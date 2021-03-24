@@ -5,7 +5,8 @@ let html = `
   // This macro needs the following
   //  - Gear ciTems must belong to a specific group
   //  - User must have OWNER right to both source actor and target actor
-  //  - user must select source and target tokens
+  //  - user must select source and target tokens  
+  //  - 
   // Change settings to fit your needs
   // 
   // To change the width of the form(dialog), change the rows at the bottom with
@@ -73,8 +74,14 @@ let html = `
   }
   th.alignLeftth{
     text-align:left;
-    width:50%;
-  }    
+    width:40%;
+  } 
+  img.item{
+    height:36px;
+  } 
+  td.itemimage{
+    width:40px;
+  }  
  
   .hbo:hover {box-shadow:0 0 5px red}
   </style>     
@@ -103,7 +110,7 @@ let html = `
       <td class="halftd"> 
         <table id="tblActorAGear" class="halftable" >
         <thead>
-        <tr><th class="alignLeftth leftpad">Item</th><th class="leftpad">Quantity</th><th class="leftpad">Uses</th><th></th><th></th></tr>
+        <tr><th class="leftpad">Item</th><th class="alignLeftth"></th><th class="leftpad">Quantity</th><th class="leftpad">Uses</th><th></th><th></th></tr>
         </thead> 
         <tbody>
         </tbody>
@@ -113,7 +120,7 @@ let html = `
       <td class="halftd">
         <table id="tblActorBGear"class="halftable"> 
         <thead>
-        <tr><th></th><th></th><th class="alignLeftth leftpad">Item</th><th class="leftpad">Quantity</th><th class="leftpad">Uses</th></tr>
+        <tr><th></th><th></th><th class="leftpad">Item</th><th class="alignLeftth"></th><th class="leftpad">Quantity</th><th class="leftpad">Uses</th></tr>
         </thead>
         <tbody>
         </tbody>
@@ -133,7 +140,8 @@ let html = `
   try{
     let actorSource =await game.actors.get(sourceActorID);
     let actorTarget = await game.actors.get(targetActorID);
-    let item = await game.items.get(itemID); 
+    let item = await game.items.get(itemID);     
+    //console.log(item.img);
     //console.log('Moving ' +itemCount + item.name + ' with ' + uses + ' uses '  +  ' from ' + actorSource.name + ' to ' + actorTarget.name );
     let citem;   
     let subitemsTag;
@@ -181,24 +189,19 @@ let html = `
     else{        
       subitems = actorSource.data.data[subitemsTag];
       for (let i=0;i<subitems.length;i++) {
-          if (subitems[i].id == itemID) {
-              if(isUnique){
-                  console.log("item is unique, can not double");                  
-              }
-              else{
-                  subitems[i].number = parseInt(subitems[i].number) - itemCount;
-                  if(parseInt(subitems[i].uses) - parseInt(uses)<=0){ 
-                     subitems[i].uses =0;
-                  }
-                  else{
-                    subitems[i].uses = parseInt(subitems[i].uses) - parseInt(uses);
-                  } 
-                  actorSource.data.data.citems= subitems;
-                  if (subitems[i].number==0){
-                    await actorSource.deletecItem(itemID);
-                  }                                   
-              }
+        if (subitems[i].id == itemID) {
+          subitems[i].number = parseInt(subitems[i].number) - itemCount;
+          if(parseInt(subitems[i].uses) - parseInt(uses)<=0){ 
+             subitems[i].uses =0;
           }
+          else{
+            subitems[i].uses = parseInt(subitems[i].uses) - parseInt(uses);
+          } 
+          actorSource.data.data.citems= subitems;
+          if (subitems[i].number==0){
+            await actorSource.deletecItem(itemID);
+          }                                                 
+        }
       }
     }                          
     // update both
@@ -227,7 +230,8 @@ let html = `
         let thCell;   
         let table ;
         let row;
-        let tdCell;
+        let tdCell;   
+        let item;
         let usestomoveforsingleitem=1;
         // list all citems for actor a   
         console.log(actorA.name);       
@@ -254,8 +258,14 @@ let html = `
                 //console.log(citem.groups[iGroup]);
                 if(citem.groups[iGroup].ikey==itemSelectedGroupKey){ 
                   //console.log(citem.id + " " +citem.number + " " +citem.name ); 
-                  //console.log(citem);
-                  row=table.insertRow(-1);
+                  console.log(citem);
+                  row=table.insertRow(-1);  
+                  let item = game.items.get(citem.id);     
+                   
+                  tdCell=row.insertCell(-1)
+                  tdCell.className='itemimage';
+                  tdCell.innerHTML='<img class="item" src="' + item.img + '"></img>';
+                  
                   tdCell=row.insertCell(-1)
                   tdCell.innerHTML=citem.name;
                   tdCell=row.insertCell(-1);
@@ -332,7 +342,11 @@ let html = `
                   tdCell.className='moveaction';
                   tdCell=row.insertCell(-1);                  
                   tdCell.innerHTML='<i title="Move all items" class=" fas fa-angle-double-left hbo" onclick="ExchangeGear(' + singleQuote() + actorBID  + singleQuote() +','+ singleQuote()+ actorAID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',' +singleQuote() + citem.number +singleQuote() +','+singleQuote() + citem.uses +singleQuote()   +');"></i>';
-                  tdCell.className='moveaction';
+                  tdCell.className='moveaction'; 
+                  let item = game.items.get(citem.id);
+                  tdCell=row.insertCell(-1) 
+                  tdCell.className='itemimage';
+                  tdCell.innerHTML='<img class="item" src="' + item.img + '"></img>';
                   tdCell=row.insertCell(-1)
                   tdCell.innerHTML=citem.name;
                   tdCell=row.insertCell(-1)
