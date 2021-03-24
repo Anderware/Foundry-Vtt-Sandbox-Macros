@@ -1,4 +1,24 @@
 let html = `
+  <script>  
+  // --------------------------------------------------------------------------------------
+  // GearExchange
+  // This macro needs the following
+  //  - Gear ciTems must belong to a specific group
+  //  - User must have OWNER right to both source actor and target actor
+  //  - user must select source and target tokens
+  // Change settings to fit your needs
+  // 
+  // To change the width of the form(dialog), change the rows at the bottom with
+  //   d.options.width = 600;
+  //   d.position.width = 600;
+  //
+  // Macro by Ramses800, 2021-03-25
+  // ---------------------------------------------------------------------------------------
+  function Setting_GearGroupKey()          {return 'grpGear';  }// this must be specified according to your groups key 
+  // ---------------------------------------------------------------------------------------
+  // generic code below
+  // ---------------------------------------------------------------------------------------
+  </script>
   <style> 
   table.mastertable{
     border-spacing: 0px;
@@ -192,7 +212,7 @@ let html = `
     }
   }
   async function ListGear(){
-    let itemSelectedGroupKey="grpGear";       // this must be specified according to your groups key
+    let itemSelectedGroupKey=Setting_GearGroupKey();       
     let selected = canvas.tokens.controlled;  // the user must have OWNER for both actors
     if (selected!=null){
       if (selected.length>=2){ 
