@@ -1,5 +1,5 @@
   
-  GearExchange
+  #GearExchange
   This macro needs the following
    - Gear ciTems must belong to a specific group
    - User must have OWNER right to both source actor and target actor
