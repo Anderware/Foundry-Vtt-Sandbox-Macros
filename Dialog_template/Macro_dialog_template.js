@@ -16,10 +16,10 @@ let html = `
   }      
   function showTime(){  
     let greeting='';                          
-    let currentuser=game.user.name; 
+    let currentuser=game.user.name;     
     let dnow = new Date();
     let snow = dnow.toLocaleString();
-    if (currentuser!=null){
+    if (currentuser==null){
       currentuser='Faceless stranger';
     }     
     greeting=currentuser + Setting_Greeting() + snow; 
