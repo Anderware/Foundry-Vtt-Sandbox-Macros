@@ -11,7 +11,8 @@ Change settings to fit your needs
 To change the width of the form(dialog), change the rows at the bottom with
      d.options.width = 600;
      d.position.width = 600;
-  
+
+It is built re-using the existing code in sandbox meaning it is a bit version-sensitive.  
 
 Macro devloped/tested only in
 FoundryVTT 0.7.9
