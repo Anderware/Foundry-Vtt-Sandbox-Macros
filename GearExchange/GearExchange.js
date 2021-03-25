@@ -1,24 +1,46 @@
+// ******************************************************************************** 
+// Macro:          GearExchange                                                     
+// Description:    Macro for exchanging cItems between actors                       
+//                                                                                  
+//                 Macro developed/tested with                                      
+//                   FoundryVTT 0.7.9                                               
+//                   Sandbox    0.8.1b                                              
+//                                                                                  
+//                 This macro needs the following                                   
+//                  - Gear ciTems must belong to a specific group                   
+//                  - User must have OWNER right to both                            
+//                    source actor and target actor                                 
+//                                                                                  
+//                 Change settings to fit your needs in                             
+//                 functions:                                                       
+//                   Setting_GearGroupKey()                                         
+//                   Setting_CommonStorageName()                                    
+//                                                                                  
+//                 To change the width of the form(dialog), change the rows at the  
+//                 bottom(the end of this macro)                                    
+//                 with                                                             
+//                   d.options.width = 600;                                         
+//                   d.position.width = 600;                                        
+// ================================================================================ 
+// Date       Version  Author               Description                             
+// ---------- -------- -------------------- --------------------------------------- 
+// 2021-03-25 1.0.0    Ramses800            Macro created.                         
+// 2021-03-26 1.1.0    Ramses800            Sorting of tables,common storage
+//                                          formatting/styling,
+//                                          dialog focus .         
+// ******************************************************************************** 
 let html = `
-  <script>  
+  <script>                                                                    
   // --------------------------------------------------------------------------------------
-  // GearExchange
-  // This macro needs the following
-  //  - Gear ciTems must belong to a specific group
-  //  - User must have OWNER right to both source actor and target actor
-  // Change settings to fit your needs
-  // 
-  // To change the width of the form(dialog), change the rows at the bottom with
-  //   d.options.width = 600;
-  //   d.position.width = 600;
-  //
-  // Macro by Ramses800, 2021-03-25
-  // ---------------------------------------------------------------------------------------
+  // These are the only setttings you need to change to use it in your Sandbox            
+  // --------------------------------------------------------------------------------------
   function Setting_GearGroupKey()          {return 'grpGear';  }// this must be specified according to your groups key 
   function Setting_CommonStorageName()          {return 'Group Storage';  }// this must be specified according to your common actor
   // ---------------------------------------------------------------------------------------
   // generic code below
   // ---------------------------------------------------------------------------------------
   </script>
+
   <style> 
   table.mastertable{   
     width:100%;
@@ -70,7 +92,7 @@ let html = `
     width:24px;
     text-align:center;
     padding-right: 3px;
-    padding-left:3px;
+    
   }
   th.alignLeftth{
     text-align:left;
@@ -92,7 +114,7 @@ let html = `
   .hbo:hover {box-shadow:0 0 5px red}
   </style>     
   
-  <i title="Refresh" class="fas fa-redo-alt hbo" onclick="ListGear()"></i>
+  <i id="refreshbtnid" title="Refresh" class="fas fa-redo-alt hbo" onclick="ListGear()"></i>
   <table id="tblGearExchange" class="mastertable"> 
     <tbody class="sep">
     <tr class="major">
@@ -138,8 +160,7 @@ let html = `
         
   
 <script>
-  function singleQuote()
-  {
+  function singleQuote(){
     return '&quot;';
   }
   async function ExchangeGear(sourceActorID,targetActorID,itemID,itemCount=1,uses=1){ 
@@ -507,15 +528,44 @@ function sortTableBodyByColumn(tableBody,columnNumber) { // (string,integer)
   }    
   ListGear();
 </script>
+ 
+  
+  <!--Marker element to detect if macro is running-->
+  <input type="hidden" id="GearExchangeMacro_appId" value="-1"> 
 `;
-// HTML Form completed
-// show it as dialog
-let d = new Dialog({
- title: "Gear Exchange",
- content: html,
- buttons: {
-  },
-});
-d.options.width = 600;
-d.position.width = 600;
-d.render(true);
+  // HTML Form completed
+
+  // check if this already loaded 
+  let appId_element=document.getElementById('GearExchangeMacro_appId'); 
+  if (appId_element!=null){
+    // already loaded    
+    let appId=appId_element.getAttribute('value');
+    if (appId!=null){ 
+      let app=ui.windows[appId];
+      if (app!=null){    
+        // attempt to bring to the front
+        app.bringToTop(); 
+        // and trigger refresh content button
+        let elem = document.getElementById("refreshbtnid");
+        if (elem!=null){
+          if (typeof elem.onclick == "function") {
+            elem.onclick.apply(elem);
+          }               
+        }
+      }
+    }
+  }
+  else{
+    // show it as dialog, after render update hidden id
+    let d =new Dialog({
+     title: "Gear Exchange",
+     content: html,
+     buttons: {},
+     render: html => document.getElementById('GearExchangeMacro_appId').setAttribute('value',d.appId),
+    });
+    d.options.width = 600;
+    d.position.width = 600;
+    d.options.resizable=true;
+    d.render(true);    
+    
+  }
