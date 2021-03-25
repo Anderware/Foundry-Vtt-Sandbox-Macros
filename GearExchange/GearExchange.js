@@ -70,6 +70,7 @@ let html = `
     width:24px;
     text-align:center;
     padding-right: 3px;
+    padding-left:3px;
   }
   th.alignLeftth{
     text-align:left;
@@ -80,6 +81,9 @@ let html = `
   } 
   td.itemimage{
     width:40px;
+  }    
+  td.itemname{
+    padding-left:3px;
   }
   tr.actorbar{
     height:55px;
@@ -114,7 +118,7 @@ let html = `
         <thead>
         <tr><th class="leftpad">Item</th><th class="alignLeftth"></th><th class="leftpad">Quantity</th><th class="leftpad">Uses</th><th></th><th></th></tr>
         </thead> 
-        <tbody>
+        <tbody id="tbodyAGear">
         </tbody>
         </table>
       </td>  
@@ -124,7 +128,7 @@ let html = `
         <thead>
         <tr><th></th><th></th><th class="leftpad">Item</th><th class="alignLeftth"></th><th class="leftpad">Quantity</th><th class="leftpad">Uses</th></tr>
         </thead>
-        <tbody>
+        <tbody id="tbodyBGear">
         </tbody>
         </table>
       </td>
@@ -215,7 +219,20 @@ let html = `
     catch(err){
       console.log('ERR:' + err);
     }
-  }
+  }   
+  
+function sortTableBodyByColumn(tableBody,columnNumber) { // (string,integer)
+  //var tableElement=document.getElementById(tableId);
+  [].slice.call(tableBody.rows).sort(function(a, b) {
+    return (
+      a.cells[columnNumber-1].textContent<b.cells[columnNumber-1].textContent?-1:
+      a.cells[columnNumber-1].textContent>b.cells[columnNumber-1].textContent?1:
+      0);
+  }).forEach(function(val, index) {
+    tableBody.appendChild(val);
+  });
+}
+  
   async function ListGear(){
     let itemSelectedGroupKey=Setting_GearGroupKey();       
     
@@ -242,6 +259,7 @@ let html = `
       let actorB; 
       let actorBID; 
       let actorAID;
+      let tbody;
       let thCell;           
       let row;
       let tdCell;   
@@ -321,7 +339,7 @@ let html = `
         thCell = document.getElementById("ActorAPortrait");
         thCell.innerHTML='<img style="height:48px;width:48px;object-fit:cover;object-position:50% 0;margin: 0 8px 0 2px;border: none;" src="' + actorA.data.img +'"</img>'; 
                
-        table= document.getElementById("tblActorAGear"); 
+        tbody= document.getElementById("tbodyAGear"); 
         citems = actorA.data.data.citems;
         if(citems!=null){
           for(let l=0;l<citems.length;l++){            
@@ -334,7 +352,7 @@ let html = `
                 if(citem.groups[iGroup].ikey==itemSelectedGroupKey){ 
                   //console.log(citem.id + " " +citem.number + " " +citem.name ); 
                   //console.log(citem);
-                  row=table.insertRow(-1);  
+                  row=tbody.insertRow(-1);  
                   let item = game.items.get(citem.id);     
                    
                   tdCell=row.insertCell(-1)
@@ -343,6 +361,7 @@ let html = `
                   
                   tdCell=row.insertCell(-1)
                   tdCell.innerHTML=citem.name;
+                  tdCell.className='itemname';
                   tdCell=row.insertCell(-1);
                   tdCell.innerHTML=citem.number; 
                   tdCell.className='centerAlign';
@@ -390,6 +409,9 @@ let html = `
             }
           }
         }
+        // sort table
+          
+        sortTableBodyByColumn(tbody,2);
        }
      // -------------
      // Actor B 
@@ -413,7 +435,8 @@ let html = `
         thCell.innerHTML= actorB.name;
         thCell = document.getElementById("ActorBPortrait");
         thCell.innerHTML='<img style="height:48px;width:48px;object-fit:cover;object-position:50% 0;margin: 0 8px 0 2px;border: none;" src="' + actorB.data.img +'"</img>'; 
-        table= document.getElementById("tblActorBGear");       
+        
+        tbody=document.getElementById("tbodyBGear");     
         citems = actorB.data.data.citems;
         if(citems!=null){
           for(let l=0;l<citems.length;l++){            
@@ -424,7 +447,7 @@ let html = `
               for(let iGroup=0;iGroup<citem.groups.length;iGroup++){
                 if(citem.groups[iGroup].ikey==itemSelectedGroupKey){ 
                   //console.log(citem.id + " " +citem.number + " " +citem.name );                   
-                  row=table.insertRow(-1);         
+                  row=tbody.insertRow(-1);         
                   tdCell=row.insertCell(-1); 
                   if(citem.number==1){
                     usestomoveforsingleitem=citem.uses;
@@ -459,6 +482,7 @@ let html = `
                   tdCell.innerHTML='<img class="item" src="' + item.img + '"></img>';
                   tdCell=row.insertCell(-1)
                   tdCell.innerHTML=citem.name;
+                  tdCell.className='itemname';
                   tdCell=row.insertCell(-1)
                   tdCell.innerHTML=citem.number;  
                   tdCell.className='centerAlign';
@@ -474,7 +498,10 @@ let html = `
               }                                        
             }
           }
-        }                        
+        }
+        // sort table
+        
+        sortTableBodyByColumn(tbody,4);                        
       }    
     }        
   }    
