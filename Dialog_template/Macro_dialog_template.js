@@ -2,14 +2,11 @@ let html = `
   <script>                                                                    
   function Setting_Greeting()          {return ', it is now ';  }
   </script>
-
   <style>  
   .hbo:hover {box-shadow:0 0 5px red}
   </style>       
   <i id="TemplateMacrorefreshbtnid" title="Refresh" class="fas fa-redo-alt hbo" onclick="showTime()"></i>
-
-  <p id="show_here"></p>      
-  
+  <p id="show_here"></p>        
   <script>
   function singleQuote(){
     return '&quot;';
