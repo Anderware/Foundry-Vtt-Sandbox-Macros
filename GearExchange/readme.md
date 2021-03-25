@@ -15,7 +15,7 @@ Macro devloped/tested only in
 FoundryVTT 0.7.9
 Sandbox  0.8.1b
 
-#BACKUP YOUR SANDBOX WORLD BEFORE TESTING THIS MACRO!
+# BACKUP YOUR SANDBOX WORLD BEFORE TESTING THIS MACRO!
 
 ![GearExchange](https://user-images.githubusercontent.com/81265884/112399263-3a28ba80-8d06-11eb-9b57-2cbd3fb1a11e.gif)
 
