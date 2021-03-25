@@ -3,5 +3,8 @@
 - With customizable headers(replaces those codelike keys)
 - If the properties you specified to list has a roll expression, you can trigger that roll directly from the list. Useful for npcs or the more miniature/skirmish kind of games.
 
- 
+Macro devloped/tested only in
+FoundryVTT 0.7.9
+Sandbox  0.8.1b
+
 ![CharcterQuickOverview](https://user-images.githubusercontent.com/81265884/112221893-4cccc200-8c28-11eb-83e8-bee480145083.gif)
