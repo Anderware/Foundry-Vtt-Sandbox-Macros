@@ -5,8 +5,6 @@ let html = `
   // This macro needs the following
   //  - Gear ciTems must belong to a specific group
   //  - User must have OWNER right to both source actor and target actor
-  //  - user must select source and target tokens  
-  //  - 
   // Change settings to fit your needs
   // 
   // To change the width of the form(dialog), change the rows at the bottom with
@@ -16,12 +14,14 @@ let html = `
   // Macro by Ramses800, 2021-03-25
   // ---------------------------------------------------------------------------------------
   function Setting_GearGroupKey()          {return 'grpGear';  }// this must be specified according to your groups key 
+  function Setting_CommonStorageName()          {return 'Group Storage';  }// this must be specified according to your common actor
   // ---------------------------------------------------------------------------------------
   // generic code below
   // ---------------------------------------------------------------------------------------
   </script>
   <style> 
-  table.mastertable{
+  table.mastertable{   
+    width:100%;
     border-spacing: 0px;
     border-top: 0px solid transparent;
     border-bottom: 0px solid transparent;
@@ -36,7 +36,7 @@ let html = `
             
   th.portrait{          
     text-align:left;
-     
+    height:55px; 
     width:60px;
     padding:2px 0px 0px 2px;
     vertical-align:middle;
@@ -48,8 +48,6 @@ let html = `
   }
   
   tbody.sep{
-     
-    display:block;
     background: rgba(0, 0, 0, 0) !important;
   }
   
@@ -66,6 +64,7 @@ let html = `
     border: 0px solid transparent;
     background: rgba(0, 0, 0, 0) !important;
     margin-top:0px;
+    
   }
   td.moveaction{
     width:24px;
@@ -81,6 +80,9 @@ let html = `
   } 
   td.itemimage{
     width:40px;
+  }
+  tr.actorbar{
+    height:55px;
   }  
  
   .hbo:hover {box-shadow:0 0 5px red}
@@ -216,37 +218,110 @@ let html = `
   }
   async function ListGear(){
     let itemSelectedGroupKey=Setting_GearGroupKey();       
-    let selected = canvas.tokens.controlled;  // the user must have OWNER for both actors
-    if (selected!=null){
-      if (selected.length>=2){ 
-        // use the first selected token as source A
-        let tokenA = selected[0];
-        const actorA = tokenA.actor;
-        let actorAID=actorA._id;
-        // use second selected token as source B
-        let tokenB = selected[1];
-        const actorB = tokenB.actor;
-        let actorBID=actorB._id;        
-        let thCell;   
-        let table ;
-        let row;
-        let tdCell;   
-        let item;
-        let usestomoveforsingleitem=1;
+    
+    let table ; 
+    table= document.getElementById("tblActorAGear"); 
+    // empty gear tables
+    if (table.rows.length>0){
+      for(let i=table.rows.length;i>1;i--){
+        table.deleteRow(-1);	
+      }
+    }
+    table= document.getElementById("tblActorBGear");
+    // empty table
+    if (table.rows.length>0){
+      for(let i=table.rows.length;i>1;i--){
+        table.deleteRow(-1);	
+      }
+    }  
+    let selected = canvas.tokens.controlled; 
+    if (selected!=null){         
+      let tokenA;
+      let tokenB;
+      let actorA;
+      let actorB; 
+      let actorBID; 
+      let actorAID;
+      let thCell;           
+      let row;
+      let tdCell;   
+      let item;
+      let usestomoveforsingleitem=1; 
+      let citems;  
+      let showmoveactions=false;
+      let actorBStatus=0;  
+      let userprimarycharacter;
+      
+      // if no tokens selected - show primary and common
+      if (selected.length==0){
+        userprimarycharacter=game.user.character;          
+        if (userprimarycharacter!=null){
+          actorAID=userprimarycharacter._id;
+          actorA= game.actors.get(actorAID);
+        }  
+        actorB = game.actors.getName(Setting_CommonStorageName() );
+        if(actorB!=null){
+          actorBID=actorB._id;
+          actorBStatus=2;
+        } 
+        else{              
+          actorBStatus=-2;
+        }
+      }
+      // if 1 token selected - show token and primary
+      else if(selected.length==1){
+        tokenA = selected[0];
+        actorA = tokenA.actor;  
+        actorAID=actorA._id; 
+        
+        userprimarycharacter=game.user.character;          
+        if (userprimarycharacter!=null){
+          actorBID=userprimarycharacter._id;
+          actorB= game.actors.get(actorBID);
+        }  
+        // if the single selected is the same as primary or primary not found show common instead 
+        if (actorAID==actorBID || userprimarycharacter==null){
+          actorB = game.actors.getName(Setting_CommonStorageName() );
+          if(actorB!=null){
+            actorBID=actorB._id;
+            actorBStatus=2;
+          } 
+          else{              
+            actorBStatus=-2;
+          }
+        }
+              
+      }            
+      // if 2 token selected - show token 1 and token 2
+      else if(selected.length>=2){
+        tokenA = selected[0];
+        actorA = tokenA.actor;  
+        actorAID=actorA._id;
+        tokenB = selected[1]; 
+        actorB = tokenB.actor;
+        actorBID=actorB._id; 
+        actorBStatus=1;
+      }
+
+      // ------- 
+      // Actor A 
+      // ------
+      if (actorA==null){
+        thCell = document.getElementById("ActorAName");
+        thCell.innerHTML= 'Not selected'; 
+        thCell = document.getElementById("ActorAPortrait");
+        thCell.innerHTML='';
+      }
+      else{                                              
+        
         // list all citems for actor a   
-        console.log(actorA.name);       
+        //console.log(actorA.name);       
         thCell = document.getElementById("ActorAName");
         thCell.innerHTML= actorA.name;
         thCell = document.getElementById("ActorAPortrait");
         thCell.innerHTML='<img style="height:48px;width:48px;object-fit:cover;object-position:50% 0;margin: 0 8px 0 2px;border: none;" src="' + actorA.data.img +'"</img>'; 
+               
         table= document.getElementById("tblActorAGear"); 
-        // empty table
-        if (table.rows.length>0){
-          for(let i=table.rows.length;i>1;i--){
-            table.deleteRow(-1);	
-          }
-        }        
-        let citems;
         citems = actorA.data.data.citems;
         if(citems!=null){
           for(let l=0;l<citems.length;l++){            
@@ -258,7 +333,7 @@ let html = `
                 //console.log(citem.groups[iGroup]);
                 if(citem.groups[iGroup].ikey==itemSelectedGroupKey){ 
                   //console.log(citem.id + " " +citem.number + " " +citem.name ); 
-                  console.log(citem);
+                  //console.log(citem);
                   row=table.insertRow(-1);  
                   let item = game.items.get(citem.id);     
                    
@@ -291,30 +366,54 @@ let html = `
                     tdCell.innerHTML='';
                   }
                   tdCell.className='centerAlign'; 
-                  tdCell=row.insertCell(-1);                       
-                  tdCell.innerHTML='<i title="Move all items" class=" fas fa-angle-double-right hbo" onclick="ExchangeGear(' + singleQuote() + actorAID  + singleQuote() +','+ singleQuote()+ actorBID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',' +singleQuote() + citem.number +singleQuote() +','+singleQuote() + citem.uses +singleQuote()  +');"></i>';                  
+                  tdCell=row.insertCell(-1); 
+                  if(actorAID!=null && actorBID!=null && citem.id!=null ){ 
+                    showmoveactions=true;                       
+                  }
+                  
+                  else{
+                    showmoveactions=false;
+                  }
+                   
+                  if(showmoveactions==true){                      
+                    tdCell.innerHTML='<i title="Move all items" class=" fas fa-angle-double-right hbo" onclick="ExchangeGear(' + singleQuote() + actorAID  + singleQuote() +','+ singleQuote()+ actorBID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',' +singleQuote() + citem.number +singleQuote() +','+singleQuote() + citem.uses +singleQuote()  +');"></i>';                  
+                  }
+                                    
                   tdCell.className='moveaction';
-                  tdCell=row.insertCell(-1);                                       
-                  tdCell.innerHTML='<i title="Move single item" class=" fas fa-angle-right hbo" onclick="ExchangeGear(' + singleQuote() + actorAID  + singleQuote() +','+ singleQuote()+ actorBID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',1,' +singleQuote() + usestomoveforsingleitem +singleQuote()  +');"></i>';
+                  tdCell=row.insertCell(-1);  
+                  if(showmoveactions==true){                                     
+                    tdCell.innerHTML='<i title="Move single item" class=" fas fa-angle-right hbo" onclick="ExchangeGear(' + singleQuote() + actorAID  + singleQuote() +','+ singleQuote()+ actorBID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',1,' +singleQuote() + usestomoveforsingleitem +singleQuote()  +');"></i>';
+                  }
                   tdCell.className='moveaction'; 
                 }                    
               }                                        
             }
           }
         }
+       }
+     // -------------
+     // Actor B 
+     // ------------
+      if(actorB==null){
+        thCell = document.getElementById("ActorBName"); 
+        if(actorBStatus==-2){
+          thCell.innerHTML= 'No common storage found';
+        }
+        else{
+          thCell.innerHTML= 'Not selected';
+        }
+        thCell = document.getElementById("ActorBPortrait");
+        thCell.innerHTML='';
+        }
+        else
+        {                 
         // list alll items for actor b 
         //console.log(actorB.name);  
         thCell = document.getElementById("ActorBName");
         thCell.innerHTML= actorB.name;
         thCell = document.getElementById("ActorBPortrait");
         thCell.innerHTML='<img style="height:48px;width:48px;object-fit:cover;object-position:50% 0;margin: 0 8px 0 2px;border: none;" src="' + actorB.data.img +'"</img>'; 
-        table= document.getElementById("tblActorBGear");
-        // empty table
-        if (table.rows.length>0){
-          for(let i=table.rows.length;i>1;i--){
-            table.deleteRow(-1);	
-          }
-        }        
+        table= document.getElementById("tblActorBGear");       
         citems = actorB.data.data.citems;
         if(citems!=null){
           for(let l=0;l<citems.length;l++){            
@@ -337,11 +436,22 @@ let html = `
                     else{                    
                       usestomoveforsingleitem=citem.maxuses;
                     }
-                  }                 
-                  tdCell.innerHTML='<i title="Move single item" class=" fas fa-angle-left hbo" onclick="ExchangeGear(' + singleQuote() + actorBID  + singleQuote() +','+ singleQuote()+ actorAID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',1,' +singleQuote() + usestomoveforsingleitem +singleQuote()  +');"></i>';
+                  }      
+                  if(actorAID!=null && actorBID!=null && citem.id!=null ){ 
+                    showmoveactions=true;                       
+                  }
+                  
+                  else{
+                    showmoveactions=false;
+                  }  
+                  if(showmoveactions==true){         
+                    tdCell.innerHTML='<i title="Move single item" class=" fas fa-angle-left hbo" onclick="ExchangeGear(' + singleQuote() + actorBID  + singleQuote() +','+ singleQuote()+ actorAID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',1,' +singleQuote() + usestomoveforsingleitem +singleQuote()  +');"></i>';
+                  }
                   tdCell.className='moveaction';
-                  tdCell=row.insertCell(-1);                  
-                  tdCell.innerHTML='<i title="Move all items" class=" fas fa-angle-double-left hbo" onclick="ExchangeGear(' + singleQuote() + actorBID  + singleQuote() +','+ singleQuote()+ actorAID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',' +singleQuote() + citem.number +singleQuote() +','+singleQuote() + citem.uses +singleQuote()   +');"></i>';
+                  tdCell=row.insertCell(-1);
+                  if(showmoveactions==true){                  
+                    tdCell.innerHTML='<i title="Move all items" class=" fas fa-angle-double-left hbo" onclick="ExchangeGear(' + singleQuote() + actorBID  + singleQuote() +','+ singleQuote()+ actorAID + singleQuote() +',' + singleQuote() + citem.id + singleQuote() +',' +singleQuote() + citem.number +singleQuote() +','+singleQuote() + citem.uses +singleQuote()   +');"></i>';
+                  }
                   tdCell.className='moveaction'; 
                   let item = game.items.get(citem.id);
                   tdCell=row.insertCell(-1) 
