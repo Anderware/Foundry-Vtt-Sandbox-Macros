@@ -8,4 +8,7 @@ Macro devloped/tested only in
 FoundryVTT 0.7.9
 Sandbox  0.8.1b
 
-![CharcterQuickOverview](https://user-images.githubusercontent.com/81265884/112221893-4cccc200-8c28-11eb-83e8-bee480145083.gif)
+![QCO](https://user-images.githubusercontent.com/81265884/113228274-c43bca80-9294-11eb-951b-a43fddcc05c8.gif)
+
+
+
