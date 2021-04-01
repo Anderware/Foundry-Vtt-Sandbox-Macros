@@ -4,7 +4,7 @@ let html = `
   <div>
   <script>
   // Change settings to fit your needs
-  function Setting_PropertiesRequested() {return ['STY','REF','INT','CHA', 'TÅL', 'TÅL_AKTUELL','VST','VST_AKTUELL'];  }
+  function Setting_PropertiesRequested() {return ['STY','REF','INT','CHA', 'TÃ…L', 'TÃ…L_AKTUELL','VST','VST_AKTUELL'];  }
   function Setting_Foldername()          {return 'Characters';  }
   // ----------------------------------------------------------------------
   // Generic code below
