@@ -1,5 +1,6 @@
 ## Character Quick Overview
-- It displays specified properties for all actors(characters) in a specified folder. Useful to keep track of key properties like perception, saving throws, current hits and whatever without having to open each character sheet.
+- It displays specified properties(both actor properties and cItem properties) for all actors(characters) in a specified folder or tokens selected. 
+- Useful to keep track of key properties like perception, saving throws, current hits and whatever without having to open each character sheet.
 - With customizable headers(replaces those codelike keys)
 - If the properties you specified to list has a roll expression, you can trigger that roll directly from the list. Useful for npcs or the more miniature/skirmish kind of games.
 
