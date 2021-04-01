@@ -5,7 +5,7 @@ let html = `
   // Properties format entered is 'Name of sandbox property key;Any label you want to show'
   // if you dont need a special label just use the propertykey(without any ;)
   // ---------------------------------------------------------------------------------------
-  function Setting_PropertiesRequested() {return ['STY','REF','INT','CHA', 'TÅL;HP Max', 'TÅL_AKTUELL;HP Current','VST;WIL Max','VST_AKTUELL;WIL Current'];  } 
+  function Setting_PropertiesRequested() {return ['STY','REF','INT','CHA', 'TÃ…L;HP Max', 'TÃ…L_AKTUELL;HP Current','VST;WIL Max','VST_AKTUELL;WIL Current'];  } 
   function Setting_Foldername()          {return 'Characters';  }
   </script>  
 
