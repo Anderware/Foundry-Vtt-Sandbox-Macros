@@ -296,22 +296,43 @@ let html_content = `
       let columnheader='';
       let title=''; 
       let headerproperty;
+      let iscitem=false; 
+      let citemname; 
+      let propkey;  
+      let tooltip='';
       arrProperties.forEach(function(item){   
-        title='';
+        title='';       
+        tooltip='';
         if (item.hasOwnProperty('columnheadertooltip')){
           title='title="' + item.columnheadertooltip  + '"';
         }    
-        else{
-          // try to get it from the property
-          headerproperty = game.items.find(y=>y.type=="property" && y.data.data.attKey==item.display);
+        else{ 
+          // determine attribute or citem
+          if (item.display.indexOf('|')>-1){          
+            iscitem=true; 
+            citemname=${thisMacroName()}_splitString(item.display,'|',0);
+            propkey=${thisMacroName()}_splitString(item.display,'|',1);                                
+          }      
+          else{
+            propkey=item.display;
+          }
+        
+          // try to get it from the propertys tool tip
+          headerproperty = game.items.find(y=>y.type=="property" && y.data.data.attKey==propkey);
           if (headerproperty!=null) { 
                 
-            if (headerproperty.data.data.hasOwnProperty('tooltip')){
-              title='title="' + headerproperty.data.data.tooltip  + '"';
-            } 
-            
-          }
-          
+            if (headerproperty.data.data.hasOwnProperty('tooltip')){ 
+              tooltip= headerproperty.data.data.tooltip;
+              if (tooltip!=''){
+                if (iscitem){
+                  title='title="' + citemname + ' - ' + tooltip  + '"';
+                }
+                else{
+                  title='title="' + tooltip  + '"';
+                }   
+              }
+            }             
+          }          
         }
          
         if(item.columnheader.startsWith("%")){
