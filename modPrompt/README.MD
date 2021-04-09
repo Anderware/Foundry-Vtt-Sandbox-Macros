@@ -57,6 +57,7 @@ let modpromptvalue=await modPrompt(rollname);
  rollexp= rollexp + '+'+ modpromptvalue;
  }
  ```
+ It will then look like this
  
  ``` javascript
         //Parse roll difficulty in name, and general atts
@@ -74,5 +75,9 @@ let modpromptvalue=await modPrompt(rollname);
             rollexp = await rollexp.replace(/\#{name}/g,citemattributes.name);
         }
 ```
+ 
+ Save file and in Foundry press F5 to refresh(reload the scripts)
+ 
+ 
  
  ![modprompt](https://user-images.githubusercontent.com/81265884/114140425-85e78080-9910-11eb-94e3-205782c12dfe.gif)
