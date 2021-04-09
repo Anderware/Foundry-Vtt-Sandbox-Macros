@@ -10,7 +10,7 @@ As always
 
 This have been tested with Sandbox 0.8.6
 
-Example.
+## Step 1
 Create a new file called modprompt.js in \Data\systems\sandbox\module\ with the following code
 ``` javascript
   export async function modPrompt(rollname){
@@ -31,17 +31,19 @@ Create a new file called modprompt.js in \Data\systems\sandbox\module\ with the 
     return modpromptvalue;
   }
 ```
+## Step 2
 Then(**AFTER MAKING A BACKUP OF THE ORIGINAL FILE**), edit the file a-entity.js like this:
 At the top, add 
 ``` javascript
 import { modPrompt } from "./modprompt.js";
 ```
-Find the function starting with 
+## Step 3
+In a-entity.js , find the function starting with 
 ``` javascript 
 async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,number=1,target=null)
 ```
-
-Inside the function rollSheetDice, find these lines of code
+## Step 4
+In a-entity.js , inside the function rollSheetDice, find these lines of code
 ``` javascript
         //Parse roll difficulty in name, and general atts
         rollname = rollname.replace(/\#{diff}/g,diff);
@@ -53,6 +55,7 @@ Inside the function rollSheetDice, find these lines of code
             rollexp = await rollexp.replace(/\#{name}/g,citemattributes.name);
         }
 ```
+
 And add in between them 
 ```javascript
 let modpromptvalue=await modPrompt(rollname);
