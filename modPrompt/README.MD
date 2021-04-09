@@ -1,5 +1,9 @@
 # Adding a modifier prompt for all Sandbox rolls
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
+
+* This will apply for any roll(labels, simplenumerics, citems etc) made from the actor(meaning character sheet or equivalent). 
+* It will not be applied on a Initiative roll triggered from the Combat Tracker(if you are using the Sandbox builtin Initiative Attribute Key -functionality)
+
 > As always
 > * Make a backup of any Sandbox file you edit __**before**__ any editing
 > * Any changes you have made to Sandbox core files will be overwritten when updating Sandbox to a newer version so save your edits somewhere to re-apply them again 
