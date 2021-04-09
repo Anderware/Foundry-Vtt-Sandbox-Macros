@@ -1,5 +1,9 @@
-# Adding a modifier prompt for all Sandbox rols
+# Adding a modifier prompt for all Sandbox rolls
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
+> As always
+> * Make a backup of any Sandbox file you edit **before** any editing
+> * Any changes you have made to Sandbox core files will be overwritten when updating Sandbox to a newer version so save your edits somewhere to re-apply them again 
+
 Example.
 Create a new file called modprompt.js in \Data\systems\sandbox\module\ with the following code
 ``` javascript
@@ -28,7 +32,7 @@ import { modPrompt } from "./modprompt.js";
 ```
 Find the function starting with async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,number=1,target=null)
 
-Find these lines of code
+Inside the function rollSheetDice, find these lines of code
 ``` javascript
         //Parse roll difficulty in name, and general atts
         rollname = rollname.replace(/\#{diff}/g,diff);
@@ -46,5 +50,24 @@ let modpromptvalue=await modPrompt(rollname);
    if (modpromptvalue!=null){
  rollformula= rollformula + '+'+ modpromptvalue;
  rollexp= rollexp + '+'+ modpromptvalue;
+ }
  ```
+ 
+ ``` javascript
+        //Parse roll difficulty in name, and general atts
+        rollname = rollname.replace(/\#{diff}/g,diff);
+        rollname = await auxMeth.autoParser(rollname,actorattributes,citemattributes,true,false,number);      
+        
+        let modpromptvalue=await modPrompt(rollname);
+        if (modpromptvalue!=null){
+          rollformula= rollformula + '+'+ modpromptvalue;
+          rollexp= rollexp + '+'+ modpromptvalue;
+        }
+        //Parse roll difficulty
+        rollexp = rollexp.replace(/\#{diff}/g,diff);
+        if(citemattributes!=null){
+            rollexp = await rollexp.replace(/\#{name}/g,citemattributes.name);
+        }
+```
+ 
  ![modprompt](https://user-images.githubusercontent.com/81265884/114140425-85e78080-9910-11eb-94e3-205782c12dfe.gif)
