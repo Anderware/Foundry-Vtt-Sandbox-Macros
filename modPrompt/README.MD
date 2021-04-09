@@ -1,8 +1,10 @@
 # Adding a modifier prompt for all Sandbox rolls
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 > As always
-> * Make a backup of any Sandbox file you edit **before** any editing
+> * Make a backup of any Sandbox file you edit __**before**__ any editing
 > * Any changes you have made to Sandbox core files will be overwritten when updating Sandbox to a newer version so save your edits somewhere to re-apply them again 
+
+This have been tested with Sandbox 0.8.6
 
 Example.
 Create a new file called modprompt.js in \Data\systems\sandbox\module\ with the following code
@@ -30,7 +32,10 @@ At the top, add
 ``` javascript
 import { modPrompt } from "./modprompt.js";
 ```
-Find the function starting with async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,number=1,target=null)
+Find the function starting with 
+``` javascript 
+async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,number=1,target=null)
+```
 
 Inside the function rollSheetDice, find these lines of code
 ``` javascript
