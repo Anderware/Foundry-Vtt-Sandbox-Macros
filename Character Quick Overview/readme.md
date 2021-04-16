@@ -6,7 +6,7 @@
 - Also possible to trigger macros
 Macro devloped/tested only in
 FoundryVTT 0.7.9
-Sandbox  0.8.1b
+Sandbox  0.8.6
 
 ![QCO](https://user-images.githubusercontent.com/81265884/113228274-c43bca80-9294-11eb-951b-a43fddcc05c8.gif)
 
