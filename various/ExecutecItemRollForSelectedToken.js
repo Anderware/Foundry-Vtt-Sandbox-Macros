@@ -7,7 +7,8 @@ async function ExecutecItemRollForSelectedToken(scItemName,sPropertyKey){
     if(selected.length>0){
       if(selected.length==1){
         let token = selected[0];  
-        // check if token has citem
+        // check if token has citem   
+        let actor=token.actor;
         let citem = actor.data.data.citems.find(y=>y.name == scItemName);
         if (citem!=null){ 
           // check if it has the property
@@ -20,7 +21,7 @@ async function ExecutecItemRollForSelectedToken(scItemName,sPropertyKey){
                 // execute it 
                 let citemattributes = citem.attributes;              
                 let rollname = property.data.data.rollname;         
-                token.actor.rollSheetDice(rollexp,rollname,null,token.actor.data.data.attributes,citemattributes); 
+                actor.rollSheetDice(rollexp,rollname,null,actor.data.data.attributes,citemattributes); 
               }
               else{
                 ui.notifications.warn('The roll expression for property ' + sPropertyKey + ' is empty');
