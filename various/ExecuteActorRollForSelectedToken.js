@@ -1,4 +1,4 @@
-ExecuteActorRollForSelectedToken('Body');
+ExecuteActorRollForSelectedToken('BodyRoll');
 
 async function  ExecuteActorRollForSelectedToken(sPropertyKey){
     // get selected token
@@ -11,11 +11,11 @@ async function  ExecuteActorRollForSelectedToken(sPropertyKey){
         let actor=token.actor;
         let actorattributes = actor.data.data.attributes;        
         if (actorattributes!=null){ 
-          // check if it has the property
+          // check if it has the property  
           let property = game.items.find(y=>y.type=="property" && y.data.data.attKey==sPropertyKey);          
           if (property!=null) { 
-            // check that token has this property(attribute)
-            if(actor.data.data.attributes.hasOwnProperty(sPropertyKey)){ 
+            // check that token has this property(attribute) or it is a label(neat trick, the label does not actually be in the actor, its roll expression(as long as it is valid with the actor in question) can be rolled against an actor anyways)
+            if(actor.data.data.attributes.hasOwnProperty(sPropertyKey)|| property.data.data.datatype=='label'){ 
               // check if the property has a roll
               let rollexp = property.data.data.rollexp;
               if (rollexp!=null){
