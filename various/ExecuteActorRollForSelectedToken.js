@@ -9,8 +9,7 @@ async function  ExecuteActorRollForSelectedToken(sPropertyKey){
         let token = selected[0];  
         // check if token has citem   
         let actor=token.actor;
-        let actorattributes = actor.data.data.attributes;
-        
+        let actorattributes = actor.data.data.attributes;        
         if (actorattributes!=null){ 
           // check if it has the property
           let property = game.items.find(y=>y.type=="property" && y.data.data.attKey==sPropertyKey);          
@@ -43,8 +42,7 @@ async function  ExecuteActorRollForSelectedToken(sPropertyKey){
             ui.notifications.warn('The property with key '+ sPropertyKey + ' does not exist');
           }
         }
-        else{
-          // 
+        else{          
           ui.notifications.error('The selected token(' + token.data.name + ') does not have any attributes' );
         }
       }
