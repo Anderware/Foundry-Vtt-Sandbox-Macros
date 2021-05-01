@@ -1,0 +1,23 @@
+.sandbox.sheet input[name*='chkWithLetter' ] {
+  -webkit-filter:none;
+  -webkit-appearance: none;
+  appearance:none;
+  background-color: lightblue ;
+  background:lightblue ;
+  content: 'L' ; 
+  font-size: larger; 
+  font-weight: bold;
+}
+
+.sandbox.sheet input[name*='chkWithLetter' ]:after {
+  content: 'L' ;  
+}
+
+.sandbox.sheet input[name*='chkWithLetter' ]:checked {
+  background-color: red ;
+  background:red ;  
+}
+
+.sandbox.sheet input[name*="chkWithLetter" ]:checked:after {
+  content: 'L';  
+}

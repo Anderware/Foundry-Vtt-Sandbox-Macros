@@ -8,10 +8,10 @@ color:initial;*/
 :root {
   --editablecolor:GhostWhite;
   --disabledcolor:Gainsboro;
-  --linkcolor:royalblue;
-  --radiocolor:darkblue;
+  --linkcolor:steelblue;
+  --radiocolor:dodgerblue;
   --hovercolor: navy; /* color used for illumniating clickable element */
-  --focuscolor: Lightblue; /* color used for illumniating focus/active selection */  
+  --focuscolor: royalblue; /* color used for illumniating focus/active selection */  
   --box-shadow-size:0 0 5px;
   --text-shadow-size:0 0 8px; 
   --drop-shadow-size:0 0 11px;
@@ -25,6 +25,11 @@ color:initial;*/
 
 .sandbox.sheet input[readonly=true]{background-color:var(--disabledcolor) !important;box-shadow: none !important;} 
 .sandbox.sheet input.input-disabled{background-color:var(--disabledcolor) !important;box-shadow: none !important;} 
+
+/*textarea*/
+.sandbox.sheet textarea{background-color:var(--editablecolor) !important;}
+.sandbox.sheet textarea:hover{box-shadow:var(--box-shadow-size) var(--hovercolor);}
+.sandbox.sheet textarea:focus{box-shadow:var(--box-shadow-size) var(--focuscolor);} 
 
 /*Checkbox Input fields*/
 .sandbox.sheet input[type=checkbox] {
