@@ -1,0 +1,96 @@
+/*To set no color(or initial) use:
+box-shadow: none; 
+text-shadow:none; 
+filter:none; 
+color:initial;*/
+
+/* CSS variables */
+:root {
+  --editablecolor:GhostWhite;
+  --disabledcolor:Gainsboro;
+  --linkcolor:royalblue;
+  --radiocolor:darkblue;
+  --hovercolor: navy; /* color used for illumniating clickable element */
+  --focuscolor: Lightblue; /* color used for illumniating focus/active selection */  
+  --box-shadow-size:0 0 5px;
+  --text-shadow-size:0 0 8px; 
+  --drop-shadow-size:0 0 11px;
+}
+
+/*Input fields*/
+.sandbox.sheet input:hover{box-shadow:var(--box-shadow-size) var(--hovercolor);}
+.sandbox.sheet input:focus{box-shadow:var(--box-shadow-size) var(--focuscolor);} 
+
+.sandbox.sheet input{background-color:var(--editablecolor) !important;}
+
+.sandbox.sheet input[readonly=true]{background-color:var(--disabledcolor) !important;box-shadow: none !important;} 
+.sandbox.sheet input.input-disabled{background-color:var(--disabledcolor) !important;box-shadow: none !important;} 
+
+/*Checkbox Input fields*/
+.sandbox.sheet input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance:none;
+  background-color: var(--editablecolor) !important;
+}
+
+.sandbox.sheet input[type=checkbox]:checked {
+  -webkit-filter:none;
+  -webkit-appearance: none;
+  appearance:none;
+  background: var(--editablecolor)  !important;
+  background-color: var(--editablecolor) !important;
+}
+
+.sandbox.sheet input[type=checkbox]:checked:after {
+  content: '?';  
+}
+
+
+
+/*Dropdowns*/
+.sandbox.sheet select{background-color:var(--editablecolor) !important;}
+.sandbox.sheet select:hover{box-shadow:var(--box-shadow-size) var(--hovercolor);} 
+.sandbox.sheet select:focus{box-shadow:var(--box-shadow-size) var(--focuscolor);} 
+
+/*Radio buttons*/
+.sandbox.sheet .radio-element{color:var(--radiocolor) ;}
+.sandbox.sheet .radio-element:hover  {text-shadow:var(--text-shadow-size)  var(--hovercolor);}
+
+/*badge */
+.sandbox.sheet .badge-image{color:var(--linkcolor) ;}
+.sandbox.sheet .badge-image:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+.sandbox.sheet .badge-clickgm{color:var(--linkcolor) ;}
+.sandbox.sheet .badge-clickgm:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+
+/* citems related */
+.sandbox.sheet .citem-edit{color:var(--linkcolor) ;}
+.sandbox.sheet .citem-edit:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+
+.sandbox.sheet .citem-delete{color:var(--linkcolor) ;}
+.sandbox.sheet .citem-delete:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+
+.sandbox.sheet .ci-delete{color:var(--linkcolor) ;}
+.sandbox.sheet .ci-delete:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+
+.sandbox.sheet .consumable-button{color:var(--linkcolor) ;}
+.sandbox.sheet .consumable-button:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+
+/*Navigational*/
+.sandbox.sheet .tab-button:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+.sandbox.sheet .leftarrow:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
+.sandbox.sheet .rightarrow:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
+
+.sandbox.sheet .sheet-reload:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+.sandbox.sheet .editor-edit:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+/* Rollable links*/
+.sandbox.sheet .rollable{color: var(--linkcolor);}
+.sandbox.sheet .rollable:hover{color: var(--hovercolor);}
+/* links*/
+.sandbox.sheet .linkable{color:var(--linkcolor);}
+.sandbox.sheet .linkable:hover{color: var(--hovercolor);}
+
+/*scrollbars*/
+.sheet-body ::-webkit-scrollbar-thumb {
+    background: var(--linkcolor);
+    border: 1px solid var(--linkcolor);
+}
