@@ -47,7 +47,7 @@ color:initial;*/
 }
 
 .sandbox.sheet input[type=checkbox]:checked:after {
-  content: '?';  
+  content: '✔';  
 }
 
 
