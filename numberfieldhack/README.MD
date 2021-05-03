@@ -19,7 +19,7 @@ This have been tested with Sandbox 0.8.6
 
 ## Step 1
 
-**AFTER MAKING A BACKUP OF THE ORIGINAL FILE**, edit the file gactorsheet.js like this:
+**AFTER MAKING A BACKUP OF THE ORIGINAL FILE**, edit the file \Data\systems\sandbox\module\gactorsheet.js like this:
 
 In gactorsheet.js , find the function starting with 
 ``` javascript 
