@@ -1,6 +1,7 @@
 # Modify simplenumerics input fields to increase/decrease value easily
 With this hack, you can use the scroll wheel or upp/down spinners on your mouse to increase the value of a simplenumeric field
 ![spinner](https://user-images.githubusercontent.com/81265884/116862386-f24e5a80-ac04-11eb-93b1-b7f88a99d867.gif)
+
 Difference between using the scroll wheel and the spinners.
 * When using the scroll wheel, the number will change in the input box but the actor will not be updated for each increment/decrement change meaning only the final number will be processed.
 * When using the up/down spinners, each change will update the actor separately.
