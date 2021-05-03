@@ -108,7 +108,7 @@ It will then look like this
 
 	    }
 ```
-## Step 3 - For cItems
+## Step 3 - For cItems simplenumeric properties
 In gactorsheet.js , find the function starting with 
 ``` javascript 
 async refreshCItems(basehtml){
@@ -161,6 +161,109 @@ It will then look like this
 
     }
 ```
+### For the NUM field in cItem table
+In gactorsheet.js , inside the function refreshCItems, find these lines of code
+``` javascript
+	if(propTable.data.data.hasunits){
+		let numcell = document.createElement("TD");
+		numcell.className = "input-min centertext";                   
+		numcell.className += " " + inputgroup;                  
+		new_row.appendChild(numcell);
+
+		let numinput = document.createElement("INPUT");
+		numinput.className = "table-input table-free centertext";
+		numinput.className += " " + inputgroup;
+
+		let ciNumber = ciObject.number;
+
+		numinput.value = ciObject.number;
+		numinput.addEventListener("change", (event) => this.changeCINum(ciObject.id,event.target.value));
+
+		numcell.appendChild(numinput);
+	    }
+```
+And in between 
+```
+let numinput = document.createElement("INPUT");
+```
+and
+```
+numinput.className = "table-input table-free centertext";
+```
+Add this line
+```
+numinput.setAttribute("type", "number");   // added input type number
+```
+It will then look like this
+``` javascript
+	    if(propTable.data.data.hasunits){
+		let numcell = document.createElement("TD");
+		numcell.className = "input-min centertext";                   
+		numcell.className += " " + inputgroup;                  
+		new_row.appendChild(numcell);
+
+		let numinput = document.createElement("INPUT"); 
+
+		numinput.setAttribute("type", "number");   // added input type number
+
+		numinput.className = "table-input table-free centertext";
+		numinput.className += " " + inputgroup;
+
+		let ciNumber = ciObject.number;
+
+		numinput.value = ciObject.number;
+		numinput.addEventListener("change", (event) => this.changeCINum(ciObject.id,event.target.value));
+
+		numcell.appendChild(numinput);
+	    }
+```
+### For the USES field in cItem table
+In gactorsheet.js , inside the function refreshCItems, find these lines of code
+``` javascript
+	    if(propTable.data.data.hasuses && propTable.data.data.hasactivation){
+		let usescell = document.createElement("TD");
+		usescell.className = "tabblock-center";                   
+		usescell.className += " " + inputgroup;                  
+		new_row.appendChild(usescell);
+
+		let usevalue = document.createElement("INPUT");
+		usevalue.className = "table-input table-small centertext";
+		usevalue.className += " " + inputgroup;  
+
+		usescell.appendChild(usevalue);
+```
+And in between 
+```
+let usevalue = document.createElement("INPUT");
+```
+and
+```
+usevalue.className = "table-input table-small centertext";
+```
+Add this line
+```
+usevalue.setAttribute("type", "number");   // added input type number
+```
+It will then look like this
+``` javascript
+	if(propTable.data.data.hasuses && propTable.data.data.hasactivation){
+		let usescell = document.createElement("TD");
+		usescell.className = "tabblock-center";                   
+		usescell.className += " " + inputgroup;                  
+		new_row.appendChild(usescell);
+
+		let usevalue = document.createElement("INPUT");
+		
+		usevalue.setAttribute("type", "number");   // added input type number
+		
+		usevalue.className = "table-input table-small centertext";
+		usevalue.className += " " + inputgroup;  
+
+		usescell.appendChild(usevalue);
+```
+
+
+
 Save the file
 
 ## Step 4
