@@ -1,4 +1,7 @@
 # Modify simplenumerics input fields to increase/decrease value easily
+
+With this hack, you can use the scroll wheel on your mouse to increase the value of a simplenumeric field
+
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
 
@@ -19,6 +22,8 @@ async addNewPanel(tabpanel,tabKey,tabname,firstmrow, multiID=null,multiName=null
 ## Step 2
 In gactorsheet.js , inside the function addNewPanel, find these lines of code
 ``` javascript
+                else {
+
                     sInput = deftemplate.createElement("INPUT");
 
                     sInput.setAttribute("name", "data.attributes." + property.data.attKey  + ".value");
@@ -26,7 +31,7 @@ In gactorsheet.js , inside the function addNewPanel, find these lines of code
 
                     if(property.data.datatype==="simplenumeric"){
 
-                        sInput.setAttribute("type", "text");   
+                        sInput.setAttribute("type", "text");  
                         sInput.className = "input-min";
 
                         if(property.data.inputsize=="M"){
@@ -61,6 +66,8 @@ sInput.setAttribute("type", "number");   // changed this from text to number
 It will then look like this
 
 ```
+                else {
+
                     sInput = deftemplate.createElement("INPUT");
 
                     sInput.setAttribute("name", "data.attributes." + property.data.attKey  + ".value");
