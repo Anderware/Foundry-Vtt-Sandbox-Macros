@@ -1,5 +1,5 @@
 # Modify simplenumerics input fields to increase/decrease value easily
-With this hack, you can use the scroll wheel or upp/down spinners on your mouse to increase the value of a simplenumeric field
+With this hack, you can use the scroll wheel or up/down spinners on your mouse to increase the value of a simplenumeric field
 ![spinner](https://user-images.githubusercontent.com/81265884/116862386-f24e5a80-ac04-11eb-93b1-b7f88a99d867.gif)
 
 Difference between using the scroll wheel and the spinners.
