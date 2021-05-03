@@ -113,5 +113,6 @@ Add some CSS for the styling(you can use a custom css file or the module https:/
 	-webkit-appearance: textfield ;	
 }
 ```
+Save the css
 ## Step 5 
- Save file and in Foundry press F5 to refresh(reload the scripts) and rebuild the template and reload the actor.
+In Foundry press F5 to refresh(reload the scripts) and rebuild the template and reload the actor.
