@@ -108,7 +108,8 @@ It will then look like this
 
 	    }
 ```
-## Step 3 - For cItems simplenumeric properties
+## Step 3 - For cItems 
+### For simplenumeric properties field in cItem table
 In gactorsheet.js , find the function starting with 
 ``` javascript 
 async refreshCItems(basehtml){
