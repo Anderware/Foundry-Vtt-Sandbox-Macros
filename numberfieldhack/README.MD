@@ -12,7 +12,7 @@ So, when adding/subtracting a lot of steps, use the scroll wheel.
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
 ### What does this hack actually do?
-Sandbox uses the html input element as TEXT type for all input fields. This hack chenges it so for all simplenumerics field the html input type is NUMBER.
+Sandbox uses the html input element as TEXT type for all input fields. This hack modifies the sheet generation so for all simplenumerics field the html input type is NUMBER.
 
 ## As always
 * Make a backup of any Sandbox file you edit __**before**__ any editing
