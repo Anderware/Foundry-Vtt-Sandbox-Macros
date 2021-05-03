@@ -4,7 +4,9 @@ With this hack, you can use the scroll wheel or upp/down spinners on your mouse 
 
 Difference between using the scroll wheel and the spinners.
 * When using the scroll wheel, the number will change in the input box but the actor will not be updated for each increment/decrement change meaning only the final number will be processed.
-* When using the up/down spinners, each change will be processed separately meaning that calculation, and communictaions with all clients will be triggered every time.
+* When using the up/down spinners, each change will update the actor separately.
+
+Every time an actor is updated all calculations and communications with all clients is triggered.
 So, when adding/subtracting a lot of steps, use the scroll wheel.
 
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
