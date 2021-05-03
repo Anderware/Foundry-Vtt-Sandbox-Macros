@@ -25,40 +25,40 @@ In gactorsheet.js , find the function starting with
 ``` javascript 
 async addNewPanel(tabpanel,tabKey,tabname,firstmrow, multiID=null,multiName=null,_paneldata=null){
 ```
-## Step 2
+## Step 2 - For actor properties
 In gactorsheet.js , inside the function addNewPanel, find these lines of code
 ``` javascript
-                else {
+	else {
 
-                    sInput = deftemplate.createElement("INPUT");
+	    sInput = deftemplate.createElement("INPUT");
 
-                    sInput.setAttribute("name", "data.attributes." + property.data.attKey  + ".value");
-                    sInput.setAttribute("value", "{{data.attributes." + property.data.attKey + ".value}}");
+	    sInput.setAttribute("name", "data.attributes." + property.data.attKey  + ".value");
+	    sInput.setAttribute("value", "{{data.attributes." + property.data.attKey + ".value}}");
 
-                    if(property.data.datatype==="simplenumeric"){
+	    if(property.data.datatype==="simplenumeric"){
 
-                        sInput.setAttribute("type", "text");  
-                        sInput.className = "input-min";
+		sInput.setAttribute("type", "text");  
+		sInput.className = "input-min";
 
-                        if(property.data.inputsize=="M"){
-                            sInput.className = "input-med";
-                        }
+		if(property.data.inputsize=="M"){
+		    sInput.className = "input-med";
+		}
 
-                        if(!hasProperty(property.data,"maxvisible")){
-                            property.data.maxvisible=true;
-                        }
+		if(!hasProperty(property.data,"maxvisible")){
+		    property.data.maxvisible=true;
+		}
 
-                        if(property.data.automax!="" && property.data.maxvisible){
-                            sInputMax = deftemplate.createElement("INPUT");
-                            sInputMax.setAttribute("type", "text");
-                            sInput.className = "input-ahalf ";
-                            sInputMax.className = "input-bhalf input-disabled inputGM " + property.data.attKey + ".max";
-                            sInputMax.setAttribute("name", "data.attributes." + property.data.attKey  + ".max");
-                            sInputMax.setAttribute("value", "{{data.attributes." + property.data.attKey + ".max}}");
-                        }
+		if(property.data.automax!="" && property.data.maxvisible){
+		    sInputMax = deftemplate.createElement("INPUT");
+		    sInputMax.setAttribute("type", "text");
+		    sInput.className = "input-ahalf ";
+		    sInputMax.className = "input-bhalf input-disabled inputGM " + property.data.attKey + ".max";
+		    sInputMax.setAttribute("name", "data.attributes." + property.data.attKey  + ".max");
+		    sInputMax.setAttribute("value", "{{data.attributes." + property.data.attKey + ".max}}");
+		}
 
 
-                    }
+	    }
 ```
 
 And change the line
@@ -72,46 +72,99 @@ sInput.setAttribute("type", "number");   // changed this from text to number
 It will then look like this
 
 ```
-                else {
+	else {
 
-                    sInput = deftemplate.createElement("INPUT");
+	    sInput = deftemplate.createElement("INPUT");
 
-                    sInput.setAttribute("name", "data.attributes." + property.data.attKey  + ".value");
-                    sInput.setAttribute("value", "{{data.attributes." + property.data.attKey + ".value}}");
+	    sInput.setAttribute("name", "data.attributes." + property.data.attKey  + ".value");
+	    sInput.setAttribute("value", "{{data.attributes." + property.data.attKey + ".value}}");
 
-                    if(property.data.datatype==="simplenumeric"){
+	    if(property.data.datatype==="simplenumeric"){
 
-                        sInput.setAttribute("type", "number");   // changed this from text to number
-                        sInput.className = "input-min";
+		sInput.setAttribute("type", "number");   // changed this from text to number
+		sInput.className = "input-min";
 
-                        if(property.data.inputsize=="M"){
-                            sInput.className = "input-med";
-                        }
+		if(property.data.inputsize=="M"){
+		    sInput.className = "input-med";
+		}
 
-                        if(!hasProperty(property.data,"maxvisible")){
-                            property.data.maxvisible=true;
-                        }
+		if(!hasProperty(property.data,"maxvisible")){
+		    property.data.maxvisible=true;
+		}
 
-                        if(property.data.automax!="" && property.data.maxvisible){
-                            sInputMax = deftemplate.createElement("INPUT");
-                            sInputMax.setAttribute("type", "text");
-                            sInput.className = "input-ahalf ";
-                            sInputMax.className = "input-bhalf input-disabled inputGM " + property.data.attKey + ".max";
-                            sInputMax.setAttribute("name", "data.attributes." + property.data.attKey  + ".max");
-                            sInputMax.setAttribute("value", "{{data.attributes." + property.data.attKey + ".max}}");
-                        }
+		if(property.data.automax!="" && property.data.maxvisible){
+		    sInputMax = deftemplate.createElement("INPUT");
+		    sInputMax.setAttribute("type", "text");
+		    sInput.className = "input-ahalf ";
+		    sInputMax.className = "input-bhalf input-disabled inputGM " + property.data.attKey + ".max";
+		    sInputMax.setAttribute("name", "data.attributes." + property.data.attKey  + ".max");
+		    sInputMax.setAttribute("value", "{{data.attributes." + property.data.attKey + ".max}}");
+		}
 
 
-                    }
+	    }
+```
+## Step 3 - For cItems
+In gactorsheet.js , find the function starting with 
+``` javascript 
+async refreshCItems(basehtml){
+```
+In gactorsheet.js , inside the function refreshCItems, find these lines of code
+``` javascript
+
+   else if(propdata.datatype==="simplenumeric"){
+	cellvalue = document.createElement("INPUT");
+	cellvalue.setAttribute("type", "text"); 
+	cellvalue.className = "table-input centertext";
+	cellvalue.className += " " + propTable.data.data.inputgroup;
+
+
+	if(propdata.inputsize=="M"){
+	    cellvalue.className += " input-med";
+	}
+
+	else{
+	    cellvalue.className += " table-small";
+	}
+
+    }
+```
+And change the line
+```
+cellvalue.setAttribute("type", "text"); 
+```
+to
+```
+cellvalue.setAttribute("type", "number");   // changed from text to number
+```
+It will then look like this
+``` javascript
+
+   else if(propdata.datatype==="simplenumeric"){
+	cellvalue = document.createElement("INPUT");
+	cellvalue.setAttribute("type", "number");   // changed from text to number
+	cellvalue.className = "table-input centertext";
+	cellvalue.className += " " + propTable.data.data.inputgroup;
+
+
+	if(propdata.inputsize=="M"){
+	    cellvalue.className += " input-med";
+	}
+
+	else{
+	    cellvalue.className += " table-small";
+	}
+
+    }
 ```
 Save the file
 
-## Step 3
+## Step 4
 Add some CSS for the styling(you can use a custom css file or the module https://foundryvtt.com/packages/custom-css)
 
 ```
-.sandbox.sheet input[type=number]:not(.input-disabled):hover::-webkit-inner-spin-button,
-.sandbox.sheet input[type=number]:not(.input-disabled):hover::-webkit-outer-spin-button {
+.sandbox.sheet input[type=number]:not(.input-disabled):not([readonly="true"]):hover::-webkit-inner-spin-button,
+.sandbox.sheet input[type=number]:not(.input-disabled):not([readonly="true"]):hover::-webkit-outer-spin-button {
    opacity: 0.5 ;
 	margin:-4px;
 	height:28px;	
