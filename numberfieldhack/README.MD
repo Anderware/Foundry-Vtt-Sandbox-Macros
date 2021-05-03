@@ -1,9 +1,13 @@
 # Modify simplenumerics input fields to increase/decrease value easily
 
-With this hack, you can use the scroll wheel on your mouse to increase the value of a simplenumeric field
+With this hack, you can use the scroll wheel or upp/down spinners on your mouse to increase the value of a simplenumeric field
+
+Difference between using the scroll wheel and the spinners.
+* When using the scroll wheel, the number will change in the input box but the actor will not be updated for each increment/decrement change meaning only the final number will be processed.
+* When using the up/down spinners, each change will be processed separately meaning that calculation, and communictaions with all clients will be triggered every time.
+So, when adding/subtracting a lot of steps, use the scroll wheel.
 
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
-
 
 As always
 * Make a backup of any Sandbox file you edit __**before**__ any editing
