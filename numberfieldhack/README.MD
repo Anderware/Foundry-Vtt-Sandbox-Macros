@@ -98,6 +98,20 @@ It will then look like this
 
                     }
 ```
+Save the file
 
- 
+## Step 3
+Add some CSS for the styling(you can use a custom css file or the module https://foundryvtt.com/packages/custom-css)
+
+```
+.sandbox.sheet input[type=number]:not(.input-disabled):hover::-webkit-inner-spin-button,
+.sandbox.sheet input[type=number]:not(.input-disabled):hover::-webkit-outer-spin-button {
+   opacity: 0.5 ;
+	margin:-4px;
+	height:28px;	
+	cursor:pointer;
+	-webkit-appearance: textfield ;	
+}
+```
+## Step 5 
  Save file and in Foundry press F5 to refresh(reload the scripts) and rebuild the template and reload the actor.
