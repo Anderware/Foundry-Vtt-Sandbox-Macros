@@ -32,11 +32,11 @@ In gactorsheet.js , inside the function activateCI, find these lines of code
         }
 ```
 And after the line
-```
+``` javascript
 citem.isreset = false;
 ```
 Add this
-```
+``` javascript
 // ------------------------------------------------------------
             // modification for single activation groups
             let sSingleActivationGroupSuffix='_SingleActivation';
