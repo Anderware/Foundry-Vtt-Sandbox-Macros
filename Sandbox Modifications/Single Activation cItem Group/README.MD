@@ -1,12 +1,5 @@
-
-
-
-# NOT COMPLETED!!!!
-
-
-
 # Single Activation for cItem Group
-With this modification, any cItem Group that ends with _/_SingleActivation_ will automatically make sure that only one cItem can be Activated at a time.
+With this modification, any cItem Group with a name(key) that ends with a  \_SingleActivation will automatically make sure that only one cItem can be Activated at a time.
 
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
