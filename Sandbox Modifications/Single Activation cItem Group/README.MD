@@ -1,5 +1,8 @@
+
 # Single Activation for cItem Group
 With this modification, any cItem Group with a name(key) that ends with a  \_SingleActivation will automatically make sure that only one cItem can be Activated at a time.
+
+![singleactivation](https://user-images.githubusercontent.com/81265884/117083324-bd492180-ad44-11eb-82d3-ac706b697268.gif)
 
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
