@@ -12,6 +12,7 @@ This modification has been tested with the following versions
 Sandbox  | FoundryVTT
 -------  | ----------
 0.8.7    | 0.7.9
+
 This have been tested with Sandbox 0.8.6
 
 ## Step 1
