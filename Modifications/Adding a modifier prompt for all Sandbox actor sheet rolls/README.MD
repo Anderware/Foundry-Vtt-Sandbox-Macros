@@ -1,15 +1,21 @@
-# Adding a modifier prompt for all Sandbox rolls
+# Adding a modifier prompt for all Sandbox actor sheet rolls
+![modprompt](https://user-images.githubusercontent.com/81265884/114140425-85e78080-9910-11eb-94e3-205782c12dfe.gif)
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
 * This will apply for any roll(labels, simplenumerics, citems etc) made from the actor(meaning character sheet or equivalent). 
 * It will not be applied on a Initiative roll triggered from the Combat Tracker(if you are using the Sandbox builtin Initiative Attribute Key -functionality)
 
-As always
+## As always
 * Make a backup of any Sandbox file you edit __**before**__ any editing
 * Any changes you have made to Sandbox core files will be overwritten when updating Sandbox to a newer version so save your edits somewhere to re-apply them again 
 
-This have been tested with Sandbox 0.8.6
+## Version Compability
+This modification has been tested with the following versions
+Sandbox  | FoundryVTT
+-------  | ----------
+0.8.7    | 0.7.9
 
+# Modification process
 ## Step 1
 Create a new file called modprompt.js in \Data\systems\sandbox\module\ with the following code
 ``` javascript
@@ -106,4 +112,4 @@ let modpromptvalue=await modPrompt(rollname);
  
  
  
- ![modprompt](https://user-images.githubusercontent.com/81265884/114140425-85e78080-9910-11eb-94e3-205782c12dfe.gif)
+ 
