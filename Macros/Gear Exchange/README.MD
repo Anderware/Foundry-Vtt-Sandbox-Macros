@@ -1,5 +1,7 @@
 
 # GearExchange
+Enables exchanging of cItems between actors or linked tokens
+
 This macro needs the following
  - Gear ciTems must belong to a specific group
  - User must have OWNER right to both source actor and target actor
@@ -14,9 +16,12 @@ To change the width of the form(dialog), change the rows at the bottom with
 
 It is built re-using the existing code in sandbox meaning it is a bit version-sensitive.  
 
-Macro devloped/tested only in
-FoundryVTT 0.7.9
-Sandbox  0.8.1b
+## Version Compability
+This macro has been tested with the following versions
+Sandbox  | FoundryVTT
+-------  | ----------
+0.8.1b    | 0.7.9
+0.8.7    | 0.7.9
 
 # BACKUP YOUR SANDBOX WORLD BEFORE TESTING THIS MACRO!
 
