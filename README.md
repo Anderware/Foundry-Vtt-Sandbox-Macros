@@ -1,7 +1,7 @@
 
-# Foundry-Vtt-Sandbox-Macros
+# Things for Foundry-Vtt-Sandbox
 
-Various macros for Foundry VTT system Sandbox
+Various macros & modifications for Foundry VTT system Sandbox
 
 
 
