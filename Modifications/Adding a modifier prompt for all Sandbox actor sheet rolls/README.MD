@@ -1,5 +1,6 @@
 # Adding a modifier prompt for all Sandbox actor sheet rolls
 ![modprompt](https://user-images.githubusercontent.com/81265884/114140425-85e78080-9910-11eb-94e3-205782c12dfe.gif)
+
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
 * This will apply for any roll(labels, simplenumerics, citems etc) made from the actor(meaning character sheet or equivalent). 
