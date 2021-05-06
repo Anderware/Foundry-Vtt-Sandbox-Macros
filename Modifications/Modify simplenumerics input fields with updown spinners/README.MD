@@ -79,6 +79,16 @@ to
 ```
 sInput.setAttribute("type", "number");   // changed this from text to number
 ```
+
+And change the line
+```
+sInputMax.setAttribute("type", "text");
+```
+to
+```
+sInputMax.setAttribute("type", "number");   // changed this from text to number
+```
+
 It will then look like this
 
 ```
@@ -104,7 +114,7 @@ It will then look like this
 
 		if(property.data.automax!="" && property.data.maxvisible){
 		    sInputMax = deftemplate.createElement("INPUT");
-		    sInputMax.setAttribute("type", "text");
+		    sInputMax.setAttribute("type", "number");   // changed this from text to number
 		    sInput.className = "input-ahalf ";
 		    sInputMax.className = "input-bhalf input-disabled inputGM " + property.data.attKey + ".max";
 		    sInputMax.setAttribute("name", "data.attributes." + property.data.attKey  + ".max");
