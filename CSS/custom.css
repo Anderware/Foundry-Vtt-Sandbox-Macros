@@ -24,7 +24,7 @@
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /*                                                                  */
 :root {
-
+  
   --label_font-size:13px;
   --label_font-family:Garamond, serif;
   --label_color:black;
@@ -40,25 +40,25 @@
   --input_border:1px solid #7a7971;
   --input_border-radius:3px;   
 
-  --table_background-color:cadetblue;
+  --table_background-color:#e3dac9;
   --tableheader_font-family:Garamond, serif;
   --tableheader_font-size:14px;
-  --tableheader_color:tan;
-  --tableheader_backgroundcolor:teal;  
+  --tableheader_color:darkslategrey;
+  --tableheader_backgroundcolor:#9b7653;  
 
   --panel_background-color:darkslategrey;
   --panel_color:tan;
   --panel_font-family:Garamond, serif;
-  --panel_font-size:14px;
+  --panel_font-size:20px;
   --panel_padding:3px 5px;
     
-  --editablecolor:white;
-  --disabledcolor:silver;
+  --editablecolor:Linen;
+  --disabledcolor:#a99a86;
   
-  --linkcolor:blue;
-  --radiocolor:blue;
-  --hovercolor: navy; /* color used for illumniating clickable element */
-  --focuscolor: royalblue; /* color used for illumniating focus/active selection */  
+  --linkcolor:darkslategrey;
+  --radiocolor:darkslategrey;
+  --hovercolor: darkslategrey; /* color used for illumniating clickable element */
+  --focuscolor: darkslategrey; /* color used for illumniating focus/active selection */  
   --box-shadow-size:0 0 5px;
   --text-shadow-size:0 0 8px; 
   --drop-shadow-size:0 0 11px;
@@ -72,12 +72,16 @@
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /*                                                                  */
 
+.sandbox.sheet{
+   
+}
 .sandbox.sheet .window-content {
   display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-  color:initial;                    
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  color:initial;              
+        
   /*--------------------------------*/
   /*To use a single background color*/
   /*background-color:tan;*/
@@ -91,7 +95,7 @@
   background-repeat:repeat;*/
   /*--------------------------------*/     
   /* change between hidden and auto to show vertical scroll bar in sheets. Good for long sheets */
-  overflow-y: hidden; 
+  overflow-y: auto; 
 }
 /* ---------------------------------------------------------------- */
 /* Navigational                                                     */
@@ -169,6 +173,8 @@
   height:var(--input_height) !important; 
   border:var(--input_border); 
   border-radius: var(--input_border-radius);
+  padding: 1px 3px; 
+  text-align:left;
   }    
 
 /*Disabled */
@@ -180,7 +186,8 @@
   border:var(--input_border); 
   border-radius: var(--input_border-radius);
   background-color:var(--disabledcolor) !important;
-  box-shadow: none !important;
+  box-shadow: none !important; 
+  padding: 1px 3px;
   } 
  
 /* ----------------------------- */
@@ -202,11 +209,11 @@
 	width:110px !important;    /*Default value is :110px*/
 }
 .sandbox.sheet input[type=text].input-large{
-	width: 150px;   /*Default value is :150 px */
+	width: calc(100% - 5px);   /*Default value is :150 px */
 }
 
 .sandbox.sheet input[type=text].input-free {
-  width:100%;    /*Default value is :100% */
+  width:calc(100% - 5px);    /*Default value is :100% */
 }
 
   
@@ -312,9 +319,12 @@
 /* Textareas                                                        */
 /* ---------------------------------------------------------------- */
 .sandbox.sheet textarea{
-  background-color:var(--editablecolor) !important;
+  background-color:var(--editablecolor) !important;  
+  color: var(--input_color) !important;
+  font-size: var(--input_font-size) !important;
   border:var(--input_border); 
-  border-radius: var(--input_border-radius);
+  border-radius: var(--input_border-radius); 
+  font-family:var(--input_font-family);
 }  
 .sandbox.sheet textarea:hover{box-shadow:var(--box-shadow-size) var(--hovercolor);}
 .sandbox.sheet textarea:focus{box-shadow:var(--box-shadow-size) var(--focuscolor);} 
@@ -324,7 +334,18 @@
 /* ---------------------------------------------------------------- */
 
 /*Radio buttons*/
-.sandbox.sheet .radio-element{color:var(--radiocolor) ;}
+.sandbox.sheet .radio-input {    
+  vertical-align: middle;
+  padding: 4px 4px;
+  white-space: nowrap;
+}
+.sandbox.sheet .radio-element{
+  color:var(--radiocolor) ;
+  
+}
+
+
+
 .sandbox.sheet .radio-element:hover  {text-shadow:var(--text-shadow-size)  var(--hovercolor);}
 
 /*badge */
