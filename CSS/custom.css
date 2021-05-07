@@ -1,15 +1,62 @@
-/*To set no color(or initial) use:
-box-shadow: none; 
-text-shadow:none; 
-filter:none; 
-color:initial;*/
+﻿/* **************************************************************** */
+/* Module:         css                                              */
+/* Description:    Theme oriented CSS                               */
+/*                 Using CSS variables to apply a coheherent        */
+/*                 styling of elements                              */
+/*                                                                  */
+/*                 Extra information:                               */
+/*                 To set no color(or initial) use,                 */
+/*                 box-shadow: none;                                */
+/*                 text-shadow:none;                                */
+/*                 filter:none;                                     */
+/*                 color:initial;                                   */
+/* ================================================================ */
+/* Date       Version  Author               Description             */
+/* ---------- -------- -------------------- ----------------------- */
+/* 2021-05-06 1.0.0    Ramses800            Module created.         */
+/* **************************************************************** */
 
-/* CSS variables */
+/*                                                                  */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/*                                                                  */
+/*                          CSS variables                           */
+/*                                                                  */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/*                                                                  */
 :root {
-  --editablecolor:GhostWhite;
-  --disabledcolor:Gainsboro;
-  --linkcolor:steelblue;
-  --radiocolor:dodgerblue;
+
+  --label_font-size:13px;
+  --label_font-family:Garamond, serif;
+  --label_color:black;
+  --label_height:20px;
+
+  --name_font-family:Garamond, serif;
+  --name_font-size:32px;
+
+  --input_font-family: Garamond, serif;
+  --input_color:black;
+  --input_font-size:13px;
+  --input_height:24px; 
+  --input_border:1px solid #7a7971;
+  --input_border-radius:3px;   
+
+  --table_background-color:cadetblue;
+  --tableheader_font-family:Garamond, serif;
+  --tableheader_font-size:14px;
+  --tableheader_color:tan;
+  --tableheader_backgroundcolor:teal;  
+
+  --panel_background-color:darkslategrey;
+  --panel_color:tan;
+  --panel_font-family:Garamond, serif;
+  --panel_font-size:14px;
+  --panel_padding:3px 5px;
+    
+  --editablecolor:white;
+  --disabledcolor:silver;
+  
+  --linkcolor:blue;
+  --radiocolor:blue;
   --hovercolor: navy; /* color used for illumniating clickable element */
   --focuscolor: royalblue; /* color used for illumniating focus/active selection */  
   --box-shadow-size:0 0 5px;
@@ -17,25 +64,215 @@ color:initial;*/
   --drop-shadow-size:0 0 11px;
 }
 
-/*Input fields*/
-.sandbox.sheet input:hover{box-shadow:var(--box-shadow-size) var(--hovercolor);}
-.sandbox.sheet input:focus{box-shadow:var(--box-shadow-size) var(--focuscolor);} 
+/*                                                                  */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/*                                                                  */
+/*                             Elements                             */
+/*                                                                  */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/*                                                                  */
 
-.sandbox.sheet input{background-color:var(--editablecolor) !important;}
+.sandbox.sheet .window-content {
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  color:initial;                    
+  /*--------------------------------*/
+  /*To use a single background color*/
+  /*background-color:tan;*/
+  /*background-image:none;*/
+  /*--------------------------------*/
+  
+  /*--------------------------------*/
+  /*To use a background image*/
+  background-image: url("../ui/parchment.jpg"); 
+  /* Replace no-repeat with repeat for pattern images */
+  background-repeat:repeat;*/
+  /*--------------------------------*/     
+  /* change between hidden and auto to show vertical scroll bar in sheets. Good for long sheets */
+  overflow-y: hidden; 
+}
+/* ---------------------------------------------------------------- */
+/* Navigational                                                     */
+/* ---------------------------------------------------------------- */
+.sandbox.sheet .tab-button{
+  font-family: Garamond, serif;
+  font-size: 14px;
+  font-weight: bold;
+  color:var(--linkcolor);
+  
+}
+.sandbox.sheet .tab-button:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+.sandbox.sheet .leftarrow:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
+.sandbox.sheet .rightarrow:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
 
-.sandbox.sheet input[readonly=true]{background-color:var(--disabledcolor) !important;box-shadow: none !important;} 
-.sandbox.sheet input.input-disabled{background-color:var(--disabledcolor) !important;box-shadow: none !important;} 
+/* ---------------------------------------------------------------- */
+/* Panels                                                           */
+/* ---------------------------------------------------------------- */
+.sandbox.sheet .panelheader {
+    background-color:var(--panel_background-color);
+    color: var(--panel_color);
+    
+    padding: var(--panel_padding);
+    font-family: var(--panel_font-family);
+    font-size: var(--panel_font-size);
+    font-weight: bold;
+    text-align: center;  
+    
+    text-shadow: none; /*1px 1px black;*/
+    border-bottom: none; /* 1px solid black;*/
+}
 
-/*textarea*/
-.sandbox.sheet textarea{background-color:var(--editablecolor) !important;}
-.sandbox.sheet textarea:hover{box-shadow:var(--box-shadow-size) var(--hovercolor);}
-.sandbox.sheet textarea:focus{box-shadow:var(--box-shadow-size) var(--focuscolor);} 
+/* ---------------------------------------------------------------- */
+/* Labels                                                           */
+/* ---------------------------------------------------------------- */
+ 
+.sandbox.sheet .label-mini,
+.sandbox.sheet .label-small,  
+.sandbox.sheet .label-med,
+.sandbox.sheet .label-medlarge,
+.sandbox.sheet .label-large,
+.sandbox.sheet .label-free{
+    color:var(--label_color);  
+    font-family:var(--label_font-family);
+    font-size: var(--label_font-size);
+    height:var(--label_height);
+}
 
-/*Checkbox Input fields*/
+
+/* ---------------------------------------------------------------- */
+/* Inputs                                                           */
+/* ---------------------------------------------------------------- */
+
+/* ------------------------------------ */
+/* Generic Input Styling for all inputs */
+/* ------------------------------------ */
+
+.sandbox.sheet input:not(.input-disabled):not([readonly=true]):hover{
+  box-shadow:var(--box-shadow-size) var(--hovercolor);
+  }
+.sandbox.sheet input:not(.input-disabled):not([readonly=true]):focus{
+  box-shadow:var(--box-shadow-size) var(--focuscolor);
+  } 
+
+/* ----------- */
+/* Text inputs */
+/* ----------- */
+
+/* Editable text*/
+.sandbox.sheet input[type=text]:not(.entityname):not(.itemname):not(.input-disabled):not([readonly=true]){
+  background-color:var(--editablecolor) !important;   
+  color: var(--input_color) !important;
+  font-size: var(--input_font-size); 
+  font-family:var(--input_font-family); 
+  height:var(--input_height) !important; 
+  border:var(--input_border); 
+  border-radius: var(--input_border-radius);
+  }    
+
+/*Disabled */
+.sandbox.sheet input[type=text].input-disabled,.sandbox.sheet input[type=text][readonly=true]{
+  font-family:var(--input_font-family);  
+  color: var(--input_color) !important;
+  font-size: var(--input_font-size) !important;
+  height:var(--input_height) !important; 
+  border:var(--input_border); 
+  border-radius: var(--input_border-radius);
+  background-color:var(--disabledcolor) !important;
+  box-shadow: none !important;
+  } 
+ 
+/* ----------------------------- */
+/* Sandbox specifics text inputs */
+/* ----------------------------- */
+/*Actor header, citem header*/
+.sandbox.sheet input[type=text].entityname,.sandbox.sheet input[type=text].itemname{
+  color: var(--input_color) !important;   
+  background-color:var(--editablecolor) !important;    
+  border:var(--input_border); 
+  border-radius: var(--input_border-radius);
+  font-family: var(--name_font-family); /*Default is :font-family: "Signika", sans-serif; */
+  font-size:var(--name_font-size);
+}
+.sandbox.sheet input[type=text].input-small{
+	width:70px !important;     /*Default value is :70px*/
+}
+.sandbox.sheet input[type=text].input-med{
+	width:110px !important;    /*Default value is :110px*/
+}
+.sandbox.sheet input[type=text].input-large{
+	width: 150px;   /*Default value is :150 px */
+}
+
+.sandbox.sheet input[type=text].input-free {
+  width:100%;    /*Default value is :100% */
+}
+
+  
+/* ------------- */
+/* Number inputs */
+/* ------------- */
+
+/*Editable number*/
+.sandbox.sheet input[type=number]:not(.table-empty-small):not(.input-disabled):not([readonly=true]){
+  color: var(--input_color) !important;   
+  font-family:var(--input_font-family);
+  font-size: var(--input_font-size) !important;
+  height:var(--input_height) !important;
+  border:var(--input_border); 
+  border-radius: var(--input_border-radius);
+  background-color:var(--editablecolor) !important; 
+  padding: 0px 0px !important; 
+}
+
+/* disabled number*/
+.sandbox.sheet input[type=number][readonly=true],.sandbox.sheet input[type=number].input-disabled{
+  color: var(--input_color) !important;   
+  font-family:var(--input_font-family);
+  font-size: var(--input_font-size) !important;
+  height:var(--input_height) !important;
+  border:var(--input_border); 
+  border-radius: var(--input_border-radius);
+  background-color:var(--disabledcolor) !important;
+  box-shadow: none !important;
+  }     
+/* special one used in table*/  
+.sandbox.sheet input[type=number].table-empty-small{
+  visibility: hidden;
+  
+} 
+/*Spin buttons*/
+.sandbox.sheet input[type=number]:not(.input-disabled):not([readonly="true"]):hover::-webkit-inner-spin-button,
+.sandbox.sheet input[type=number]:not(.input-disabled):not([readonly="true"]):hover::-webkit-outer-spin-button {
+  opacity: 0.5 ;
+	margin:0px;
+	height:var(--input_height);	
+	cursor:pointer;
+	-webkit-appearance: textfield ;	
+}
+
+
+/* -------------- */
+/* Checkbox Input */
+/* -------------- */
 .sandbox.sheet input[type=checkbox] {
+  -webkit-filter:none;
   -webkit-appearance: none;
   appearance:none;
   background-color: var(--editablecolor) !important;
+  border:var(--input_border); 
+  border-radius: var(--input_border-radius);
+  height:var(--input_height) !important;
+  width:var(--input_height) !important;
+  cursor:pointer;
+  
+  color: var(--input_color) !important;
+}
+
+.sandbox.sheet input[type=checkbox]:after{
+  content: '✓'; 
+  color: var(--editablecolor) !important;
 }
 
 .sandbox.sheet input[type=checkbox]:checked {
@@ -47,15 +284,44 @@ color:initial;*/
 }
 
 .sandbox.sheet input[type=checkbox]:checked:after {
-  content: '✔';  
+  content: '✓'; 
+  font-weight: bolder; 
+  font-size: var(--input_font-size);
+  color: var(--input_color) !important; 
 }
 
 
 
-/*Dropdowns*/
-.sandbox.sheet select{background-color:var(--editablecolor) !important;}
+
+/* ---------------------------------------------------------------- */
+/* select(dropdowns)                                                */
+/* ---------------------------------------------------------------- */
+.sandbox.sheet select{
+  font-family:var(--input_font-family);
+  background-color:var(--editablecolor) !important;
+  color: var(--input_color) !important;
+  font-size: var(--input_font-size) !important;
+  height:var(--input_height) !important; 
+  border:var(--input_border); 
+  border-radius: var(--input_border-radius);
+}
 .sandbox.sheet select:hover{box-shadow:var(--box-shadow-size) var(--hovercolor);} 
 .sandbox.sheet select:focus{box-shadow:var(--box-shadow-size) var(--focuscolor);} 
+
+/* ---------------------------------------------------------------- */
+/* Textareas                                                        */
+/* ---------------------------------------------------------------- */
+.sandbox.sheet textarea{
+  background-color:var(--editablecolor) !important;
+  border:var(--input_border); 
+  border-radius: var(--input_border-radius);
+}  
+.sandbox.sheet textarea:hover{box-shadow:var(--box-shadow-size) var(--hovercolor);}
+.sandbox.sheet textarea:focus{box-shadow:var(--box-shadow-size) var(--focuscolor);} 
+
+/* ---------------------------------------------------------------- */
+/* Sandbox specific elements                                        */
+/* ---------------------------------------------------------------- */
 
 /*Radio buttons*/
 .sandbox.sheet .radio-element{color:var(--radiocolor) ;}
@@ -80,12 +346,11 @@ color:initial;*/
 .sandbox.sheet .consumable-button{color:var(--linkcolor) ;}
 .sandbox.sheet .consumable-button:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
 
-/*Navigational*/
-.sandbox.sheet .tab-button:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
-.sandbox.sheet .leftarrow:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
-.sandbox.sheet .rightarrow:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
 
+
+/*Reload template button*/
 .sandbox.sheet .sheet-reload:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+/*Editor on BIO*/
 .sandbox.sheet .editor-edit:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
 /* Rollable links*/
 .sandbox.sheet .rollable{color: var(--linkcolor);}
@@ -94,8 +359,307 @@ color:initial;*/
 .sandbox.sheet .linkable{color:var(--linkcolor);}
 .sandbox.sheet .linkable:hover{color: var(--hovercolor);}
 
+
+/* ---------------------------------------------------------------- */
+/* Tables                                                           */
+/* ---------------------------------------------------------------- */
+/* Table Body background color */
+.sandbox.sheet tbody.table {
+  background-color: var(--table_background-color);
+}
+
+
+.sandbox.sheet thead {
+    background-color: var(--tableheader_backgroundcolor);
+    color: var(--tableheader_color);
+    padding: 1px 5px;
+    font-family: var(--tableheader_font-family);
+    font-size: var(--tableheader_font-size);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: none; /* Default is 1px 1px black;*/
+    border-bottom: 1px solid black;
+}
+
+/*Table header cell*/
+.sandbox.sheet th,
+.sandbox.sheet th.input-min,
+.sandbox.sheet th.input-med,
+.sandbox.sheet th.input-free {
+  font-family:var(--tableheader_font-family) !important;
+  font-size:var(--tableheader_font-size) !important;
+  color:var(--tableheader_color) !important;
+}
+/* Tableheader, First column*/
+.sandbox.sheet th:first-child {
+  text-align:left;
+  
+}
+
+
+
+
+/* Table cells fonts */
+.sandbox.sheet td {
+  font-size: var(--input_font-size); 
+  font-family:var(--input_font-family); 
+  background-color: transparent !important; 
+  height:var(--label_height); 
+  
+}
+
+/* ---------------------------------------------------------------- */
+/* Misc.                                                            */
+/* ---------------------------------------------------------------- */
 /*scrollbars*/
 .sheet-body ::-webkit-scrollbar-thumb {
     background: var(--linkcolor);
     border: 1px solid var(--linkcolor);
+}
+
+.sandbox.sheet .new-block {
+    padding: 0px 0px;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+.sandbox.sheet .col-1-1 {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px 3px;
+}
+.sandbox.sheet .col-1-2 {
+    width: 50%;
+    max-width: 50%;
+    padding: 0px 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sandbox.sheet .col-1-3 {
+    width: 33.33%;
+    max-width: 33.33%;
+    padding: 0px 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+.sandbox.sheet .col-1-4 {
+    width: 25%;
+    max-width: 25%;
+    padding: 0px 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sandbox.sheet .col-1-6 {
+    width: 16.66%;
+    max-width:16.66%;
+    padding: 0px 3px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.sandbox.sheet .col-1-8 {
+    width: 12.5%;
+    max-width:12.5%;
+    padding: 0px 3px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .col-3-8 {
+    width: 37.5%;
+    max-width: 37.5%;
+    padding: 0px 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sandbox.sheet .col-5-8 {
+    width: 62.5%;
+    max-width: 62.5%;
+    padding: 0px 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+.sandbox.sheet .col-2-3 {
+    width: 66.66%;
+    max-width:66.66%;
+    padding: 0px 3px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .col-3-4 {
+    width: 75%;
+    max-width:75%;
+    padding: 0px 3px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .col-5-6 {
+    width: 83.33%;
+    max-width:83.33%;
+    padding: 0px 3px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.sandbox.sheet .multi-1-1-col {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px 1px;
+}
+
+.sandbox.sheet .multi-1-2-col {
+    width:50%;  
+    max-width: 50%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+/*multi panels*/
+.sandbox.sheet .multi-1-1 {
+    width:100%;
+    padding: 0px 2px 4px 2px;
+}
+.sandbox.sheet .multi-1-2 {
+    width:50%;
+    max-width:50%
+    padding: 0px 2px 4px 2px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-1-3-col {
+    width: 33.33%;
+    max-width: 33.33%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.sandbox.sheet .multi-1-4-col {
+    width: 25%;
+    max-width: 25%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-1-6-col {
+    width:16.66%;
+    max-width:16.66%
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.sandbox.sheet .multi-1-8 {
+    width: 12.5%;
+    max-width:12.5%;
+    padding: 0px 2px 4px 2px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-3-8 {
+    width: 37.5%;
+    max-width: 37.5%;
+    padding: 0px 2px 4px 2px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.sandbox.sheet .multi-5-8 {
+    width: 62.5%;
+    max-width: 62.5%;
+    padding: 0px 2px 4px 2px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.sandbox.sheet .multi-2-3 {
+    width: 66.66%;
+    max-width:66.66%;
+    padding: 0px 2px 4px 2px;
+    display:inline-block;
+    vertical-align:top;
+} 
+.sandbox.sheet .multi-3-4 {
+    width: 75%;
+    max-width:75%;
+    padding: 0px 2px 4px 2px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-5-6 {
+    width: 83.33%;
+    max-width:83.33%;
+    padding: 0px 2px 4px 2px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.sandbox.sheet .multi-1-1-col {
+    width:100%;
+    padding: 0px 1px;
+}
+.sandbox.sheet .multi-1-2-col {
+    wwidth:50%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-1-3-col {
+    width:33.33%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-1-4-col {
+    width:25%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-1-6-col {
+    width:16.66%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-1-8-col {
+    width:12.5%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+} 
+
+.sandbox.sheet .multi-3-8-col {
+    width: 37.5%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-5-8-col {
+    width: 62.5%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-2-3-col {
+    width:33.33%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-3-4-col {
+    width:75%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
+}
+.sandbox.sheet .multi-5-6-col {
+    width: 83.33%;
+    padding: 0px 1px;
+    display:inline-block;
+    vertical-align:top;
 }
