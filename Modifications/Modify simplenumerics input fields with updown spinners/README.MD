@@ -1,6 +1,8 @@
 # Modify simplenumerics input fields to increase/decrease value easily
-With this hack, you can use the scroll wheel or up/down spinners on your mouse to increase the value of a simplenumeric field
+With this modification, you can use the scroll wheel or up/down spinners on your mouse to increase the value of a simplenumeric field
 ![spinner](https://user-images.githubusercontent.com/81265884/116862386-f24e5a80-ac04-11eb-93b1-b7f88a99d867.gif)
+
+If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
 Difference between using the scroll wheel and the spinners.
 * When using the scroll wheel, the number will change in the input box but the actor will not be updated for each increment/decrement change meaning only the final number will be processed.
@@ -9,15 +11,15 @@ Difference between using the scroll wheel and the spinners.
 Every time an actor is updated all calculations and communications with all clients is triggered.
 So, when adding/subtracting a lot of steps, use the scroll wheel.
 
-If you dont mind some minor modification of sandbox core files, this can be done quite easily.
-
-### What does this hack actually do?
-Sandbox uses the html input element as TEXT type for all input fields. This hack modifies the sheet generation so for all simplenumerics field the html input type is NUMBER.
+### What does this modification actually do?
+Sandbox uses the html input element as TEXT type for all input fields. This modification modifies the sheet generation so for all simplenumerics field the html input type is NUMBER.
 Fields with NUMBER type have builtin spinners that can be styled with CSS.
 
-## As always
-* Make a backup of any Sandbox file you edit __**before**__ any editing
-* Any changes you have made to Sandbox core files will be overwritten when updating Sandbox to a newer version so save your edits somewhere to re-apply them again 
+##  Warnings, notes and disclaimers
+* :pushpin: Make a backup of your Sandbox world __**before**__ any editing! This modification, **if** implemented incorrectly or in a untested version(of Foundry/Sandbox) can corrupt your data. You have been warned.
+* :pushpin: Make a backup of any Sandbox core file you edit __**before**__ any editing
+* :warning: Any changes you have made to Sandbox core files will be overwritten when updating Sandbox to a newer version so save your edits somewhere to re-apply them again 
+
 
 ## Version Compability
 This modification has been tested with the following versions
@@ -72,26 +74,26 @@ In gactorsheet.js , inside the function addNewPanel, find these lines of code
 ```
 
 And change the line
-```
+``` javascript
 sInput.setAttribute("type", "text");
 ```
 to
-```
+``` javascript
 sInput.setAttribute("type", "number");   // changed this from text to number
 ```
 
 And change the line
-```
+``` javascript
 sInputMax.setAttribute("type", "text");
 ```
 to
-```
+``` javascript
 sInputMax.setAttribute("type", "number");   // changed this from text to number
 ```
 
 It will then look like this
 
-```
+``` javascript
 	else {
 
 	    sInput = deftemplate.createElement("INPUT");
@@ -151,11 +153,11 @@ In gactorsheet.js , inside the function refreshCItems, find these lines of code
     }
 ```
 And change the line
-```
+``` javascript
 cellvalue.setAttribute("type", "text"); 
 ```
 to
-```
+``` javascript
 cellvalue.setAttribute("type", "number");   // changed from text to number
 ```
 It will then look like this
@@ -200,15 +202,15 @@ In gactorsheet.js , inside the function refreshCItems, find these lines of code
 	    }
 ```
 And in between 
-```
+``` javascript
 let numinput = document.createElement("INPUT");
 ```
 and
-```
+``` javascript
 numinput.className = "table-input table-free centertext";
 ```
 Add this line
-```
+``` javascript
 numinput.setAttribute("type", "number");   // added input type number
 ```
 It will then look like this
@@ -250,15 +252,15 @@ In gactorsheet.js , inside the function refreshCItems, find these lines of code
 		usescell.appendChild(usevalue);
 ```
 And in between 
-```
+``` javascript
 let usevalue = document.createElement("INPUT");
 ```
 and
-```
+``` javascript
 usevalue.className = "table-input table-small centertext";
 ```
 Add this line
-```
+``` javascript
 usevalue.setAttribute("type", "number");   // added input type number
 ```
 It will then look like this
@@ -286,14 +288,16 @@ Save the file
 ## Step 4
 Add some CSS for the styling(you can use a custom css file or the module https://foundryvtt.com/packages/custom-css)
 
-```
+Note.The styling is needed to make sure to not display the spinners for readonly fields
+
+``` css
 .sandbox.sheet input[type=number]:not(.input-disabled):not([readonly="true"]):hover::-webkit-inner-spin-button,
 .sandbox.sheet input[type=number]:not(.input-disabled):not([readonly="true"]):hover::-webkit-outer-spin-button {
    opacity: 0.5 ;
-	margin:-4px;
-	height:28px;	
-	cursor:pointer;
-	-webkit-appearance: textfield ;	
+   margin:-4px;
+   height:28px;	
+   cursor:pointer;
+   -webkit-appearance: textfield ;	
 }
 ```
 Save the css
