@@ -23,6 +23,9 @@ Sandbox  | FoundryVTT
 0.8.1b    | 0.7.9
 0.8.7    | 0.7.9
 
+This macro will NOT work with FoundryVtt 0.8.x
+
+This macro uses the builtin code from Sandbox - that means that it is very important to use the correct version of Sandbox!
 # BACKUP YOUR SANDBOX WORLD BEFORE TESTING THIS MACRO!
 
 ![GearExchange](https://user-images.githubusercontent.com/81265884/112399263-3a28ba80-8d06-11eb-9b57-2cbd3fb1a11e.gif)
