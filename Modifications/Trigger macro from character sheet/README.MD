@@ -107,8 +107,8 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
 ```
  Save file and in Foundry press F5 to refresh(reload the scripts)
  
- # Example 
- Create a Rollable property , set the Roll Formula to ~macro~ and the Roll Name to the macros name(in this example it is simply "Hello"
+ # How to and Example 
+ Create a Rollable property , set the Roll Formula to ```~macro~``` and the Roll Name to the macros name(in this example it is simply "Hello"
  
  ![TriggerMacroFromSheet](https://user-images.githubusercontent.com/81265884/130596056-b401a9f5-5608-4999-90bf-de1910b46dac.jpg)
  ## Macro
