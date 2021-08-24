@@ -108,12 +108,15 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
  Save file and in Foundry press F5 to refresh(reload the scripts)
  
  # How to and Example 
- Create a Rollable property , set the Roll Formula to ```~macro~``` and the Roll Name to the macros name(in this example it is simply "Hello"
+ Create a Rollable property , set the Roll Formula to ```~macro~``` and the Roll Name to the macros name(in this example it is simply "Hello")
+ To add any parameters to the macro, use the Roll ID with a valid JSON expression(in this example it is ```{"HITS":@{HITS},"TM1_EDGES":"@{TM1_EDGES}"}```).
+ The parameters can use the normal Sandbox expression, i e @{propertyname} etc
  
- ![TriggerMacroFromSheet](https://user-images.githubusercontent.com/81265884/130596056-b401a9f5-5608-4999-90bf-de1910b46dac.jpg)
+ ![TriggerMacroFromSheet](https://user-images.githubusercontent.com/81265884/130613735-ce154a1f-106c-43de-8f89-1a12d6fd5cb9.jpg)
+
  ## Macro
   ``` javascript
- function ShowImg(actorId,actorLink){
+function ShowImg(actorId,actorLink,hits){
 let objactor;
 let objtoken; 
 let simg;
@@ -126,7 +129,7 @@ if(actorLink==true){
   }
 }
 else{        
-  // unlinked token, try to find it from controlled tokens on the current scene       
+  // unlinked token, try to find it on the canvas        
   objtoken = canvas.tokens.controlled.find(y=>y.data.actorId==actorId);
   if(objtoken!=null){
     simg=objtoken.data.img;
@@ -134,14 +137,14 @@ else{
   }           
 }
 ChatMessage.create({
-    content : '<p>' +sname +'</p> <img src="' + simg + '" />'
+    content : '<p>' +sname +'</p> <img src="' + simg + '" />Hits ' + hits
   });
 }
 // get arguments
 let args=game.user.getFlag('world','myFuncArgs');
 console.log('Args are:');
-console.log(args.actorId);
-ShowImg(args.actorId,args.actorLink);
+console.log(args);
+ShowImg(args.actorId,args.actorLink,args.HITS);
 ```
  
  
