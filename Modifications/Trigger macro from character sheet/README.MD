@@ -16,7 +16,7 @@ Sandbox  | FoundryVTT
 
 # Modification process
 ## Step 1
-MAKING A BACKUP OF THE ORIGINAL FILE a-entity.js
+Make a backup of the original file \Data\systems\sandbox\module\a-entity.js
 ## Step 2
 Then(**AFTER MAKING A BACKUP OF THE ORIGINAL FILE**), edit the file a-entity.js like this:
 
