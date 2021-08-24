@@ -9,9 +9,10 @@ This modification uses Flags to carry arguments to the selected macro.(It is als
 
 ## Version Compability
 This modification has been tested with the following versions
-Foundry  | Sandbox
+Sandbox  | Foundry
 -------  | ----------
-0.8.8    | 0.9.26
+0.9.26   | 0.8.8
+0.9.27   | 0.8.8
 
 
 
