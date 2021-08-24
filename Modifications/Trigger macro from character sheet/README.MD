@@ -49,21 +49,28 @@ if(rollexp.includes("~blind~"))
  ```
 add
 ```javascript
-        // ----------------------------------------------------------------
+       // ----------------------------------------------------------------
         // macro modification
         if(rollexp.includes("~macro~")){
           // uses the rollname for macro name
           let macro = game.macros.getName(rollname);  
           if (macro!=null){                  
             // reset arguments(unset flag)
-            await game.user.unsetFlag('world','myFuncArgs');
+            await game.user.unsetFlag('world','myFuncArgs'); 
+            // get arguments from rollid          
+            let args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number); 
+            let objargs=JSON.parse(args);             
+            // merge macro argumenets with actor data
+            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink};
+            let objMerged=Object.assign(objActorData,objargs);              
             // set  arguments
-            await game.user.setFlag('world','myFuncArgs',{actorId: this._id, actorLink: this.data.token.actorLink})
+            await game.user.setFlag('world','myFuncArgs',objMerged)
             macro.execute(this);
           }
           else{
             ui.notifications.warn('Macro ' + macroname +' not found');
-          }
+          }    
+          // simpy return from this function to exit the roll
           return;
         }
         // end macro hack
