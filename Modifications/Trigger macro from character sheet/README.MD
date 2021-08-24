@@ -130,7 +130,7 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
  
  ![TriggerMacroFromSheet](https://user-images.githubusercontent.com/81265884/130613735-ce154a1f-106c-43de-8f89-1a12d6fd5cb9.jpg)
 
- ## Macro
+ ## Example Macro
   ``` javascript
 function ShowImg(actorId,actorLink,hits){
 let objactor;
