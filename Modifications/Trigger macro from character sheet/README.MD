@@ -1,8 +1,6 @@
 # Trigger macro from Sandbox character sheet
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
-
 This modification uses Flags to carry arguments to the selected macro.(It is also possible to use the module Furnace for this but in this mod, flags works well enough)
-
 
 ## As always
 * Make a backup of any Sandbox file you edit __**before**__ any editing
@@ -109,7 +107,11 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
 ```
  Save file and in Foundry press F5 to refresh(reload the scripts)
  
- # Example macro
+ # Example 
+ Create a Rollable property , set the Roll Formula to ~macro~ and the Roll Name to the macros name(in this example it is simply "Hello"
+ 
+ ![TriggerMacroFromSheet](https://user-images.githubusercontent.com/81265884/130596056-b401a9f5-5608-4999-90bf-de1910b46dac.jpg)
+ ## Macro
   ``` javascript
  function ShowImg(actorId,actorLink){
 let objactor;
