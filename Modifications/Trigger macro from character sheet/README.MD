@@ -9,7 +9,7 @@ This modification uses Flags to carry arguments to the selected macro.(It is als
 
 ## Version Compability
 This modification has been tested with the following versions
-Sandbox  | FoundryVTT
+Foundry  | Sandbox
 -------  | ----------
 0.8.8    | 0.9.26
 
