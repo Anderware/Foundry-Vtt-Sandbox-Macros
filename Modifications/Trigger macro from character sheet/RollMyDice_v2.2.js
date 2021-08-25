@@ -1,6 +1,10 @@
 // Macro for demonstrating trigger macro from Sandbox character sheet
 // rolls are made from Foundry Tables
 // this macro requires 3 tables(D4,D6,D8)
+
+// Example JSON(to be entered in the rollable propertys Roll ID)
+// {"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}} 
+
 function BuildFieldSet(sTableName,defaultvalue=0){
   let sFieldset=`
     <fieldset style="text-align:left;"><legend style="text-align:left;">` + game.tables.getName(sTableName).data.name + `</legend>
@@ -24,6 +28,7 @@ function GetArguments(objArguments,sArgumentName,sArgumentType="number"){
   }
 }
 let macroname=this.data.name;
+// get arguments from user flag with this macro´s name
 let args=game.user.getFlag('world',macroname);
 console.log('Args are:');
 console.log(args);
@@ -38,7 +43,7 @@ if (args!=null){
   d6=GetArguments(args,'D6');
   d8=GetArguments(args,'D8');  
   // reset arguments(unset flag)
-  await game.user.unsetFlag('world','myFuncArgs'); 
+  await game.user.unsetFlag('world',macroname); 
 }
 
 let html_content=`
