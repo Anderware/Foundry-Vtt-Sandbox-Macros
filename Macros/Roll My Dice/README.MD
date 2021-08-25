@@ -19,9 +19,8 @@ Please use a custom css for the class roll-result to make the resulting chat mes
 roll-result{height:10%;}
 ```
 # How to use with Trigger Macro modification
-To pass arguments with the Trigger Macro modification
-In a rollable property set the fields
-Roll Name: <the name of the macro> Example RollMyDice
+To pass arguments with the Trigger Macro modification, in a rollable property set the fields
++ Roll Name: <the name of the macro> Example RollMyDice
 Roll Formula: ~macro~
 Roll ID: <JSON string with parameters to pass
 Example JSON
