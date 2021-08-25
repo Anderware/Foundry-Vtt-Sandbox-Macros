@@ -1,7 +1,9 @@
 # Trigger macro from Sandbox character sheet
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 This modification uses Flags to carry arguments to the selected macro.(It is also possible to use the module Furnace for this but in this mod, flags works well enough)
-![MacroFromSheet2](https://user-images.githubusercontent.com/81265884/130702394-06d85c05-ce20-414a-b0c2-1b2841635a00.gif)
+
+![MacroFromSheet_ffm](https://user-images.githubusercontent.com/81265884/130738161-49535400-8810-484b-92bb-482db4f6b2ad.gif)
+
 
 ## As always
 * Make a backup of any Sandbox file you edit __**before**__ any editing
