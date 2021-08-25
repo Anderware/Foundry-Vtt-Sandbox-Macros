@@ -1,7 +1,7 @@
 # Roll My Dice
 Macro for generating a dialog with UI for rolling on Foundry Tables
 
-+ Can use arguments for Trigger Macro modification(https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modifications/Trigger%20macro%20from%20character%20sheet) from Sandbox character sheet
++ Can use arguments for [Trigger Macro modification](https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modifications/Trigger%20macro%20from%20character%20sheet) from Sandbox character sheet
 
 ![MacroFromSheet_2 3_ffm](https://user-images.githubusercontent.com/81265884/130839256-1f1d54f2-48b4-4f69-8c12-4624583d19ec.gif)
 
