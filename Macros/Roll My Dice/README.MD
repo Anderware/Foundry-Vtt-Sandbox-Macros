@@ -14,16 +14,38 @@ Sandbox  | Foundry
 
 # Specials
 Please use a custom css for the class roll-result to make the resulting chat message window big enough
-``` css
+``` css![macro Settings](https://user-images.githubusercontent.com/81265884/130842817-47825803-e193-457a-bea3-e3cf32a1c717.png)
+
  /* Custom CSS */
 roll-result{height:10%;}
 ```
+# How to configure and use this macro
+* Create your rollable tables, the name you give them is what you need to configure in macro settings section.  
+The name, description and image will be used to build the dialog.  
+![Roll Table](https://user-images.githubusercontent.com/81265884/130842626-07a5b40a-c65a-4582-9990-9d659f5e63e3.png)
+* Configure macro settings  
+![macro Settings](https://user-images.githubusercontent.com/81265884/130842860-2c5ebb28-6438-4536-9993-1094bb31d0d2.png)  
+```
+// Configure tables to use.
+let objRollTables = [
+{"tablename":"D4","defaultnrofdice":0},
+{"tablename":"D6","defaultnrofdice":0},
+{"tablename":"D8","defaultnrofdice":0}
+];
+```
+
 # How to use with Trigger Macro modification
 To pass arguments with the Trigger Macro modification, in a rollable property set the fields
-+ Roll Name: <the name of the macro> Example RollMyDice
-Roll Formula: ~macro~
-Roll ID: <JSON string with parameters to pass
-Example JSON
-``` javascript 
-{"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}}
-``` 
++ Roll Name: \<the name of the macro\>  
+*Example: RollMyDice*
++ Roll Formula: \~macro\~
++ Roll ID: <Valid JSON string with parameters to pass>  
+*Example JSON:* ``` javascript {"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}}``` 
+ 
+ 
+ This macro will accept the following arguments
+ * actorID
+ * actorLink - if false, then the it is an unlinked token(on the canvas)
+ * rollname
+ * For each configured table, the table name. This argument will be used to enter the number of rolls for that table
+ 
