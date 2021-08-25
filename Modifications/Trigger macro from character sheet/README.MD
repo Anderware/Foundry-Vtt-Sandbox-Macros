@@ -74,7 +74,7 @@ add
             // set  macro arguments
             await game.user.setFlag('world',rollname,objMerged)
             // run macro
-            macro.execute(this);
+            macro.execute();
           }
           else{
             ui.notifications.warn('Macro ' + rollname +' not found');
@@ -117,7 +117,7 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
             // set  macro arguments
             await game.user.setFlag('world',rollname,objMerged)
             // run macro
-            macro.execute(this);
+            macro.execute();
           }
           else{
             ui.notifications.warn('Macro ' + rollname +' not found');
