@@ -3,10 +3,8 @@ If you dont mind some minor modification of sandbox core files, this can be done
 
 This modification uses User Flags to carry arguments to the selected macro.(It is also possible to use the module Furnace for this but in this mod, flags works well enough)
 
-The video below showcases a macro([RollMyDice](https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Macros/Roll%20My%20Dice)) that uses Foundry Tables to roll dice.
-
-![MacroFromSheet_ffm](https://user-images.githubusercontent.com/81265884/130738161-49535400-8810-484b-92bb-482db4f6b2ad.gif)
-
+The GIF below showcases a macro([RollMyDice](https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Macros/Roll%20My%20Dice)) that uses Foundry Tables to roll dice.  
+![MacroFromSheet_2 3_ffm](https://user-images.githubusercontent.com/81265884/130851674-ce0be728-d217-4164-894e-c8f890202fe6.gif)
 
 ## As always
 * Make a backup of any Sandbox file you edit __**before**__ any editing
@@ -134,9 +132,13 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
  
  # How to and Example 
  Create a Rollable property , set the Roll Formula to ```~macro~``` and the Roll Name to the macros name(in this example it is simply "Hello")
- To add any parameters to the macro, use the Roll ID with a valid JSON expression(in this example it is ```{"HITS":@{HITS},"TM1_EDGES":"@{TM1_EDGES}"}```).
- The parameters can use the normal Sandbox expression, i e @{propertyname} etc
+ To add any arguments to the macro, use the Roll ID with a valid JSON expression(in this example it is ```{"HITS":@{HITS},"TM1_EDGES":"@{TM1_EDGES}"}```).
+ The arguments can use the normal Sandbox expression, i e @{propertyname} etc
  Another JSON triggering a macro from a cItem roll could be ```{"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}}```
+ 
+ The following arguments are always added by the Trigger Macro modification
+ * actorID
+ * actorLink - if false, then the it is an unlinked token(on the canvas)
  
  ![TriggerMacroFromSheet](https://user-images.githubusercontent.com/81265884/130613735-ce154a1f-106c-43de-8f89-1a12d6fd5cb9.jpg)
 
