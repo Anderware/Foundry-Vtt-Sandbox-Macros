@@ -1,6 +1,9 @@
 # Trigger macro from Sandbox character sheet
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
-This modification uses Flags to carry arguments to the selected macro.(It is also possible to use the module Furnace for this but in this mod, flags works well enough)
+
+This modification uses User Flags to carry arguments to the selected macro.(It is also possible to use the module Furnace for this but in this mod, flags works well enough)
+
+The video below showcases a macro that uses Foundry Tables to roll dice.
 
 ![MacroFromSheet_ffm](https://user-images.githubusercontent.com/81265884/130738161-49535400-8810-484b-92bb-482db4f6b2ad.gif)
 
