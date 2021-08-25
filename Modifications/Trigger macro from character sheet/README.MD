@@ -56,26 +56,28 @@ if(rollexp.includes("~blind~"))
  ```
 add
 ```javascript
-       // ----------------------------------------------------------------
+        // ----------------------------------------------------------------
         // macro modification
         if(rollexp.includes("~macro~")){
           // uses the rollname for macro name
           let macro = game.macros.getName(rollname);  
           if (macro!=null){                  
-            // reset arguments(unset flag)
-            await game.user.unsetFlag('world','myFuncArgs'); 
-            // get arguments from rollid          
-            let args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number); 
+            // reset saved macro arguments(unset flag) in user flags
+            await game.user.unsetFlag('world',rollname); 
+            // get arguments from rollid and parse them with Sandbox parser          
+            let args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);             
             let objargs=JSON.parse(args);             
-            // merge macro argumenets with actor data
-            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink};
+            // get actor information
+            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink}; 
+            // merge macro arguments with actor data
             let objMerged=Object.assign(objActorData,objargs);              
-            // set  arguments
-            await game.user.setFlag('world','myFuncArgs',objMerged)
+            // set  macro arguments
+            await game.user.setFlag('world',rollname,objMerged)
+            // run macro
             macro.execute(this);
           }
           else{
-            ui.notifications.warn('Macro ' + macroname +' not found');
+            ui.notifications.warn('Macro ' + rollname +' not found');
           }    
           // simpy return from this function to exit the roll
           return;
@@ -103,20 +105,22 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
           // uses the rollname for macro name
           let macro = game.macros.getName(rollname);  
           if (macro!=null){                  
-            // reset arguments(unset flag)
-            await game.user.unsetFlag('world','myFuncArgs'); 
-            // get arguments from rollid          
-            let args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number); 
+            // reset saved macro arguments(unset flag) in user flags
+            await game.user.unsetFlag('world',rollname); 
+            // get arguments from rollid and parse them with Sandbox parser          
+            let args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);             
             let objargs=JSON.parse(args);             
-            // merge macro argumenets with actor data
-            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink};
+            // get actor information
+            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink}; 
+            // merge macro arguments with actor data
             let objMerged=Object.assign(objActorData,objargs);              
-            // set  arguments
-            await game.user.setFlag('world','myFuncArgs',objMerged)
+            // set  macro arguments
+            await game.user.setFlag('world',rollname,objMerged)
+            // run macro
             macro.execute(this);
           }
           else{
-            ui.notifications.warn('Macro ' + macroname +' not found');
+            ui.notifications.warn('Macro ' + rollname +' not found');
           }    
           // simpy return from this function to exit the roll
           return;
