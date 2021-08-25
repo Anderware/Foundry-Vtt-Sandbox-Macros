@@ -167,7 +167,8 @@ ChatMessage.create({
   });
 }
 // get arguments
-let args=game.user.getFlag('world','myFuncArgs');
+let macroname=this.data.name;
+let args=game.user.getFlag('world',macroname);
 console.log('Args are:');
 console.log(args);
 ShowImg(args.actorId,args.actorLink,args.HITS);
