@@ -32,7 +32,9 @@ let objRollTables = [
 {"tablename":"D6","defaultnrofdice":0},
 {"tablename":"D8","defaultnrofdice":0}
 ];
-```
+```  
+
+To use several variants(with different table configuration), simply rename the macro
 
 # How to use with Trigger Macro modification
 To pass arguments with the Trigger Macro modification, in a rollable property set the fields
