@@ -13,8 +13,7 @@ Sandbox  | Foundry
 0.9.27   | 0.8.8
 
 # Specials
-Please use a custom css for the class roll-result to make the resulting chat message window big enough
-![macro Settings](https://user-images.githubusercontent.com/81265884/130842817-47825803-e193-457a-bea3-e3cf32a1c717.png)  
+Please use a custom css for the class roll-result to make the resulting chat message window big enough 
 ``` css
  /* Custom CSS */
 roll-result{height:10%;}
