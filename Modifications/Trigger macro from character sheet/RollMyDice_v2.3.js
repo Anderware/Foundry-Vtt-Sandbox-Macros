@@ -20,13 +20,19 @@
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 // 
 // Configure tables to use.
-// Example JSON(to be entered in the rollable propertys Roll ID)
-// {"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}} 
 let objRollTables = [
 {"tablename":"D4","defaultnrofdice":0},
 {"tablename":"D6","defaultnrofdice":0},
 {"tablename":"D8","defaultnrofdice":0}
 ];
+
+// To pass arguments with the Trigger Macro modification
+// In a rollable property set the fields
+// Roll Name: <the name of the macro> Example RollMyDice
+// Roll Formula: ~macro~
+// Roll ID: <JSON string with parameters to pass
+// Example JSON
+// {"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}} 
 
 //                                                                  
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
