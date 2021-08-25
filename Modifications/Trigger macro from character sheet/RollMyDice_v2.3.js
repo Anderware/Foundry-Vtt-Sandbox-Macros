@@ -2,9 +2,7 @@
 // Macro:         RollMyDice     
 //   Macro for generating a dialog with UI for rolling on Foundry Tables
 //   Can be used without the trigger macro modification
-//   Can use arguments for trigger macro from Sandbox character sheet 
-//   Example JSON(to be entered in the rollable propertys Roll ID)
-//   {"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}}                   
+//   Can use arguments for trigger macro from Sandbox character sheet                   
 // ================================================================ 
 // Date       Version  Author               Description             
 // ---------- -------- -------------------- -----------------------
@@ -22,6 +20,8 @@
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 // 
 // Configure tables to use.
+// Example JSON(to be entered in the rollable propertys Roll ID)
+// {"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}} 
 let objRollTables = [
 {"tablename":"D4","defaultnrofdice":0},
 {"tablename":"D6","defaultnrofdice":0},
