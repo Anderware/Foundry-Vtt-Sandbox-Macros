@@ -14,8 +14,8 @@ Sandbox  | Foundry
 
 # Specials
 Please use a custom css for the class roll-result to make the resulting chat message window big enough
-``` css![macro Settings](https://user-images.githubusercontent.com/81265884/130842817-47825803-e193-457a-bea3-e3cf32a1c717.png)
-
+![macro Settings](https://user-images.githubusercontent.com/81265884/130842817-47825803-e193-457a-bea3-e3cf32a1c717.png)  
+``` css
  /* Custom CSS */
 roll-result{height:10%;}
 ```
