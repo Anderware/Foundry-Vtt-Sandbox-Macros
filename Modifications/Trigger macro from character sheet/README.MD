@@ -3,7 +3,8 @@ If you dont mind some minor modification of sandbox core files, this can be done
 
 This modification uses User Flags to carry arguments to the selected macro.(It is also possible to use the module Furnace for this but in this mod, flags works well enough)
 
-The GIF below showcases a macro([RollMyDice](https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Macros/Roll%20My%20Dice)) that uses Foundry Tables to roll dice.  
+The GIF below showcases a macro([RollMyDice](https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Macros/Roll%20My%20Dice)) that uses Foundry Tables to roll dice.
+
 ![MacroFromSheet_2 3_ffm](https://user-images.githubusercontent.com/81265884/130851674-ce0be728-d217-4164-894e-c8f890202fe6.gif)
 
 ## As always
