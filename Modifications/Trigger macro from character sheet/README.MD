@@ -133,9 +133,9 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
  
  # How to and Example 
  Create a Rollable property , set the Roll Formula to ```~macro~``` and the Roll Name to the macros name(in this example it is simply "Hello")
- To add any arguments to the macro, use the Roll ID with a valid JSON expression(in this example it is ```{"HITS":@{HITS},"TM1_EDGES":"@{TM1_EDGES}"}```).
+ To add any arguments to the macro, use the Roll ID with a valid JSON expression(in this example it is ```{"HITS":"@{HITS}","TM1_EDGES":"@{TM1_EDGES}"}```).
  The arguments can use the normal Sandbox expression, i e @{propertyname} etc
- Another JSON triggering a macro from a cItem roll could be ```{"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}}```
+ Another JSON triggering a macro from a cItem roll could be ```{"rollname":"#{name}","D4":"#{D4}","D6":"#{D6}","D8":"#{D8}"}```
  
  The following arguments are always added by the Trigger Macro modification
  * actorID
