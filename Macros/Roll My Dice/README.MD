@@ -41,7 +41,7 @@ To pass arguments with the Trigger Macro modification, in a rollable property se
 *Example: RollMyDice*
 + Roll Formula: \~macro\~
 + Roll ID: <Valid JSON string with parameters to pass>  
-*Example JSON:* ``` javascript {"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}}``` 
+*Example JSON:* ``` javascript {"rollname":"#{name}","D4":"#{D4}","D6":"#{D6}","D8":"#{D8}"}``` 
 ![rollable property](https://user-images.githubusercontent.com/81265884/130851504-549b2d0f-de08-4331-b2c3-c94a6c895aa4.png)
  
  This macro will accept the following arguments
