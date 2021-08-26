@@ -40,7 +40,7 @@ let objRollTables = [
 // Roll Formula: ~macro~
 // Roll ID: <JSON string with parameters to pass
 // Example JSON
-// {"rollname":"#{name}","D4":#{D4},"D6":#{D6},"D8":#{D8}} 
+// {"rollname":"#{name}","D4":"#{D4}","D6":"#{D6}","D8":"#{D8}"}
 
 //                                                                  
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
