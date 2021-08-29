@@ -43,7 +43,7 @@ async function ActivatecItemForSelectedToken(scItemName) {
             // check if it has a ciRoll
             // get the roll
             let rollexp=gitem.data.data.roll; 
-            let requiredversion="0.9.271";
+            let requiredversion="0.9.27";
             if(!rollexp){ 
               // no ciroll, just activate it
               let roll=null;    
