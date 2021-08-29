@@ -1,4 +1,24 @@
-ActivatecItemForSelectedToken('Bolt');
+ActivatecItemForSelectedToken('Power Ring');
+
+function SystemCompatible(requiredsystem,requiredversion,exactversion=false){
+  let runningsystemname=game.system.data.name; // sandbox
+  let runningversion=game.system.data.version;
+  let returnvalue=false; // assume fail
+  if  (runningsystemname==requiredsystem|| requiredsystem==""){ 
+  	let result=runningversion.localeCompare(requiredversion, undefined, { numeric: true, sensitivity: 'base' });
+    if(exactversion){
+      if(result==0){
+      	returnvalue=true;
+      }
+    }
+    else{
+      if(result==1 || result==0){
+      	returnvalue=true;
+      }
+    }
+  }
+  return returnvalue;
+}
 
 async function ActivatecItemForSelectedToken(scItemName) {
 	// get selected token
@@ -23,13 +43,20 @@ async function ActivatecItemForSelectedToken(scItemName) {
             // check if it has a ciRoll
             // get the roll
             let rollexp=gitem.data.data.roll; 
+            let requiredversion="0.9.271";
             if(!rollexp){ 
               // no ciroll, just activate it
-              let roll=null;                               
-              // for Sandbox version 0.9.27+
-              actor._sheet.activateCI(cItemData.id, cItemData.value, cItemData.iscon, roll);               
-              // for Sandbox version 0.9.20
-              //actor._sheet.activateCI(cItemData.id, cItemData.value, cItemData.iscon);
+              let roll=null;    
+              
+              if (SystemCompatible("sandbox",requiredversion)){                         
+                // for Sandbox version 0.9.27+
+                actor._sheet.activateCI(cItemData.id, cItemData.value, cItemData.iscon, roll);
+              }
+              else{   
+               ui.notifications.warn("The macro " + this.name + " requires Sandbox version " + requiredversion +" or higher to be fully functional");             
+               // for Sandbox version 0.9.20
+               actor._sheet.activateCI(cItemData.id, cItemData.value, cItemData.iscon);
+              }
             }
             else{
               // has ciroll              
@@ -37,11 +64,16 @@ async function ActivatecItemForSelectedToken(scItemName) {
               let ciRoll=true;                                 
               let isFree=false; //  roll from free tables, 
               let tableKey=null; // used by free tables, not needed now  
-              // go!  
-              // for Sandbox version 0.9.27+
-              actor._sheet._onRollCheck(attrID, cItemData.id, ciRoll, isFree, tableKey , cItemData);
-              // for Sandbox version 0.9.20                                                               
-              //actor._sheet._onRollCheck(attrID, cItemData.id, ciRoll, isFree, tableKey );              
+              // go!       
+              if (SystemCompatible("sandbox",requiredversion)){
+                // for Sandbox version 0.9.27+
+                actor._sheet._onRollCheck(attrID, cItemData.id, ciRoll, isFree, tableKey , cItemData);
+              }
+              else{                    
+                ui.notifications.warn("The macro " + this.name + " requires Sandbox version " + requiredversion +" or higher to be fully functional");
+                // for Sandbox version 0.9.20                                                               
+                actor._sheet._onRollCheck(attrID, cItemData.id, ciRoll, isFree, tableKey );
+              }              
             }          
           } 
 				} else {
