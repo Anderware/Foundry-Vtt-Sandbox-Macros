@@ -65,11 +65,17 @@ add
           if (macro!=null){                  
             // reset saved macro arguments(unset flag) in user flags
             await game.user.unsetFlag('world',rollname); 
-            // get arguments from rollid and parse them with Sandbox parser          
-            let args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);             
-            let objargs=JSON.parse(args);             
+            // get arguments from rollid and parse them with Sandbox parser 
+            console.log(rollid);                     
+            let args;
+            let objargs;       
             // get actor information
-            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink}; 
+            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink};         
+            // check if any arguments were supplied
+            if (rollid[0].length>0){
+              args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);
+              objargs=JSON.parse(args);               
+            }                                                  
             // merge macro arguments with actor data
             let objMerged=Object.assign(objActorData,objargs);              
             // set  macro arguments
@@ -83,7 +89,7 @@ add
           // simpy return from this function to exit the roll
           return;
         }
-        // end macro hack
+        // end macro modification
         // ----------------------------------------------------------------
  ```
  It will then look like this
@@ -108,11 +114,17 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
           if (macro!=null){                  
             // reset saved macro arguments(unset flag) in user flags
             await game.user.unsetFlag('world',rollname); 
-            // get arguments from rollid and parse them with Sandbox parser          
-            let args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);             
-            let objargs=JSON.parse(args);             
+            // get arguments from rollid and parse them with Sandbox parser 
+            console.log(rollid);                     
+            let args;
+            let objargs;       
             // get actor information
-            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink}; 
+            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink};         
+            // check if any arguments were supplied
+            if (rollid[0].length>0){
+              args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);
+              objargs=JSON.parse(args);               
+            }                                                  
             // merge macro arguments with actor data
             let objMerged=Object.assign(objActorData,objargs);              
             // set  macro arguments
@@ -126,7 +138,7 @@ async rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,numb
           // simpy return from this function to exit the roll
           return;
         }
-        // end macro hack
+        // end macro modification
         // ----------------------------------------------------------------
         if(rollexp.includes("~blind~"))
             blindmode = true;
