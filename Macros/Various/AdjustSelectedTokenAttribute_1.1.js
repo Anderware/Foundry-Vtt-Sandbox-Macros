@@ -136,10 +136,12 @@ async function AdjustSelectedAttribute(){
           title: 'Adjust Attribute ',
           content: html_content,
           buttons: {
-            no: {
+            no: {     
+            icon: "<i class='fas fa-times'></i>",
               label: 'Cancel'
             },
-            yes: {
+            yes: {  
+              icon: "<i class='fas fa-check'></i>",
               label: 'Adjust',
               callback: async (html) => { 
                 async function AdjustAttribute(){                                                                       
