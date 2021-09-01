@@ -154,18 +154,15 @@ async function AdjustSelectedAttribute(){
                     actor = canvas.tokens.get(actorid).actor                                              
                   }          
                   // get all input boxes of class spinner 
-                  let baseInput = html.find('.spinner');
-                               
+                  let baseInput = html.find('.spinner');                               
                   let stringvalue="";    
                   let attributename="";  
                   let updatedata;    
                   let finalupdatedata;          
-                  // loop inputs found                
+                  // loop inputs found and merge the update data               
                   for (let i = 0, l = baseInput.length; i < l; i++){                                                                                            
                     stringvalue=baseInput[i].value;
-                    attributekey=baseInput[i].name;
-                    //console.log( attributekey + " = " + stringvalue );                       
-                    //await actor.update({ [`data.attributes.${attributekey}.value`]: stringvalue });  
+                    attributekey=baseInput[i].name;                    
                     if (i==0){
                       finalupdatedata= { [`data.attributes.${attributekey}.value`]: stringvalue };
                     }
@@ -180,8 +177,7 @@ async function AdjustSelectedAttribute(){
                   }
                   else{
                       ui.notifications.warn('Unable to find actor');	
-                  }                  
-                                                                        
+                  }                                                                                          
                 } 
                 await AdjustAttribute();                     
               }
