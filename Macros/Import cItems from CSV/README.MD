@@ -1,5 +1,5 @@
 # Import cItems from CSV
-This macro imports the content of a CSV(delimited text file) into cItems
+This macro imports the content of a CSV(delimited text file) into Sandbox cItems
 
 
 # BACKUP YOUR SANDBOX WORLD BEFORE TESTING THIS MACRO!
@@ -12,15 +12,36 @@ Sandbox  | Foundry
 -------  | ----------
 0.10.1   | 0.8.8
 
+Note. This have only been tested on a self-hosted Foundry VTT on Windows 10. If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
+
 # How it works
 The macro reads the file, matching each item to an existing cItem in your world that will act as a template. It actually duplicates the templateitem and then process the line in the CSV and updates this duplicate with the data in the line.
 If the item already exists, it can update it or warn you  depening on your settings in the UI.
 
-# How to use tihs macro
-First, backup your world!
+# How to use this macro
 
-Prepare your cItem templates with groups,properties, MODS etc like normal
+## Step 1 - Prepare your world
+### Create cItem templates
+Create one cItem that will act as the template to build the imported items.  
+Set it up just like a normal cItem with groups,properties, MODS etc
+### Create import folders
+Specified import folders must exist
 
+## Step 2 - Prepare your CSV file
+See section of CSV formatting below
+
+## Step 3  - Backup your world
+Before running any advanced data manipulating macro, always make sure that you have a good backup!
+
+## Step 4 - Run the macro
+![UI](https://user-images.githubusercontent.com/81265884/132597257-e87f5a30-bae8-4486-8dd6-156611cf7524.png)
+### Setup import settings
+Setting|Comment
+-------| ------
+CSV file| use the filepicker to select the CSV file
+List separator character used in CSV-file| What character the macro should use to determine fields in the file
+Update existing items with data from import file|If this is not checked, any already existing cItems will not be updated
+For update of existing items, require identical Group configuration|This is used to validate and identify an existing cItem. Can be unchecked for a more relaxed check
 
 # CSV Formatting
 The CSV file can use the following list separators
