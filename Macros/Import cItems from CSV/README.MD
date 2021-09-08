@@ -39,9 +39,13 @@ Before running any advanced data manipulating macro, always make sure that you h
 Setting|Comment
 -------| ------
 CSV file| use the filepicker to select the CSV file
-List separator character used in CSV-file| What character the macro should use to determine fields in the file
+List separator character used in CSV-file| What character the macro should use to determine fields in the file. If the file does not match this a error will be displayed.
 Update existing items with data from import file|If this is not checked, any already existing cItems will not be updated
 For update of existing items, require identical Group configuration|This is used to validate and identify an existing cItem. Can be unchecked for a more relaxed check
+
+### Run the import
+The UI contains a log with the result.  
+If you have an invalid setup, it will be listed here.
 
 # CSV Formatting
 The CSV file can use the following list separators
@@ -51,27 +55,34 @@ The CSV file can use the following list separators
 
 ## Compulsory headers
 The first line in the file must contain at least the following headers  and they must be in this order:  
+Using pipe as list separator
 ```CSV
 Name|Template|ImportFolder|Image|Description
+```
+Using comma as list separator
+```CSV
+Name,Template,ImportFolder,Image,Description
 ```
 
 Header|Comment
 ------|-------
 Name|The name of the cItem
-Template|The name of the cItem template that must exist in your world
+Template|The name of the cItem template that must exist in your world. Different templates can be used in the same file
 ImportFolder|Where the cItem should be imported into, this must exist in your world
 Image|Valid path to the image file for the cItem, this can be empty
 Description|Description is the text on the Bio/info-tab and can be a valid HTML string. This can be empty
 
 ## Custom headers
-After the compulsory headers, you can add cItem property keys that exist in your cItem template
+After the compulsory headers, you can add cItem property keys that exist in your cItem template item.
+If an item in the file has any value in a field the macro will check if the template item has that property and update it if it is not the same as in the file.  
+If you are using numerical properties that have decimal values, make sure to use a value with the correct decimal character(dot(.) or comma(,) depending on your system.
 
 
 ## CSV file examples
 ```CSV
 Name|Template|ImportFolder|Image|Description|ItemWeight|Damage
 Leather Gauntlet|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/hand/gauntlet-simple-leather-brown.webp|A standard leather glove|1|
-Leather Belt|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/waist/belt-buckle-gold.webp|Belt with buckle|1 |
+Leather Belt|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/waist/belt-buckle-gold.webp|Belt with buckle|1|
 Ring|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/finger/ring-ball-gold-pink.webp|A nice looking ring with stone|0|
 Mace|_Weapon_Template|WEAPONS|icons/weapons/maces/mace-cube-spiked-steel.webp|A solid mace with spikes|3|8
 ```
