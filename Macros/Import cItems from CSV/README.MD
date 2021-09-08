@@ -12,6 +12,15 @@ Sandbox  | Foundry
 -------  | ----------
 0.10.1   | 0.8.8
 
+# How it works
+The macro reads the file, matching each item to an existing cItem in your world that will act as a template. It actually duplicates the templateitem and then process the line in the CSV and updates this duplicate with the data in the line.
+If the item already exists, it can update it or warn you  depening on your settings in the UI.
+
+# How to use tihs macro
+First, backup your world!
+
+Prepare your cItem templates with groups,properties, MODS etc like normal
+
 
 # CSV Formatting
 The CSV file can use the following list separators
@@ -19,9 +28,11 @@ The CSV file can use the following list separators
 * semicolon ;
 * comma ,
 
-## Compulsotary headers
-The first line in the file must contain the following headers  and they must be in this order:  
-```Name|Template|ImportFolder|Image|Description```
+## Compulsory headers
+The first line in the file must contain at least the following headers  and they must be in this order:  
+```CSV
+Name|Template|ImportFolder|Image|Description
+```
 
 Header|Comment
 ------|-------
@@ -32,4 +43,32 @@ Image|Valid path to the image file for the cItem, this can be empty
 Description|Description is the text on the Bio/info-tab and can be a valid HTML string. This can be empty
 
 ## Custom headers
+After the compulsory headers, you can add cItem property keys that exist in your cItem template
 
+
+## CSV file examples
+```CSV
+Name|Template|ImportFolder|Image|Description|ItemWeight|Damage
+Leather Gauntlet|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/hand/gauntlet-simple-leather-brown.webp|A standard leather glove|1|
+Leather Belt|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/waist/belt-buckle-gold.webp|Belt with buckle|1 |
+Ring|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/finger/ring-ball-gold-pink.webp|A nice looking ring with stone|0|
+Mace|_Weapon_Template|WEAPONS|icons/weapons/maces/mace-cube-spiked-steel.webp|A solid mace with spikes|3|8
+```
+
+```CSV
+Name;Template;ImportFolder;Image;Description;ItemGroup;Damage;ArmorClass;ItemWeight
+Club;_Weapon_Template;WEAPONS;icons\weapons\clubs\club-simple-black.webp;Light;Weapon;1d4 bludgeoning;;2
+Dagger;_Weapon_Template;WEAPONS;icons\weapons\daggers\dagger-straight-blue.webp;Finesse, light, thrown (range 20/60);Weapon;1d4 piercing;;1
+Greatclub;_Weapon_Template;WEAPONS;icons\weapons\clubs\club-heavy-barbed-grey.webp;Two-handed;Weapon;1d8 bludgeoning;;10
+Handaxe;_Weapon_Template;WEAPONS;icons\weapons\axes\shortaxe-yellow.webp;Light, thrown (range 20/60);Weapon;1d6 slashing;;2
+Javelin;_Weapon_Template;WEAPONS;icons\weapons\polearms\javelin.webp;Thrown (range 30/120);Weapon;1d6 piercing;;2
+Light Hammer;_Weapon_Template;WEAPONS;icons\weapons\hammers\shorthammer-embossed-white.webp;Light, thrown (range 20/60);Weapon;1d4 bludgeoning;;2
+Mace;_Weapon_Template;WEAPONS;icons\weapons\maces\shortmace-round-spiked-wood.webp;—;Weapon;1d6 bludgeoning;;4
+Quarterstaff;_Weapon_Template;WEAPONS;icons\weapons\staves\staff-simple.webp;Versatile (1d8);Weapon;1d6 bludgeoning;;4
+Sickle;_Weapon_Template;WEAPONS;icons\weapons\sickles\sickle-simple-grey.webp;Light;Weapon;1d4 slashing;;2
+Spear;_Weapon_Template;WEAPONS;icons\weapons\polearms\spear-flared-steel.webp;Thrown (range 20/60), versatile (1d8);Weapon;1d6 piercing;;3
+Ring Mail ;_Armor_Template;ARMOR;icons\equipment\chest\vest-leather-pink.webp;Disadvantage;Armor;;14;40
+Chain Mail ;_Armor_Template;ARMOR;icons\equipment\chest\breastplate-scale-grey.webp;Disadvantage;Armor;;16;55
+Splint ;_Armor_Template;ARMOR;icons\equipment\chest\breastplate-scale-grey.webp;Disadvantage;Armor;;17;60
+Plate ;_Armor_Template;ARMOR;icons\equipment\chest\breastplate-cuirass-steel-grey.webp;Disadvantage;Armor;;18;65
+```
