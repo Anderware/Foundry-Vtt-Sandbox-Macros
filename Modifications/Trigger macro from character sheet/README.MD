@@ -13,12 +13,13 @@ The GIF below showcases a macro([RollMyDice](https://github.com/Anderware/Foundr
 
 ## Version Compability
 This modification has been tested with the following versions
+
 Sandbox  | Foundry
--------  | ----------
-0.9.26   | 0.8.8
-0.9.27   | 0.8.8
-0.9.28   | 0.8.8
-0.10.0   | 0.8.8
+-------  | -------
+0.9.26   | 0.8.8   
+0.9.27   | 0.8.8   
+0.9.28   | 0.8.8   
+0.10.0   | 0.8.8   
 
 
 
