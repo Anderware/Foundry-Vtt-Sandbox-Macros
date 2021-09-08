@@ -38,7 +38,7 @@ Before running any advanced data manipulating macro, always make sure that you h
 ### Setup import settings
 Setting|Comment
 -------| ------
-CSV file| use the filepicker to select the CSV file
+CSV file| Use the filepicker to select the CSV file
 List separator character used in CSV-file| What character the macro should use to determine fields in the file. If the file does not match this a error will be displayed.
 Update existing items with data from import file|If this is not checked, any already existing cItems will not be updated
 For update of existing items, require identical Group configuration|This is used to validate and identify an existing cItem. Can be unchecked for a more relaxed check
@@ -74,11 +74,23 @@ Description|Description is the text on the Bio/info-tab and can be a valid HTML 
 
 ## Custom headers
 After the compulsory headers, you can add cItem property keys that exist in your cItem template item.
-If an item in the file has any value in a field the macro will check if the template item has that property and update it if it is not the same as in the file.  
+If an item in the file has any value in a field the macro will check if the template item has that property and update it if it is not the same as in the file. If the cItem does not have that property, a warning will be logged. 
 If you are using numerical properties that have decimal values, make sure to use a value with the correct decimal character(dot(.) or comma(,) depending on your system.
 
 
 ## CSV file examples
+### Example 1
+Data  
+|Name            |Template               |ImportFolder |Image                                                  |Description                   |ItemWeight|Damage|
+|----------------|-----------------------|-------------|-------------------------------------------------------|------------------------------|----------|------|
+|Leather Gauntlet|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/hand/gauntlet-simple-leather-brown.webp|A standard leather glove      |1         |      |
+|Leather Belt    |_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/waist/belt-buckle-gold.webp            |Belt with buckle              |1         |      |
+|Ring            |_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/finger/ring-ball-gold-pink.webp        |A nice looking ring with stone|0         |      |
+|Mace            |_Weapon_Template       |WEAPONS      |icons/weapons/maces/mace-cube-spiked-steel.webp        |A solid mace with spikes      |3         |8     |
+
+CSV
+
+
 ```CSV
 Name|Template|ImportFolder|Image|Description|ItemWeight|Damage
 Leather Gauntlet|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/hand/gauntlet-simple-leather-brown.webp|A standard leather glove|1|
@@ -86,7 +98,26 @@ Leather Belt|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/waist/belt-bu
 Ring|_Miscellaneous_Template|MISCELLANEOUS|icons/equipment/finger/ring-ball-gold-pink.webp|A nice looking ring with stone|0|
 Mace|_Weapon_Template|WEAPONS|icons/weapons/maces/mace-cube-spiked-steel.webp|A solid mace with spikes|3|8
 ```
+### Example 2
+Data  
+|Name            |Template               |ImportFolder |Image                                                  |Description                   |ItemGroup|Damage|ArmorClass|ItemWeight|
+|----------------|-----------------------|-------------|-------------------------------------------------------|------------------------------|---------|------|----------|----------|
+|Club            |_Weapon_Template       |WEAPONS      |icons\weapons\clubs\club-simple-black.webp             |Light                         |Weapon   |1d4 bludgeoning|          |2         |
+|Dagger          |_Weapon_Template       |WEAPONS      |icons\weapons\daggers\dagger-straight-blue.webp        |Finesse, light, thrown (range 20/60)|Weapon   |1d4 piercing|          |1         |
+|Greatclub       |_Weapon_Template       |WEAPONS      |icons\weapons\clubs\club-heavy-barbed-grey.webp        |Two-handed                    |Weapon   |1d8 bludgeoning|          |10        |
+|Handaxe         |_Weapon_Template       |WEAPONS      |icons\weapons\axes\shortaxe-yellow.webp                |Light, thrown (range 20/60)   |Weapon   |1d6 slashing|          |2         |
+|Javelin         |_Weapon_Template       |WEAPONS      |icons\weapons\polearms\javelin.webp                    |Thrown (range 30/120)         |Weapon   |1d6 piercing|          |2         |
+|Light Hammer    |_Weapon_Template       |WEAPONS      |icons\weapons\hammers\shorthammer-embossed-white.webp  |Light, thrown (range 20/60)   |Weapon   |1d4 bludgeoning|          |2         |
+|Mace            |_Weapon_Template       |WEAPONS      |icons\weapons\maces\shortmace-round-spiked-wood.webp   |—                             |Weapon   |1d6 bludgeoning|          |4         |
+|Quarterstaff    |_Weapon_Template       |WEAPONS      |icons\weapons\staves\staff-simple.webp                 |Versatile (1d8)               |Weapon   |1d6 bludgeoning|          |4         |
+|Sickle          |_Weapon_Template       |WEAPONS      |icons\weapons\sickles\sickle-simple-grey.webp          |Light                         |Weapon   |1d4 slashing|          |2         |
+|Spear           |_Weapon_Template       |WEAPONS      |icons\weapons\polearms\spear-flared-steel.webp         |Thrown (range 20/60), versatile (1d8)|Weapon   |1d6 piercing|          |3         |
+|Ring Mail       |_Armor_Template        |ARMOR        |icons\equipment\chest\vest-leather-pink.webp           |Disadvantage                  |Armor    |      |14        |40        |
+|Chain Mail      |_Armor_Template        |ARMOR        |icons\equipment\chest\breastplate-scale-grey.webp      |Disadvantage                  |Armor    |      |16        |55        |
+|Splint          |_Armor_Template        |ARMOR        |icons\equipment\chest\breastplate-scale-grey.webp      |Disadvantage                  |Armor    |      |17        |60        |
+|Plate           |_Armor_Template        |ARMOR        |icons\equipment\chest\breastplate-cuirass-steel-grey.webp|Disadvantage                  |Armor    |      |18        |65        |
 
+CSV
 ```CSV
 Name;Template;ImportFolder;Image;Description;ItemGroup;Damage;ArmorClass;ItemWeight
 Club;_Weapon_Template;WEAPONS;icons\weapons\clubs\club-simple-black.webp;Light;Weapon;1d4 bludgeoning;;2
