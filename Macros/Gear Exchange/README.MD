@@ -18,6 +18,7 @@ It is built re-using the existing code in sandbox meaning it is a bit version-se
 
 ## Version Compability
 This macro has been tested with the following versions
+
 Sandbox  | FoundryVTT
 -------  | ----------
 0.8.1b    | 0.7.9
