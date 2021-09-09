@@ -7,7 +7,7 @@ Example run.
 If you decide to use this macro, make a smaller test import first to check your CSV formatting and template items.
 ## If you want to delete a folder with items in it
 When deleting a folder with items in it ALWAYS use **Delete All** instead of **Remove Folder**  
-Why? Because Remove Folder just does that. in other words any items that were in that folder are still in the world folderless.
+Why? Because Remove Folder just does that, it does not remove the items in the folder, in other words any items that were in that folder are still in the world folderless.
 
 ![Delete All](https://user-images.githubusercontent.com/81265884/132606148-78c58f1e-4f57-4307-a5a7-0bb79d18af5e.png)
 
@@ -18,7 +18,8 @@ Sandbox  | Foundry
 -------  | ----------
 0.10.1   | 0.8.8
 
-Note. This have only been tested on a self-hosted Foundry VTT on Windows 10. If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
+Note. This have only been tested on a self-hosted Foundry VTT on Windows 10.  
+If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
 
 # How it works
 The macro uses an existing cItem as a template for the import data. It reads the file, matching each item to the template structure.  
@@ -30,7 +31,9 @@ If the item already exists, it can update it or warn you  depening on your setti
 ## Step 1 - Prepare your world
 ### Create cItem templates
 Create one cItem that will act as the template to build the imported items.  
-Set it up just like a normal cItem with groups,properties, MODS etc
+Set it up just like a normal cItem with groups,properties, MODS etc.
+The CSV can only contain properties(attributes) so any MODs you need, have to be on the template item. If you have added any MODs to the cItems(either the template item or imported ones after the import, you can still update the citems properties in a future update without removing the MODs.
+
 ### Create import folders
 Specified import folders must exist
 
