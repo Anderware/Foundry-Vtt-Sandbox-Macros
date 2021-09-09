@@ -1,9 +1,15 @@
 # Import cItems from CSV
-This macro imports the content of a CSV(delimited text file) into Sandbox cItems
-
+This macro imports the content of a CSV(delimited text file) into Sandbox cItems  
+Example run.  
+![ImportcItemFromCSV](https://user-images.githubusercontent.com/81265884/132607247-2e46a8b2-0aaf-45f9-b84d-588b48f63e15.gif)
 
 # BACKUP YOUR SANDBOX WORLD BEFORE TESTING THIS MACRO!
 If you decide to use this macro, make a smaller test import first to check your CSV formatting and template items.
+## If you want to delete a folder with items in it
+When deleting a folder with items in it ALWAYS use **Delete All** instead of **Remove Folder**  
+Why? Because Remove Folder just does that. in other words any items that were in that folder are still in the world folderless.
+
+![Delete All](https://user-images.githubusercontent.com/81265884/132606148-78c58f1e-4f57-4307-a5a7-0bb79d18af5e.png)
 
 ## Version Compability
 This macro has been tested with the following versions
