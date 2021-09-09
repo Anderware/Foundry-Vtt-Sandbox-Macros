@@ -24,7 +24,7 @@
   // ================================================================ 
   // Date       Version  Author               Description             
   // ---------- -------- -------------------- -----------------------
-  // 2021-05-13 1.0.0    Ramses800            Macro created 
+  // 2021-09-09 1.0.0    Ramses800            Macro created 
   // ****************************************************************                                                                                                                                         
   function macroTitle() {
     let thismacroname=`Import cItem from CSV`;  
@@ -74,8 +74,8 @@
        
       <tr> 
         <td>List separator character used in CSV-file  </td>
-        <td style="text-align:center">
-          <select id="${thisMacroName()}_listseparator">
+        <td style="text-align:center;">
+          <select id="${thisMacroName()}_listseparator" style="background-color:white;">
             <option value="|" selected>|</option>
             <option value=";">;</option>
             <option value=",">,</option> 
@@ -107,21 +107,21 @@
     <fieldset style="text-align:left;">
     <legend style="text-align:left">Import results</legend> 
     <label  for="${thisMacroName()}_importcount">Import count</label>
-    <input type="number" id="${thisMacroName()}_importcount" style="width:48px;height:26px;" value="0" disabled>
+    <input type="number" id="${thisMacroName()}_importcount" style="width:48px;height:26px;border: 1px solid black;" value="0" disabled>
     
     <label  for="${thisMacroName()}_updatecount">Updates</label>
-    <input type="number" id="${thisMacroName()}_updatecount" style="width:48px;height:26px;" value="0" disabled>
+    <input type="number" id="${thisMacroName()}_updatecount" style="width:48px;height:26px;border: 1px solid black;" value="0" disabled>
         
     <label  for="${thisMacroName()}_importwarningcount">Warnings</label>
-    <input type="number" id="${thisMacroName()}_importwarningcount" style="width:48px;height:26px;" value="0" disabled>
+    <input type="number" id="${thisMacroName()}_importwarningcount" style="width:48px;height:26px;border: 1px solid black;" value="0" disabled>
     
     <label  for="${thisMacroName()}_importerrcount">Errors</label>
-    <input type="number" id="${thisMacroName()}_importerrcount" style="width:48px;height:26px;" value="0" disabled>
+    <input type="number" id="${thisMacroName()}_importerrcount" style="width:48px;height:26px;border: 1px solid black;" value="0" disabled>
     
     <table style="height:250px;border:1px solid black;border-style:inset;" >
-      <thead style="display:block;">
+      <thead style="display:block;color:black;background-color:gainsboro;">
         <tr>
-          <th style="width:64px;padding-left:4px;">Class</th><th style="width:100%px;padding-left:4px;">Message</th>
+          <th style="width:64px;padding-left:4px;font-weight:normal;text-shadow: none;border-right:1px solid black">Class</th><th style="width:100%px;padding-left:4px;font-weight:normal;text-shadow: none;">Message</th>
         </tr>
       </thead>
       <tbody id="import_tablelog" style="display:block;height: 250px;overflow-y: auto;overflow-x: hidden;background-color: white !important;">
@@ -404,7 +404,8 @@
                             let sDescription=itemdata[MANDATORYFIELDSINDEX.DESCRIPTION].trim();
                             ${thisMacroName()}_LogImportMessage('Preparing import for item:[' + sItemname+']','Debug');
                             
-                            let citemtemplate=game.items.find(y=>y.data.type=="cItem" && y.data.name==sTemplatename);
+                            let citemtemplate=game.items.find(y=>y.data.type=="cItem" && y.data.name==sTemplatename); 
+                            
                             let importfolder=game.folders.getName(sImportFolder);
                             let bValidData=true;
                             // check that template item  exists
