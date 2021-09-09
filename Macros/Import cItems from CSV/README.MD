@@ -66,7 +66,7 @@ The UI contains a log with the result.
 If you have an invalid setup, it will be listed here.
 
 # CSV Formatting
-The CSV file can use the following list separators
+The macro can read files with the following list separators
 * pipe |
 * semicolon ;
 * comma ,
