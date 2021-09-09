@@ -35,7 +35,8 @@ If the item already exists, it can update it or warn you  depening on your setti
 ### Create cItem templates
 Create one cItem that will act as the template to build the imported items.  
 Set it up just like a normal cItem with groups,properties, MODS etc.
-The CSV can only contain properties(attributes) so any MODs you need, have to be on the template item. If you have added any MODs to the cItems(either the template item or imported ones after the import, you can still update the citems properties in a future update without removing the MODs.
+The macro can only modify properties(attributes) so any MOD-related things you need, have to be on the template item.  
+If you have added any MODs to the cItems(either the template item or imported ones after the import, you can still update the citems properties in a future update without removing the MODs.
 
 ### Create import folders
 Specified import folders must exist
