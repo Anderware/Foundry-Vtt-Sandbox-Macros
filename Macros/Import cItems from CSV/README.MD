@@ -1,6 +1,6 @@
 # Import cItems from CSV
 This macro imports the content of a CSV(delimited text file) into Sandbox cItems  
-Example run.  
+_Example run._  
 ![ImportcItemFromCSV](https://user-images.githubusercontent.com/81265884/132607247-2e46a8b2-0aaf-45f9-b84d-588b48f63e15.gif)
 
 # :warning: Important notes
@@ -36,8 +36,8 @@ If the item already exists, it can update it or warn you  depening on your setti
 Create one cItem that will act as the template to build the imported items.  
 Set it up just like a normal cItem with groups,properties, MODS etc.
 The macro can only modify properties(attributes) so any MOD-related things you need, have to be on the template item.  
-if you have values in a MOD, it is recommended to use a property and reference it in the MOD instead of enetering a numerical value.  
-Example.
+if you have values in a MOD, it is recommended to use a property and reference(with #{citem property key} it in the MOD instead of entering a numerical value.  
+_Example._
 ![MOD](https://user-images.githubusercontent.com/81265884/132749629-3601c42a-9d0f-4861-afca-7bd4c93c23e8.png)
 
 If you have added any MODs to the cItems(either the template item or imported ones after the import, you can still update the citems properties in a future update without removing the MODs.
