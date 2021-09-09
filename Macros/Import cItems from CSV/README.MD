@@ -3,8 +3,11 @@ This macro imports the content of a CSV(delimited text file) into Sandbox cItems
 Example run.  
 ![ImportcItemFromCSV](https://user-images.githubusercontent.com/81265884/132607247-2e46a8b2-0aaf-45f9-b84d-588b48f63e15.gif)
 
-# BACKUP YOUR SANDBOX WORLD BEFORE TESTING THIS MACRO!
+# :warning: Important notes
+**BACKUP YOUR SANDBOX WORLD BEFORE TESTING THIS MACRO!**
+
 If you decide to use this macro, make a smaller test import first to check your CSV formatting and template items.
+
 ## If you want to delete a folder with items in it
 When deleting a folder with items in it ALWAYS use **Delete All** instead of **Remove Folder**  
 Why? Because Remove Folder just does that, it does not remove the items in the folder, in other words any items that were in that folder are still in the world folderless.
@@ -21,7 +24,7 @@ Sandbox  | Foundry
 Note. This have only been tested on a self-hosted Foundry VTT on Windows 10.  
 If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
 
-# How it works
+# :gear: How it works
 The macro uses an existing cItem as a template for the import data. It reads the file, matching each item to the template structure.  
 It actually duplicates the template item and then process the line in the CSV and updates this duplicate with the data in the line.
 If the item already exists, it can update it or warn you  depening on your settings in the UI.
@@ -74,13 +77,13 @@ Using comma as list separator
 Name,Template,ImportFolder,Image,Description
 ```
 
-Header|Comment
-------|-------
-Name|The name of the cItem
-Template|The name of the cItem template that must exist in your world. Different templates can be used in the same file
-ImportFolder|Where the cItem should be imported into, this must exist in your world
-Image|Valid path to the image file for the cItem, this can be empty
-Description|Description is the text on the Bio/info-tab and can be a valid HTML string. This can be empty
+Header key|Description|Can be empty
+------|-------|--------------
+Name|The name of the cItem|No
+Template|The name of the cItem template that must exist in your world. Different templates can be used in the same file|No
+ImportFolder|Where the cItem should be imported into, this must exist in your world|No
+Image|Valid path to the image file for the cItem|This can be empty
+Description|Description is the text on the Bio/info-tab and can be a valid HTML string. Just make sure that any text here dont conflict with the list separator setting|This can be empty
 
 ## Custom headers
 After the compulsory headers, you can add cItem property keys that exist in your cItem template item.
