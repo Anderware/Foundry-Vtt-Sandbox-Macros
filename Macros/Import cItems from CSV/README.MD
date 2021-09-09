@@ -21,7 +21,8 @@ Sandbox  | Foundry
 Note. This have only been tested on a self-hosted Foundry VTT on Windows 10. If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
 
 # How it works
-The macro reads the file, matching each item to an existing cItem in your world that will act as a template. It actually duplicates the templateitem and then process the line in the CSV and updates this duplicate with the data in the line.
+The macro uses an existing cItem as a template for the import data. It reads the file, matching each item to the template structure.  
+It actually duplicates the template item and then process the line in the CSV and updates this duplicate with the data in the line.
 If the item already exists, it can update it or warn you  depening on your settings in the UI.
 
 # How to use this macro
