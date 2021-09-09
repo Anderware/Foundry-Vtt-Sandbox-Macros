@@ -67,12 +67,22 @@ The CSV file can use the following list separators
 * semicolon ;
 * comma ,
 
+### Recommended list separator
+Since commas(and sometimes semicolon) might appear in normal text, it is generally recomended to use pipe(|) as list separator.  
+The macro can be easily be modified to use any character as list separator if needed.
+
 ## Compulsory headers
-The first line in the file must contain at least the following headers  and they must be in this order:  
+The first line in the file must contain at least the following headers  and they must be in this order: 
+
 Using pipe as list separator
 ```CSV
 Name|Template|ImportFolder|Image|Description
 ```
+Using semicolon as list separator
+```CSV
+Name;Template;ImportFolder;Image;Description
+```
+
 Using comma as list separator
 ```CSV
 Name,Template,ImportFolder,Image,Description
