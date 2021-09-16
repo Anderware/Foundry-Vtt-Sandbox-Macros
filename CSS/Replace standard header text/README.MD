@@ -1,4 +1,8 @@
+# Replace standard header text
 With a CSS trick it is possible to replace the table headers.
+
+![replace_table_headers](https://user-images.githubusercontent.com/81265884/133617006-19f4f20a-8252-4013-a014-febab1da3475.png)
+
 ```css
 /* Replace the Active text on all tables*/
 /* the nth-of-type(2) means the second column*/
