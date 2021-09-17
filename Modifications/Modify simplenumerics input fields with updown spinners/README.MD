@@ -22,10 +22,12 @@ Fields with NUMBER type have builtin spinners that can be styled with CSS.
 
 
 ## Version Compability
-This modification has been tested with the following versions
+This modification has been tested with the following versions  
+
 Sandbox  | FoundryVTT
 -------  | ----------
 0.8.7    | 0.7.9
+0.10.1   | 0.8.8
 
 # Modification process
 
@@ -181,9 +183,9 @@ It will then look like this
     }
 ```
 ### For the NUM field in cItem table
-In gactorsheet.js , inside the function refreshCItems, find these lines of code
+In gactorsheet.js , inside the function refreshCItems, find these lines of code  
 ``` javascript
-	if(propTable.data.data.hasunits){
+	if(propTable.data.data.hasunits){   
 		let numcell = document.createElement("TD");
 		numcell.className = "input-min centertext";                   
 		numcell.className += " " + inputgroup;                  
@@ -201,6 +203,8 @@ In gactorsheet.js , inside the function refreshCItems, find these lines of code
 		numcell.appendChild(numinput);
 	    }
 ```
+**MODIFICATION NOTE FOR SANDBOX 0.10.1** The first line will read ``` if (propTable.data.data.hasunits && !isFree) { ``` 
+
 And in between 
 ``` javascript
 let numinput = document.createElement("INPUT");
@@ -215,7 +219,7 @@ numinput.setAttribute("type", "number");   // added input type number
 ```
 It will then look like this
 ``` javascript
-	    if(propTable.data.data.hasunits){
+	    if(propTable.data.data.hasunits){    
 		let numcell = document.createElement("TD");
 		numcell.className = "input-min centertext";                   
 		numcell.className += " " + inputgroup;                  
@@ -237,9 +241,9 @@ It will then look like this
 	    }
 ```
 ### For the USES field in cItem table
-In gactorsheet.js , inside the function refreshCItems, find these lines of code
+In gactorsheet.js , inside the function refreshCItems, find these lines of code  
 ``` javascript
-	    if(propTable.data.data.hasuses && propTable.data.data.hasactivation){
+	    if(propTable.data.data.hasuses && propTable.data.data.hasactivation){   
 		let usescell = document.createElement("TD");
 		usescell.className = "tabblock-center";                   
 		usescell.className += " " + inputgroup;                  
@@ -251,6 +255,8 @@ In gactorsheet.js , inside the function refreshCItems, find these lines of code
 
 		usescell.appendChild(usevalue);
 ```
+**MODIFICATION NOTE FOR SANDBOX 0.10.1** This first line will read  ```if (propTable.data.data.hasuses && propTable.data.data.hasactivation && !isFree) {```
+
 And in between 
 ``` javascript
 let usevalue = document.createElement("INPUT");
@@ -265,7 +271,7 @@ usevalue.setAttribute("type", "number");   // added input type number
 ```
 It will then look like this
 ``` javascript
-	if(propTable.data.data.hasuses && propTable.data.data.hasactivation){
+	if(propTable.data.data.hasuses && propTable.data.data.hasactivation){ 
 		let usescell = document.createElement("TD");
 		usescell.className = "tabblock-center";                   
 		usescell.className += " " + inputgroup;                  
