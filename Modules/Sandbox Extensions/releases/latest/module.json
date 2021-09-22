@@ -33,9 +33,9 @@
     "scripts/sandbox-extensions.js",
     "scripts/module-settings-form.js"
   ],
-  "manifest": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/downloads/0.1.0/module.json",
+  "manifest": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/releases/latest/module.json",
   "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/Sandbox%20Extensions",
-  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/downloads/0.1.0/sandbox-extensions.zip",
+  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/releases/latest/sandbox-extensions.zip",
   "readme": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/README.MD",
   "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/changelog.md",
   "media": [
