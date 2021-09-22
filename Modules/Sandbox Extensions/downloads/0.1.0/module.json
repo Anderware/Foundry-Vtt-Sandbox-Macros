@@ -1,0 +1,36 @@
+{
+  "name": "sandbox-extensions",
+  "title": "Sandbox Extensions",
+  "description": "Extends functions to Sandbox System",
+  "author":"Ramses800",
+  "authors": [
+    {
+      "name": "Ramses800",
+      "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "version": "0.1.0",
+  "minimumCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.8",
+  "dependencies": [
+    {
+      "name": "sandbox",
+      "type": "system",
+      "version": "0.10.1"
+    }
+  ], 
+  "styles": [
+    "styles/sandbox-extensions.css"
+  ],   
+  "esmodules": [
+    "scripts/sandbox-extensions.js",
+    "scripts/module-settings-form.js"
+  ]
+}
