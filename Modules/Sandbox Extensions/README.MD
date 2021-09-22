@@ -11,11 +11,14 @@ Sandbox  | Foundry
 
 
 # Module Features
-* Generate values automatically based on item name, item type and configurable prefix/suffix
+* Functions for auto generate values based on item name, item type and configurable prefix/suffix/case for 
   * Key
+  * Tag
+  * Title
+  * Tooltip
   * Fontgroup
   * Inputgroup
-  * Headergroup
+  * Headergroup  
 * Validate key
   * Validates for valid key name
   * Validates if key is already in use  
