@@ -2,10 +2,10 @@
   "name": "sandbox-extensions",
   "title": "Sandbox Extensions",
   "description": "Extends functions to Sandbox System",
-  "author":"Ramses800",
+  "author":"anders-forslund",
   "authors": [
     {
-      "name": "Ramses800",
+      "name": "anders-forslund",
       "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/"
     }
   ],
