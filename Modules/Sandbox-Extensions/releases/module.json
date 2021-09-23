@@ -1,0 +1,46 @@
+{
+  "name": "sandbox-extensions",
+  "title": "Sandbox Extensions",
+  "description": "Extends functions to Sandbox System",
+  "author":"anders-forslund",
+  "authors": [
+    {
+      "name": "anders-forslund",
+      "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "version": "0.1.0",
+  "minimumCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.8",
+  "dependencies": [
+    {
+      "name": "sandbox",
+      "type": "system"
+    }
+  ], 
+  "styles": [
+    "styles/sandbox-extensions.css"
+  ],   
+  "esmodules": [
+    "scripts/sandbox-extensions.js",
+    "scripts/module-settings-form.js"
+  ],
+  "manifest": "https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/Sandbox-Extensions/releases/module.json",
+  "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/Sandbox-Extensions",
+  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/raw/main/Modules/Sandbox-Extensions/releases/sandbox-extensions-0.1.0.zip",
+  "readme": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/README.MD",
+  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/changelog.md",
+  "media": [
+      {
+          "type": "icon",
+          "url": "https://avatars.githubusercontent.com/u/81265884"
+      }
+  ]
+}
