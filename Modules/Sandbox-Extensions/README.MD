@@ -3,7 +3,7 @@ A module for extending Sandbox functionality.
 
 ## Manifest URL
 https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/Sandbox-Extensions/releases/module.json
-
+ 
 ## Version Compability
 This module has been tested with the following versions
 
