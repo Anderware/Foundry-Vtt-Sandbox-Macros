@@ -32,11 +32,11 @@
     "scripts/sandbox-extensions.js",
     "scripts/module-settings-form.js"
   ],
-  "manifest": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/releases/latest/module.json",
-  "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/Sandbox%20Extensions",
-  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/releases/latest/sandbox-extensions.zip",
-  "readme": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/README.MD",
-  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/changelog.md",
+  "manifest": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/releases/latest/module.json",
+  "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/Sandbox-Extensions",
+  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/releases/latest/sandbox-extensions.zip",
+  "readme": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/README.MD",
+  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/changelog.md",
   "media": [
       {
           "type": "icon",
