@@ -22,8 +22,7 @@
   "dependencies": [
     {
       "name": "sandbox",
-      "type": "system",
-      "version": "0.10.1"
+      "type": "system"
     }
   ], 
   "styles": [
