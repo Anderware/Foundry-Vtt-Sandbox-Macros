@@ -1,6 +1,8 @@
 # Sandbox Extensions
 A module for extending Sandbox functionality.
 
+## Manifest URL
+https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox%20Extensions/releases/latest/module.json
 
 ## Version Compability
 This module has been tested with the following versions
