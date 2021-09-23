@@ -1,8 +1,11 @@
 # Sandbox Extensions
 A module for extending Sandbox functionality.
-
-## Manifest URL
+## Installation
+### Manifest URL
 https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/Sandbox-Extensions/releases/module.json
+
+See here on help on how to use the manifest URL to install a module  
+[Foundry Wiki - How to install module](https://foundryvtt.wiki/en/basics/Modules) 
  
 ## Version Compability
 This module has been tested with the following versions
