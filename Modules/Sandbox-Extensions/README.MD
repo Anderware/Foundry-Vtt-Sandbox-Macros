@@ -23,10 +23,16 @@ Sandbox  | Foundry
   * Tooltip
   * Fontgroup
   * Inputgroup
-  * Headergroup  
+  * Headergroup
+  * Roll ID  
 * Function for validate key
   * Validates for valid key name
   * Validates if key is already in use  
+* Expression Editor
+  * Roll Formula
+  * Roll Name
+  * Auto
+* Key Checker   
 * Supports item types  
   * Property
   * Panel
@@ -39,7 +45,15 @@ Sandbox  | Foundry
 ## Validate Keys
 ![sbe_validate_key](https://user-images.githubusercontent.com/81265884/134353199-511477de-f755-4491-85e0-900d3a5060ca.gif)
 
+## Expression Editor
+![expression_editor](https://user-images.githubusercontent.com/81265884/134831102-456e4ddc-6c97-42c7-958f-1408a8215324.png)
+
+## Key Checker
+![game_settings](https://user-images.githubusercontent.com/81265884/134831200-22ae0e77-873a-479f-986a-20ede9cf7e63.png)
+
 
 
 # Module Settings
-![settings](https://user-images.githubusercontent.com/81265884/134343713-b27d22a4-993f-4896-a406-91fdbfbda636.png)
+![settings](https://user-images.githubusercontent.com/81265884/134831082-d4e81668-25fc-4ffa-a373-56b69193cfb6.png)
+
+![key_checker](https://user-images.githubusercontent.com/81265884/134831209-9eb5e91d-c000-4584-bcd1-41fd82a11f01.png)
