@@ -46,14 +46,19 @@ Sandbox  | Foundry
 ![sbe_validate_key](https://user-images.githubusercontent.com/81265884/134353199-511477de-f755-4491-85e0-900d3a5060ca.gif)
 
 ## Expression Editor
+The expression editor makes it easier to write expressions for roll formulas etc
 ![expression_editor](https://user-images.githubusercontent.com/81265884/134831102-456e4ddc-6c97-42c7-958f-1408a8215324.png)
 
 ## Key Checker
+The Key Checker lists all Sandbox items and validates them according to the current validation mode.
+Open the Key Checker by going by the Game Settings page, on the the Module tab
 ![game_settings](https://user-images.githubusercontent.com/81265884/134831200-22ae0e77-873a-479f-986a-20ede9cf7e63.png)
 
+![key_checker](https://user-images.githubusercontent.com/81265884/134831209-9eb5e91d-c000-4584-bcd1-41fd82a11f01.png)
+Click an item in the result list to open the item.
 
-
+To filter the results, use the filter controls on the bottom.
 # Module Settings
 ![settings](https://user-images.githubusercontent.com/81265884/134831082-d4e81668-25fc-4ffa-a373-56b69193cfb6.png)
 
-![key_checker](https://user-images.githubusercontent.com/81265884/134831209-9eb5e91d-c000-4584-bcd1-41fd82a11f01.png)
+
