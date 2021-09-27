@@ -51,7 +51,7 @@ The expression editor makes it easier to write expressions for roll formulas etc
 
 ## Key Checker
 The Key Checker lists all Sandbox items and validates them according to the current validation mode.
-Open the Key Checker by going by the Game Settings page, on the the Module tab
+Open the Key Checker by going by the Game Settings page, on the the Module tab  
 ![game_settings](https://user-images.githubusercontent.com/81265884/134831200-22ae0e77-873a-479f-986a-20ede9cf7e63.png)
 
 ![key_checker](https://user-images.githubusercontent.com/81265884/134831209-9eb5e91d-c000-4584-bcd1-41fd82a11f01.png)
@@ -59,6 +59,7 @@ Click an item in the result list to open the item.
 
 To filter the results, use the filter controls on the bottom.
 # Module Settings
-![settings](https://user-images.githubusercontent.com/81265884/134831082-d4e81668-25fc-4ffa-a373-56b69193cfb6.png)
+![settings](https://user-images.githubusercontent.com/81265884/134831902-4327b34c-4c6a-47cb-946d-11186ed1951e.png)
+
 
 
