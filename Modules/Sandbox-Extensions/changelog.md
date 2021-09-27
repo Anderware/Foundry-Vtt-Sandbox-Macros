@@ -7,3 +7,5 @@ First release
 * Improved key validation
 * Key Checker
 * Expression Editor
+* Changed settings to 'world'-scope(meaning that settings is no longer in 'client'-scope, in other words, each Sandbox world will have its own settings of this module )
+* Minor fixes
