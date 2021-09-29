@@ -14,6 +14,8 @@ Sandbox  | Foundry
 -------  | -------
 0.10.1   | 0.8.8  
 
+## Dependencies
+Sandbox Extension requires the excellent module [CodeMirror for Foundry VTT](https://github.com/League-of-Foundry-Developers/codemirror-lib)
 
 # Module Features
 * Functions for auto generate values based on item name, item type and configurable prefix/suffix/case for 
@@ -28,10 +30,11 @@ Sandbox  | Foundry
 * Function for validate key
   * Validates for valid key name
   * Validates if key is already in use  
-* Expression Editor
+* Expression Editor with syntax highlighting
   * Roll Formula
   * Roll Name
   * Auto
+  * Max(for simplenumerics properties)
 * Key Checker   
 * Supports item types  
   * Property
@@ -39,6 +42,7 @@ Sandbox  | Foundry
   * Multipanel
   * Group
   * Tab
+  * cItem
 # Module Operations
 ## Auto Generate Inputs
 ![sbe_autogenerate](https://user-images.githubusercontent.com/81265884/134352052-37ce91bf-10b7-4573-adc5-e7ad193330ad.gif)
@@ -47,7 +51,7 @@ Sandbox  | Foundry
 
 ## Expression Editor
 The expression editor makes it easier to write expressions for roll formulas etc
-![expression_editor](https://user-images.githubusercontent.com/81265884/134831102-456e4ddc-6c97-42c7-958f-1408a8215324.png)
+![expression_editor_v2](https://user-images.githubusercontent.com/81265884/135217290-495142f7-18ab-483a-a398-2a2b54589a14.png)
 
 ## Key Checker
 The Key Checker lists all Sandbox items and validates them according to the current validation mode.
