@@ -41,11 +41,11 @@
     "scripts/sandbox-expression-editor-form.js",
     "scripts/sandbox-expressions-code-mirror.js"
   ],
-  "manifest": "https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/Sandbox-Extensions/releases/module.json",
+  "manifest": "https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/Sandbox-Extensions/releases/0.2.0/module.json",
   "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/Sandbox-Extensions",
-  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/raw/main/Modules/Sandbox-Extensions/releases/sandbox-extensions-0.2.0.zip",
+  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/raw/main/Modules/Sandbox-Extensions/releases/0.2.0/sandbox-extensions-0.2.0.zip",
   "readme": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/README.MD",
-  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/changelog.md",
+  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/releases/0.2.0/changelog.md",
   "media": [
       {
           "type": "icon",
