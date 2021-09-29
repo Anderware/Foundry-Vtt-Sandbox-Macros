@@ -1,6 +1,9 @@
 # Sandbox Extensions
-A module for extending Sandbox functionality.
+A module for extending Sandbox functionality.  
+[Foundry Packages Directory](https://foundryvtt.com/packages/sandbox-extensions)
 ## Installation
+### Directly inside Foundry
+Sandbox Extensions can be installed from Foundry´s configuration meny under "Add-on Module", and choose "Install module", filter package for "Sandbox Extensions"
 ### Manifest URL
 https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/Sandbox-Extensions/releases/module.json
 
