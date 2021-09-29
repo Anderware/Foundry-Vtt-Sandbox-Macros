@@ -50,8 +50,9 @@ Sandbox Extension requires the excellent module [CodeMirror for Foundry VTT](htt
 ![sbe_validate_key](https://user-images.githubusercontent.com/81265884/134353199-511477de-f755-4491-85e0-900d3a5060ca.gif)
 
 ## Expression Editor
-The expression editor makes it easier to write expressions for roll formulas etc
-![expression_editor_v2](https://user-images.githubusercontent.com/81265884/135217290-495142f7-18ab-483a-a398-2a2b54589a14.png)
+The expression editor  with syntax highlightning and bracket matching makes it easier to write expressions for roll formulas etc
+![sbe_expression_editor_highlight](https://user-images.githubusercontent.com/81265884/135227867-f2c09317-a1b5-40ce-89a8-1be47aec04a5.gif)
+
 
 ## Key Checker
 The Key Checker lists all Sandbox items and validates them according to the current validation mode.
