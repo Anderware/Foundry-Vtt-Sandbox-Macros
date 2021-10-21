@@ -190,6 +190,14 @@
   padding: 1px 3px;
   } 
  
+/*Up/down arrows of simplenumerics */
+.sandbox.sheet .arrup:hover{
+  filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));
+}
+.sandbox.sheet .arrdown:hover{
+  filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));
+}
+
 /* ----------------------------- */
 /* Sandbox specifics text inputs */
 /* ----------------------------- */
