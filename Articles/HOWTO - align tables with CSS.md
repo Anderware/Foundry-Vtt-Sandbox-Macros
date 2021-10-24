@@ -17,14 +17,12 @@ This articles uses the module [Custom CSS Rules](https://foundryvtt.com/packages
 ## Goal of this article
 
 To make the following two tables(TABLE_FIRST and TABLE_SECOND) appear as one.
-
-![image-20211024205054784](HOWTO - align tables with CSS.assets/image-20211024205054784.png)
+![image-20211024205054784](https://user-images.githubusercontent.com/81265884/138609007-8cac743b-0ae6-4e2c-af80-e78a2f2805bc.png)
 
 ### Step 1
 
 Remove header from second table(for the property TABLE_SECOND, uncheck **Has Header?**)
-
-![image-20211024205141577](HOWTO - align tables with CSS.assets/image-20211024205141577.png)
+![image-20211024205141577](https://user-images.githubusercontent.com/81265884/138609010-c9dfec59-357b-42b8-8532-373bfeffb6a5.png)
 
 Position the second table directly after the first
 
@@ -34,8 +32,7 @@ Position the second table directly after the first
   margin-top:-4px;	
 }	
 ```
-
-![image-20211024205239888](HOWTO - align tables with CSS.assets/image-20211024205239888.png)
+![image-20211024205239888](https://user-images.githubusercontent.com/81265884/138609016-b153ddad-d945-447e-b259-72487f0a88d6.png)
 
 Align columns for both tables by setting the columns width to suitable values
 
@@ -55,8 +52,7 @@ Align columns for both tables by setting the columns width to suitable values
  width:245px;    
 }
 ```
-
-![image-20211024205355410](HOWTO - align tables with CSS.assets/image-20211024205355410.png)
+![image-20211024205355410](https://user-images.githubusercontent.com/81265884/138609023-48bb61b0-8ba8-4114-a7c1-82d80c40fa9c.png)
 
 If your table have more columns, just add more CSS as needed with more `td:nth-of-type(n)` where n is the column number.
 
