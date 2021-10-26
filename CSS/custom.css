@@ -446,249 +446,93 @@
     border: 1px solid var(--linkcolor);
 }
 
+/* ---------------------------------------------------------------- */
+/* Sheet sizing                                                     */
+/* ---------------------------------------------------------------- */
+.sandbox.sheet.actor{
+  /* uncomment this to set a custom fixed width for actor sheet*/
+  /* width:800px!important; */  
+}
+
+
+/* ----------------------------------------- */
+/* General settings for sheets(actors/items) */
+/* ----------------------------------------- */
 .sandbox.sheet .new-block {
-    padding: 0px 0px;
-    width: 100%;
-    max-width: 100%;
+  padding: 0px 0px;
+  width: 100%;
+  max-width:100%;
+  min-width: 100%;
+}
+.sandbox.sheet .new-multiblock{    
+  display: contents;    
+}
+/* ----------------------------------- */
+/* Widths for panels, columns, dialogs */
+/* ----------------------------------- */
+.sandbox.sheet [class*="1-1"]{
+	width:100%;
+	max-width:100%;
+	min-width:100%;
+}
+.sandbox.sheet [class*="1-2"]{
+	width:50%;
+	max-width:50%;
+	min-width:50%;
+}
+.sandbox.sheet [class*="1-3"]{
+	width:33.33%;
+	max-width:33.33%;
+	min-width:33.33%;
+}
+.sandbox.sheet [class*="1-4"]{
+	width:25%;
+	max-width:25%;
+	min-width:25%;
+}
+.sandbox.sheet [class*="1-6"]{
+	width:16.66%;
+	max-width:16.66%;
+	min-width:16.66%;
+}
+.sandbox.sheet [class*="1-8"]{
+	width:12.5%;
+	max-width:12.5%;
+	min-width:12.5%;
+}
+.sandbox.sheet [class*="3-10"]{
+	width:30%;
+	max-width:30%;
+	min-width:30%;
+}
+.sandbox.sheet [class*="1-16"]{
+	width:6.25%;
+	max-width:6.25%;
+	min-width:6.25%;
+}
+.sandbox.sheet [class*="3-8"]{
+	width:37.5%;
+	max-width:37.5%;
+	min-width:37.5%;
+}
+.sandbox.sheet [class*="5-8"]{
+	width:62.5%;
+	max-width:62.5%;
+	min-width:62.5%;
+}
+.sandbox.sheet [class*="2-3"]{
+	width:66.66%;
+	max-width:66.66%;
+	min-width:66.66%;
+}
+.sandbox.sheet [class*="3-4"]{
+	width:75%;
+	max-width:75%;
+	min-width:75%;
+}
+.sandbox.sheet [class*="5-6"]{
+	width:83.33%;
+	max-width:83.33%;
+	min-width:83.33%;
 }
 
-
-
-.sandbox.sheet .col-1-1 {
-    width: 100%;
-    max-width: 100%;
-    padding: 0px 3px;
-}
-.sandbox.sheet .col-1-2 {
-    width: 50%;
-    max-width: 50%;
-    padding: 0px 3px;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.sandbox.sheet .col-1-3 {
-    width: 33.33%;
-    max-width: 33.33%;
-    padding: 0px 3px;
-    display: inline-block;
-    vertical-align: top;
-}
-.sandbox.sheet .col-1-4 {
-    width: 25%;
-    max-width: 25%;
-    padding: 0px 3px;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.sandbox.sheet .col-1-6 {
-    width: 16.66%;
-    max-width:16.66%;
-    padding: 0px 3px;
-    display:inline-block;
-    vertical-align:top;
-}
-
-.sandbox.sheet .col-1-8 {
-    width: 12.5%;
-    max-width:12.5%;
-    padding: 0px 3px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .col-3-8 {
-    width: 37.5%;
-    max-width: 37.5%;
-    padding: 0px 3px;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.sandbox.sheet .col-5-8 {
-    width: 62.5%;
-    max-width: 62.5%;
-    padding: 0px 3px;
-    display: inline-block;
-    vertical-align: top;
-}
-.sandbox.sheet .col-2-3 {
-    width: 66.66%;
-    max-width:66.66%;
-    padding: 0px 3px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .col-3-4 {
-    width: 75%;
-    max-width:75%;
-    padding: 0px 3px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .col-5-6 {
-    width: 83.33%;
-    max-width:83.33%;
-    padding: 0px 3px;
-    display:inline-block;
-    vertical-align:top;
-}
-
-.sandbox.sheet .multi-1-1-col {
-    width: 100%;
-    max-width: 100%;
-    padding: 0px 1px;
-}
-
-.sandbox.sheet .multi-1-2-col {
-    width:50%;  
-    max-width: 50%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-/*multi panels*/
-.sandbox.sheet .multi-1-1 {
-    width:100%;
-    padding: 0px 2px 4px 2px;
-}
-.sandbox.sheet .multi-1-2 {
-    width:50%;
-    max-width:50%
-    padding: 0px 2px 4px 2px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-1-3-col {
-    width: 33.33%;
-    max-width: 33.33%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-
-.sandbox.sheet .multi-1-4-col {
-    width: 25%;
-    max-width: 25%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-1-6-col {
-    width:16.66%;
-    max-width:16.66%
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-
-.sandbox.sheet .multi-1-8 {
-    width: 12.5%;
-    max-width:12.5%;
-    padding: 0px 2px 4px 2px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-3-8 {
-    width: 37.5%;
-    max-width: 37.5%;
-    padding: 0px 2px 4px 2px;
-    display:inline-block;
-    vertical-align:top;
-}
-
-.sandbox.sheet .multi-5-8 {
-    width: 62.5%;
-    max-width: 62.5%;
-    padding: 0px 2px 4px 2px;
-    display:inline-block;
-    vertical-align:top;
-}
-
-.sandbox.sheet .multi-2-3 {
-    width: 66.66%;
-    max-width:66.66%;
-    padding: 0px 2px 4px 2px;
-    display:inline-block;
-    vertical-align:top;
-} 
-.sandbox.sheet .multi-3-4 {
-    width: 75%;
-    max-width:75%;
-    padding: 0px 2px 4px 2px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-5-6 {
-    width: 83.33%;
-    max-width:83.33%;
-    padding: 0px 2px 4px 2px;
-    display:inline-block;
-    vertical-align:top;
-}
-
-.sandbox.sheet .multi-1-1-col {
-    width:100%;
-    padding: 0px 1px;
-}
-.sandbox.sheet .multi-1-2-col {
-    wwidth:50%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-1-3-col {
-    width:33.33%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-1-4-col {
-    width:25%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-1-6-col {
-    width:16.66%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-1-8-col {
-    width:12.5%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-} 
-
-.sandbox.sheet .multi-3-8-col {
-    width: 37.5%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-5-8-col {
-    width: 62.5%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-2-3-col {
-    width:33.33%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-3-4-col {
-    width:75%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
-.sandbox.sheet .multi-5-6-col {
-    width: 83.33%;
-    padding: 0px 1px;
-    display:inline-block;
-    vertical-align:top;
-}
