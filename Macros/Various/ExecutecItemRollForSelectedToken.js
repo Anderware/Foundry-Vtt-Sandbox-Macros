@@ -1,4 +1,18 @@
-ExecutecItemRollForSelectedToken('Armed Combat','SkillRoll');
+// **************************************************************** 
+// Macro:        ExecutecItemRollForSelectedToken                                                    
+// Description:  Rolls a rollable citem property based on its name(key) 
+// Compability:  Tested with 
+//               Foundry 0.8.8 - Sandbox 0.10.1                  
+// ================================================================ 
+// Date       Version  Author               Description             
+// ---------- -------- -------------------- ----------------------- 
+// 2021-05-05 1.0.0    Ramses800            Macro created.
+// 2021-10-26 1.1.0    Ramses800            Added target         
+// **************************************************************** 
+
+// example
+
+ExecutecItemRollForSelectedToken('Axe','WEAPONATTACKROLL');
 
 async function ExecutecItemRollForSelectedToken(scItemName,sPropertyKey){
   // get selected token
@@ -20,8 +34,15 @@ async function ExecutecItemRollForSelectedToken(scItemName,sPropertyKey){
               if (rollexp.length>0){
                 // execute it 
                 let citemattributes = citem.attributes;              
-                let rollname = property.data.data.rollname;         
-                actor.rollSheetDice(rollexp,rollname,null,actor.data.data.attributes,citemattributes); 
+                let rollname = property.data.data.rollname; 
+                let rollid = [];   
+                rollid.push(property.data.data.rollid);   
+                let actorattributes = actor.data.data.attributes;
+                let number=1;
+                let targets = game.user.targets.ids; // get list of currently selected targets by the current user
+                let target = canvas.tokens.placeables.find(y=>y.id==targets[0]); // this will selected the first targeted token
+                let rollcitemID = citem.id;    
+                actor.rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,number,target,rollcitemID); 
               }
               else{
                 ui.notifications.warn('The roll expression for property ' + sPropertyKey + ' is empty');
