@@ -1,6 +1,8 @@
 // **************************************************************** 
 // Macro:        ExecuteActorRollForSelectedToken                                                    
-// Description:  Rolle a property based on its name                   
+// Description:  Rolls a rollable property based on its name(key) 
+// Compability:  Tested with 
+//               Foundry 0.8.8 - Sandbox 0.10.1                  
 // ================================================================ 
 // Date       Version  Author               Description             
 // ---------- -------- -------------------- ----------------------- 
@@ -8,6 +10,7 @@
 // 2021-10-26 1.1.0    Ramses800            Added target         
 // **************************************************************** 
 
+// example
 ExecuteActorRollForSelectedToken('ATTACK');
 
 async function  ExecuteActorRollForSelectedToken(sPropertyKey){
