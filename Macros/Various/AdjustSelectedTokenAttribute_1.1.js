@@ -1,7 +1,7 @@
 // **************************************************************** 
 // Macro:               AdjustSelectedTokenAttribute.js
 // Version Compability: Tested with
-//                      Sandbox 0.1.0 | Foundry 0.8.8
+//                      Sandbox 0.10.0 | Foundry 0.8.8
 // ================================================================ 
 // Date       Version  Author               Description             
 // ---------- -------- -------------------- -----------------------
