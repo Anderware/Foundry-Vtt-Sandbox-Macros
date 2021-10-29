@@ -1,4 +1,4 @@
-﻿/* **************************************************************** */
+/* **************************************************************** */
 /* Module:         css                                              */
 /* Description:    Theme oriented CSS                               */
 /*                 Using CSS variables to apply a coheherent        */
@@ -13,7 +13,8 @@
 /* ================================================================ */
 /* Date       Version  Author               Description             */
 /* ---------- -------- -------------------- ----------------------- */
-/* 2021-05-06 1.0.0    Ramses800            Module created.         */
+/* 2021-05-06 1.0.0    Ramses800            css created.            */
+/* 2021-10-29 1.1.0    Ramses800            fixed table background  */
 /* **************************************************************** */
 
 /*                                                                  */
@@ -286,7 +287,7 @@
 }
 
 .sandbox.sheet input[type=checkbox]:after{
-  content: '✓'; 
+  content: '?'; 
   color: var(--editablecolor) !important;
 }
 
@@ -299,7 +300,7 @@
 }
 
 .sandbox.sheet input[type=checkbox]:checked:after {
-  content: '✓'; 
+  content: '?'; 
   font-weight: bolder; 
   font-size: var(--input_font-size);
   color: var(--input_color) !important; 
@@ -425,7 +426,10 @@
   
 }
 
-
+/* table rows*/
+.sandbox.sheet tbody tr {
+   background-color: var(--table_background-color);
+}
 
 
 /* Table cells fonts */
@@ -535,4 +539,3 @@
 	max-width:83.33%;
 	min-width:83.33%;
 }
-
