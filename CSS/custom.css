@@ -109,6 +109,10 @@
   
 }
 .sandbox.sheet .tab-button:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+.sandbox.sheet a:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+
+.sandbox.sheet .profile-img:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
+
 .sandbox.sheet .leftarrow:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
 .sandbox.sheet .rightarrow:hover{filter: drop-shadow(var(--drop-shadow-size) var(--hovercolor));}
 
@@ -353,8 +357,6 @@
   
 }
 
-
-
 .sandbox.sheet .radio-element:hover  {text-shadow:var(--text-shadow-size)  var(--hovercolor);}
 
 /*badge */
@@ -385,6 +387,9 @@
 /* Rollable links*/
 .sandbox.sheet .rollable{color: var(--linkcolor);}
 .sandbox.sheet .rollable:hover{color: var(--hovercolor);}
+/*rollable die label*/
+.sandbox.sheet .rollable > div > i:hover{text-shadow: var(--text-shadow-size) var(--hovercolor);}
+
 /* links*/
 .sandbox.sheet .linkable{color:var(--linkcolor);}
 .sandbox.sheet .linkable:hover{color: var(--hovercolor);}
