@@ -7,11 +7,12 @@
 // Date       Version  Author               Description             
 // ---------- -------- -------------------- ----------------------- 
 // 2021-05-05 1.0.0    Ramses800            Macro created.
-// 2021-10-26 1.1.0    Ramses800            Added target         
+// 2021-10-26 1.1.0    Ramses800            Added target
+// 2021-11-04 1.2.0    Ramses800            Added roll dialogs support          
 // **************************************************************** 
 
 // example
-ExecuteActorRollForSelectedToken('ATTACK');
+ExecuteActorRollForSelectedToken('DODGE');
 
 async function  ExecuteActorRollForSelectedToken(sPropertyKey){
     // get selected token
@@ -35,14 +36,22 @@ async function  ExecuteActorRollForSelectedToken(sPropertyKey){
                 if (rollexp.length>0){
                   // execute it                    
                   let rollid = [];             
-                  let rollname = property.data.data.rollname;         
+                  let rollname = property.data.data.rollname;
+                  let hasDialog = property.data.data.hasdialog;
+                  let dialogID = property.data.data.dialogID;
+                  let useData = null;         
                   rollid.push(property.data.data.rollid);  
                   let citemattributes=null;
                   let number=1;
                   let targets = game.user.targets.ids; // get list of currently selected targets by the current user
                   let target = canvas.tokens.placeables.find(y=>y.id==targets[0]); // this will selected the first targeted token
-                  let rollcitemID = null       
-                  actor.rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,number,target,rollcitemID); 
+                  let rollcitemID = null;  
+                  if (hasDialog) {
+                    actor._sheet.generateRollDialog(dialogID, rollexp, rollname, rollid, actorattributes, citemattributes, number, rollcitemID, targets, useData);
+                  }
+                  else{     
+                    actor.rollSheetDice(rollexp,rollname,rollid,actorattributes,citemattributes,number,target,rollcitemID);
+                  } 
                 }
                 else{
                   ui.notifications.warn('The roll expression for property ' + sPropertyKey + ' is empty');
