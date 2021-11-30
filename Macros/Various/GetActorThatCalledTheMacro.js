@@ -17,10 +17,10 @@ async function RollNewValueForCallingActorProperty(propertykey,dieroll) {
     if(callingactor.data.data.attributes.hasOwnProperty(propertykey)){
       // roll new hp
       let roll_result = (await new Roll(dieroll).evaluate({async: true})).total.toString();
-      console.warn('New value:' + roll_result );
+      console.log('New value:' + roll_result );
       // update this actors property
       await callingactor.update({[`data.attributes.${propertykey}.value`]: roll_result});
-      console.warn('actor updated')
+      console.log('actor updated');
     }
     else{
       ui.notifications.warn('The actor(' + callingactor.data.name + ') does not have the property '+ propertykey);
