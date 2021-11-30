@@ -2,7 +2,8 @@
 // Macro:        AdjustSelectedTokenPropertyWithValue                                                    
 // Description:  Adds a value to an actor property based on its name(key) 
 // Compability:  Tested with 
-//               Foundry 0.8.8 - Sandbox 0.10.1                  
+//               Foundry 0.8.8 - Sandbox 0.10.1
+//               Foundry 0.8.9 - Sandbox 0.10.9                 
 // ================================================================ 
 // Date       Version  Author               Description             
 // ---------- -------- -------------------- ----------------------- 
