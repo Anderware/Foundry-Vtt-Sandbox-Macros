@@ -19,7 +19,9 @@ async function RollNewValueForCallingActorProperty(propertykey,dieroll) {
       let roll_result = (await new Roll(dieroll).evaluate({async: true})).total.toString();
       console.log('New value:' + roll_result );
       // update this actors property
-      await callingactor.update({[`data.attributes.${propertykey}.value`]: roll_result});
+      // when updating a value, always set 'modified:=true'
+      // when updating a max  , always set 'modmax:=true'
+      await callingactor.update({[`data.attributes.${propertykey}.value`]: roll_result,[`data.attributes.${propertykey}.modified`]: true});
       console.log('actor updated');
     }
     else{
