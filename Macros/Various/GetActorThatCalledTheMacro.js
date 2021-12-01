@@ -5,32 +5,32 @@
 // key 'hp'
 // ---------------------------------------
 
-RollNewValueForCallingActorProperty('hp','3d6');
 
-async function RollNewValueForCallingActorProperty(propertykey,dieroll) {
-  // get calling actor
-  let callingactor = GetCallingActor(event); // event is what triggered the macro, usually it is a MouseClick
-  
-  if (callingactor != null) {
-    console.log(callingactor.data.name);
-    // check that this actor has the hp attribute
-    if(callingactor.data.data.attributes.hasOwnProperty(propertykey)){
-      // roll new hp
-      let roll_result = (await new Roll(dieroll).evaluate({async: true})).total.toString();
-      console.log('New value:' + roll_result );
-      // update this actors property
-      // when updating a value, always set 'modified:=true'
-      // when updating a max  , always set 'modmax:=true'
-      await callingactor.update({[`data.attributes.${propertykey}.value`]: roll_result,[`data.attributes.${propertykey}.modified`]: true});
-      console.log('actor updated');
-    }
-    else{
-      ui.notifications.warn('The actor(' + callingactor.data.name + ') does not have the property '+ propertykey);
-    }
+let dieroll='3d6';
+let propertykey='hp';
+// get calling actor
+let callingactor = GetCallingActor(event); // event is what triggered the macro, usually it is a MouseClick
+
+if (callingactor != null) {
+  console.log(callingactor.data.name);
+  // roll new value
+  let roll_result = new Roll(dieroll).evaluate({async: false}).total.toString();
+  UpdateActorProperty(callingactor, propertykey, roll_result);
+} else {
+  ui.notifications.warn('The macro was not triggered from an actor');
+}
+
+async function UpdateActorProperty(actor, propertykey, newvalue) {
+  // check that this actor has the hp attribute
+  if (actor.data.data.attributes.hasOwnProperty(propertykey)) {
+    // update this actors property
+    // when updating a value, always set 'modified:=true'
+    // when updating a max  , always set 'modmax:=true'
+    await actor.update({[`data.attributes.${propertykey}.value`]: newvalue, [`data.attributes.${propertykey}.modified`]: true});
+  } else {
+    ui.notifications.warn('The actor(' + actor.data.name + ') does not have the property ' + propertykey);
   }
-  else{
-    ui.notifications.warn('The macro was not triggered from an actor');
-  }
+
 }
 
 // **************************************************************** 
