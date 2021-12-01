@@ -1,5 +1,7 @@
 // **************************************************************** 
 // Macro:               AdjustSelectedTokenProperties.js
+// Description:         Displays a dialog for the seleced token
+//                      with configured properties
 // Version Compability: Tested with
 //                      Sandbox 0.10.9 | Foundry 0.8.9
 // ================================================================ 
@@ -18,12 +20,17 @@
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 // 
 function Setting_PropertiesToAdjust() {
+  // Note on configuring this macro
+  // Property field:
+  //   propertykey - the key of the property, required
+  //   dieroll     - any normal die roll expression, not required
+  //   maxvalue    - limits the input, not required
+  //   minvalue    - limits the input, not required
   let objProperties = [
-    {'propertykey': 'Dexterity',  'dieroll': '3d6','maxvalue':'18','minvalue':'3'},
-    {'propertykey': 'Strength',   'dieroll': '3d6','maxvalue':'18','minvalue':'3'},
-    {'propertykey': 'Perception', 'dieroll': '3d6','maxvalue':'18','minvalue':'3'},
-    {'propertykey': 'hp', 'dieroll': '3d8','maxvalue':'','minvalue':'1'}
-    
+    {'propertykey': 'Dexterity', 'dieroll': '3d6', 'maxvalue': '18', 'minvalue': '3'},
+    {'propertykey': 'Strength', 'dieroll': '3d6', 'maxvalue': '18', 'minvalue': '3'},
+    {'propertykey': 'Perception', 'dieroll': '3d6', 'maxvalue': '18', 'minvalue': '3'},
+    {'propertykey': 'hp','dieroll': '4d8'}
   ];
   return JSON.stringify(objProperties);
 }
@@ -40,7 +47,7 @@ AdjustSelectedTokenProperties();
 // 
 
 
-function BuildTableRow(sPropertyTag, sPropertyKey, currentvalue = 0,sDieRoll,maxvalue='',minvalue='') {
+function BuildTableRow(sPropertyTag, sPropertyKey, currentvalue = 0, sDieRoll, maxvalue = '', minvalue = '') {
   let sNameToShow = '';
   if (sPropertyTag == "") {
     sNameToShow = sPropertyKey;
@@ -53,7 +60,7 @@ function BuildTableRow(sPropertyTag, sPropertyKey, currentvalue = 0,sDieRoll,max
        <td style="text-align:center;">` + currentvalue + `</td>
        <td><input class="spinner" style="width:48px;" type="number" id="property-` + sPropertyKey + `" name="` + sPropertyKey + `" value="` + currentvalue + `" max="` + maxvalue + `" min="` + minvalue + `"></td>
        <td><input class="die" style="width:64px;padding-right:5px;" type="text" id="` + sPropertyKey + `-die-roll" name="` + sPropertyKey + `-die-roll" value="` + sDieRoll + `">
-          <i onclick="RollNewValue('property-` + sPropertyKey + `','`+ sPropertyKey +`-die-roll')" title="Roll new value" class="rolldie fas fa-dice-d20"></i></td>
+          <i onclick="RollNewValue('property-` + sPropertyKey + `','` + sPropertyKey + `-die-roll')" title="Roll new value" class="rolldie fas fa-dice-d20"></i></td>
        </tr>`;
   return sBuildTableRow;
 }
@@ -61,7 +68,7 @@ function BuildTableRow(sPropertyTag, sPropertyKey, currentvalue = 0,sDieRoll,max
 function BuildHTML(token) {
   let actorid = token.actor.id;
   let actorlink = token.data.actorLink;
-  
+
 
   if (actorlink == false) {
     actorid = token.data._id;
@@ -75,10 +82,8 @@ function BuildHTML(token) {
   const attributes = token.actor.data.data.attributes;
   let arrPropertys = JSON.parse(Setting_PropertiesToAdjust());
   let propertytag;
-  let dieroll='';
-  let minvalue='';
-  let maxvalue='';
   
+
   if (arrPropertys.length > 0) {
     shtml += `<table>
        <thead> 
@@ -91,6 +96,9 @@ function BuildHTML(token) {
        </thead>
        <tbody>`;
     arrPropertys.forEach(function (property) {
+      let dieroll = '';
+      let minvalue = '';
+      let maxvalue = '';
       propertykey = property.propertykey;
       // check if actor has property    
       if (attributes.hasOwnProperty(propertykey)) {
@@ -99,10 +107,16 @@ function BuildHTML(token) {
         attribute = game.items.get(attributes[propertykey].id);
         // get the tag
         propertytag = attribute.data.name;
-        dieroll=property.dieroll;
-        maxvalue=property.maxvalue;
-        minvalue=property.minvalue;
-        shtml += BuildTableRow(propertytag, propertykey, currentvalue,dieroll,maxvalue,minvalue);
+        if (property.hasOwnProperty('dieroll')) {
+          dieroll = property.dieroll;
+        }
+        if(property.hasOwnProperty('maxvalue')){
+          maxvalue = property.maxvalue;
+        }
+        if(property.hasOwnProperty('minvalue')){
+          minvalue = property.minvalue;
+        }
+        shtml += BuildTableRow(propertytag, propertykey, currentvalue, dieroll, maxvalue, minvalue);
       }
     });
     shtml += `</tbody>
@@ -212,9 +226,9 @@ async function AdjustSelectedTokenProperties() {
                     // when updating a value, always set 'modified:=true'
                     // when updating a max  , always set 'modmax:=true'
                     if (i == 0) {
-                      finalupdatedata = {[`data.attributes.${propertykey}.value`]: stringvalue,[`data.attributes.${propertykey}.modified`]: true};
+                      finalupdatedata = {[`data.attributes.${propertykey}.value`]: stringvalue, [`data.attributes.${propertykey}.modified`]: true};
                     } else {
-                      updatedata = {[`data.attributes.${propertykey}.value`]: stringvalue,[`data.attributes.${propertykey}.modified`]: true};
+                      updatedata = {[`data.attributes.${propertykey}.value`]: stringvalue, [`data.attributes.${propertykey}.modified`]: true};
                       finalupdatedata = Object.assign(finalupdatedata, updatedata);
                     }
                   }
