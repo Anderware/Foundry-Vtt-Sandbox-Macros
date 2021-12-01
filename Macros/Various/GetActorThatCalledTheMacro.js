@@ -11,10 +11,10 @@ let propertykey='hp';
 // get calling actor
 let callingactor = GetCallingActor(event); // event is what triggered the macro, usually it is a MouseClick
 
-if (callingactor != null) {
-  console.log(callingactor.data.name);
+if (callingactor != null) {  
   // roll new value
   let roll_result = new Roll(dieroll).evaluate({async: false}).total.toString();
+  console.log('Updating actor ['+ callingactor.data.name + '] property ['+ propertykey +'] New value ['+ roll_result +']');
   UpdateActorProperty(callingactor, propertykey, roll_result);
 } else {
   ui.notifications.warn('The macro was not triggered from an actor');
@@ -64,14 +64,14 @@ function GetCallingActor(event) {
             if (actorid.length > 16) {
               // get secondary actor id
               actorid = actorid.substring(17);
-              console.log('Token Actor ' + actorid);
+              //console.log('Token Actor ' + actorid);
               //token = canvas.tokens.get(actorid);
               token = canvas.tokens.placeables.find(y=>y.id==actorid);
               if (token != null) {
                 returnactor = token.actor;
               }
             } else {
-              console.log('Actor ' + actorid);   // MwTr94GekOCihrC
+              //console.log('Actor ' + actorid);   // MwTr94GekOCihrC
               returnactor = game.actors.get(actorid);
             }
             // exit for loop
