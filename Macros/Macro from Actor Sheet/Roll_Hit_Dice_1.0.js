@@ -22,6 +22,29 @@ if (sheetactor!= null) {
   ui.notifications.warn('The macro was not triggered from an actor');
 }
 
+//                                                                  
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+//                                                                  
+//                            Functions                             
+//                                                                  
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+//                                                                  
+
+// **************************************************************** 
+// Function:            GetSheetActor
+// Version Compability: Tested with
+//                      Sandbox 0.10.9 | Foundry 0.8.9
+//                      Sandbox 0.10.11 | Foundry 0.8.9
+// Parameters:          event            
+// Return:              Returns the actor that called this macro
+//                      If no actor found, it returns null. 
+//                      This means generally that the macro have 
+//                      been run from the hot bar
+// ================================================================ 
+// Date       Version  Author               Description             
+// ---------- -------- -------------------- -----------------------
+// 2021-11-30 1.0.0    Ramses800            Macro created                          
+// ****************************************************************  
 function GetSheetActor(event) {
   let returnactor;
   let actorid = '';
@@ -59,6 +82,20 @@ function GetSheetActor(event) {
   return returnactor;
 }
 
+
+// **************************************************************** 
+// Function:            GetActorPropertyValue
+// Version Compability: Tested with
+//                      Sandbox 0.10.9 | Foundry 0.8.9
+//                      Sandbox 0.10.11 | Foundry 0.8.9
+// Parameters:          actor,propertykey            
+// Return:              Returns the value of an actor property 
+//                      If no value is found, it returns null. 
+// ================================================================ 
+// Date       Version  Author               Description             
+// ---------- -------- -------------------- -----------------------
+// 2021-11-30 1.0.0    Ramses800            Macro created                          
+// **************************************************************** 
 function GetActorPropertyValue(actor, propertykey) {
   let returnvalue;
   if (actor !== null && propertykey!=='' ) {
@@ -69,6 +106,18 @@ function GetActorPropertyValue(actor, propertykey) {
   return returnvalue;
 }
 
+// **************************************************************** 
+// Function:            SetActorPropertyValue
+// Version Compability: Tested with
+//                      Sandbox 0.10.9 | Foundry 0.8.9
+//                      Sandbox 0.10.11 | Foundry 0.8.9
+// Parameters:          actor,propertykey,newvalue,newmax            
+// Return:              Sets the value/max of an actor property  
+// ================================================================ 
+// Date       Version  Author               Description             
+// ---------- -------- -------------------- -----------------------
+// 2021-11-30 1.0.0    Ramses800            Macro created                          
+// **************************************************************** 
 async function SetActorPropertyValue(actor, propertykey, newvalue='',newmax='') {
   if (actor !== null && propertykey!=='' ) {
     // check that this actor has the attribute
