@@ -4,6 +4,8 @@ But! With some more javascript in your macro you can find out what actor trigger
 This approach uses the event chain of the button click and travels upwards in the sheet and finds the actor id(those random letters and numbers)
 With this, then a world of possibilities opens up for  macros on the sheet.
 
+See an example here https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Macros/Macro%20from%20Actor%20Sheet/Roll_Hit_Dice_1.0.js
+
 ## Version Compability
 This macro has been tested with the following versions
 
