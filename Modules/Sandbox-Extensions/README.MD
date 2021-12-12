@@ -75,7 +75,39 @@ Click an item in the result list to open the item.
 To filter the results, use the filter controls on the bottom.
 # Module Settings
 
-![module settings](README.assets/sbe_module_settings.webp)
+| Setting                               | Description                                                  | Default     |
+| ------------------------------------- | ------------------------------------------------------------ | ----------- |
+| Activate item deletion protection     | When activated, delete icons will be hidden as default, a checkbox for toggling the visibility of the delete icon is added to sheets window title. | true        |
+| Enforced key validation mode          | <b>Unchecked:</b> Sandbox standard - Keys are valid unless containing space, special characters or empty.<br>Keys for can be duplicate between datatypes except panels/multipanels<br><b>Checked:</b> Enforced - Keys are valid if containing only A-Z, a-z,0-9,_(underscore) and not empty.<br>Keys can not be duplicate between datatypes | false       |
+| Adapt item sheet size/position        | When checked, the starting size and position are adapted to item content.<br> Applies for GMs only. | true        |
+| Override item default tab             | When checked, the default(starting) tab when an item is displayed is Details or Attributes(for cItems)<br> Applies for GMs only. | true        |
+| Show item helpers                     | Show item helper menus on item sheets                        | true        |
+| Confirm batch overwrite               | Ask user for confirmation before applying batch overwrite(Autogenerate All,Clear All) | true        |
+| Convert key to case                   | Used for autogenerating key                                  | Upper case  |
+| Convert CSS to case                   | Used for autogenerating CSS class                            | Lower case  |
+| Transliterate non-latin characters    | When autogenerating key, any non-latin characters are transliterated into latin equivalents.<br>When <b>Enforced key validation mode</b> is checked, transliteration will be executed regardless of this setting.<br><b>Please note that using non-latin characters as key might not work in roll expressions</b> | true        |
+| Use prefix/suffix for autogenerating  | When autogenerating a field, add prefix and suffix           | true        |
+| Use property data type for prefix     | When autogenerating a property key, use the propertys data type for prefix | true        |
+| Prefix for property key               | Used for autogenerating property key when <b>Use property data type for prefix</b> is unchecked | PROPERTY    |
+| Prefix for simpletext property key    | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | TXT         |
+| Prefix for simplenumeric property key | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | NUM         |
+| Prefix for checkbox property key      | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | CHK         |
+| Prefix for radio property key         | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | RDO         |
+| Prefix for textarea property key      | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | TXA         |
+| Prefix for list property key          | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | LST         |
+| Prefix for label property key         | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | LBL         |
+| Prefix for badge property key         | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | BDG         |
+| Prefix for property key               | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | TBL         |
+| Prefix for button property key        | Used for autogenerating property key when <b>Use property data type for prefix</b> is checked | BTN         |
+| Prefix for panel key                  | Used for autogenerating key                                  | PANEL       |
+| Prefix for multipanel key             | Used for autogenerating key                                  | MULTIPANEL  |
+| Prefix for group key                  | Used for autogenerating key                                  | GROUP       |
+| Prefix for tab key                    | Used for autogenerating key                                  | TAB         |
+| Suffix for item fontgroup             | Used for autogenerating CSS class                            | FONTGROUP   |
+| Suffix for item inputgroup            | Used for autogenerating CSS class                            | INPUTGROUP  |
+| Suffix for item headergroup           | Used for autogenerating CSS class                            | HEADERGROUP |
+| Suffix for item roll id               | Used for autogenerating roll id                              | ROLL        |
+| Suffix for item roll name             | Used for autogenerating roll name                            | Roll        |
 
 
 
