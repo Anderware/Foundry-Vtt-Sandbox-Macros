@@ -16,6 +16,7 @@ This module has been tested with the following versions
 
  Sandbox              | Foundry          
  -------------------- | ---------------- 
+ 0.11.0               | 0.8.9            
  0.10.12<br />0.10.11 | 0.8.9            
  0.10.1               | 0.8.9<br />0.8.8 
 
@@ -50,6 +51,7 @@ Sandbox Extension requires the excellent module [CodeMirror for Foundry VTT](htt
 * Option for adapt item sheets size and position based on content automatically on open. Only for GMs
 * Option for automatic Latin conversion(transliteration) for key autogenerating support for many(!) alphabets(Using https://github.com/dzcpy/transliteration )
 * Key Checker   
+* Item Structure Checker
 * Supports item types  
   * Property, Panel, Multipanel, Group, Tab, cItem
 * All functions are optional and can be disabled in Settings
@@ -63,22 +65,35 @@ Sandbox Extension requires the excellent module [CodeMirror for Foundry VTT](htt
 
 ![](README.assets/sbe_item_deletion_protection.gif)
 
-## Key Checker
+## Item Structure & Key Checker
+
+Open the Checkers by going by the Game Settings page, on the the Module tab  
+![game_settings](README.assets/sbe_game_settings.png)  
+
+### Key Checker
 
 The Key Checker lists all Sandbox items and validates them according to the current validation mode.
-Open the Key Checker by going by the Game Settings page, on the the Module tab  
-![game_settings](README.assets/sbe_game_settings.png)  
 
 ![key_checker](README.assets/sbe_key_checker.png)
 Click an item in the result list to open the item.
 
 To filter the results, use the filter controls on the bottom.
+
+### Item Structure Checker
+
+![](README.assets/sbe_item_structure_checker.png)
+
+Click an item in the result list to open the item.
+
+To filter the results, use the filter controls on the bottom.
+
 # Module Settings
 
 | Setting                               | Description                                                  | Default     |
 | ------------------------------------- | ------------------------------------------------------------ | ----------- |
 | Activate item deletion protection     | When activated, delete icons will be hidden as default, a checkbox for toggling the visibility of the delete icon is added to sheets window title. | true        |
 | Enforced key validation mode          | <b>Unchecked:</b> Sandbox standard - Keys are valid unless containing space, special characters or empty.<br>Keys for can be duplicate between datatypes except panels/multipanels<br><b>Checked:</b> Enforced - Keys are valid if containing only A-Z, a-z,0-9,_(underscore) and not empty.<br>Keys can not be duplicate between datatypes | false       |
+| Show ID in sheet caption              | When checked, the item/actors ID will be shown in the sheets window title. Useful for debugging problem.<br/> Applies for GMs only. | false       |
 | Adapt item sheet size/position        | When checked, the starting size and position are adapted to item content.<br> Applies for GMs only. | true        |
 | Override item default tab             | When checked, the default(starting) tab when an item is displayed is Details or Attributes(for cItems)<br> Applies for GMs only. | true        |
 | Show item helpers                     | Show item helper menus on item sheets                        | true        |
