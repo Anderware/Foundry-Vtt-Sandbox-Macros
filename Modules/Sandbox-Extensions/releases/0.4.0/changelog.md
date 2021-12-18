@@ -1,5 +1,5 @@
 # Sandbox Extensions Change Log
-## Version 0.4.0 (2021-xx-xx)
+## Version 0.4.0 (2021-12-18)
 - Added Item Structure Checker
 - Added option Show ID in sheet caption. Only for GMs
 - Minor fixes
