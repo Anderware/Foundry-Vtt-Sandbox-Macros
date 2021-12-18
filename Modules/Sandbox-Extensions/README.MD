@@ -81,6 +81,8 @@ To filter the results, use the filter controls on the bottom.
 
 ### Item Structure Checker
 
+The Item Structure Checker validates the relation of the items(parent item and subitem)
+
 ![](README.assets/sbe_item_structure_checker.png)
 
 Click an item in the result list to open the item.
