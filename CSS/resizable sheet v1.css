@@ -4,7 +4,8 @@
 /* ================================================================ */
 /* Date       Version  Author               Description             */
 /* ---------- -------- -------------------- ----------------------- */
-/* 2021-10-26 1.0.0    Ramses800            Module created.         */
+/* 2021-10-26 1.0.0    Ramses800            CSS created.            */
+/* 2022-01-15 1.0.0    Ramses800            Updated .new-block      */
 /* **************************************************************** */
 
 /* ---------------------------------------------------------------- */
@@ -22,8 +23,9 @@
 .sandbox.sheet .new-block {
   padding: 0px 0px;
   width: 100%;
-	max-width:100%;
+  max-width:100%;
   min-width: 100%;
+  display: inline; /* 2022-01-15 Added this for multipanels row sequencing made by Sandbox*/
 }
 .sandbox.sheet .new-multiblock{    
   display: contents;    
