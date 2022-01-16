@@ -1,0 +1,63 @@
+{
+  "name": "sandbox-extensions",
+  "title": "Sandbox Extensions",
+  "description": "Extends functions to Sandbox System",
+  "author":"anders-forslund",
+  "authors": [
+    {
+      "name": "anders-forslund",
+      "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "version": "0.4.1",
+  "minimumCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "9.242",
+  "dependencies": [
+    {
+      "name": "sandbox",
+      "type": "system"
+    },                 
+    {
+        "name": "_CodeMirror",
+        "type": "module",
+        "manifest": "https://raw.githubusercontent.com/League-of-Foundry-Developers/codemirror-lib/master/module.json"	
+    }
+  ], 
+  "styles": [
+    "styles/sandbox-extensions.css",
+    "styles/sandbox-extensions-log.css",
+    "styles/sandbox-extensions-codemirror.css"
+  ],   
+  "esmodules": [
+    "scripts/sandbox-extensions.js",
+    "scripts/module-settings-form.js",
+    "scripts/sandbox-key-checker-form.js",
+    "scripts/sandbox-item-checker-form.js",
+    "scripts/sandbox-key-validate.js",
+    "scripts/sandbox-expression-editor-form.js",
+    "scripts/sandbox-expressions-code-mirror.js",
+    "scripts/transliteration_2.1.8_bundle.esm.min.js",
+    "scripts/sbe-tools-form.js",
+    "scripts/sandbox-extensions-macro-helpers.js"
+    
+    
+  ],
+  "manifest": "https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/Sandbox-Extensions/releases/module.json",
+  "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/Sandbox-Extensions",
+  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/raw/main/Modules/Sandbox-Extensions/releases/0.4.1/sandbox-extensions-0.4.1.zip",
+  "readme": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/README.MD",
+  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/releases/0.4.1/changelog.md",
+  "media": [
+      {
+          "type": "icon",
+          "url": "https://avatars.githubusercontent.com/u/81265884"
+      }
+  ]
+}
