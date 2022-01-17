@@ -8,11 +8,15 @@ Builtin support for
 
 - Game system Sandbox chat result style
 - Dice So Nice
+## Installation
+### Manifest URL
+https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/FUx-Dice-Roller/releases/module.json
+
+See here on help on how to use the manifest URL to install a module  
+[Foundry Wiki - How to install module](https://foundryvtt.wiki/en/basics/Modules) 
 
 ## Variants
-
 ### FU v2
-
 As taken from FU v2 beta
 
 #### For game system Sandbox
