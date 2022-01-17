@@ -11,7 +11,7 @@ Builtin support for
 ## Installation
 ### Manifest URL
 https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/FUx-Dice-Roller/releases/module.json
-https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/FUx%20Dice%20Roller/releases/module.json
+
 
 See here on help on how to use the manifest URL to install a module  
 [Foundry Wiki - How to install module](https://foundryvtt.wiki/en/basics/Modules) 
