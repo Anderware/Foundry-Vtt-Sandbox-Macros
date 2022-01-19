@@ -1,6 +1,6 @@
 # FUx Dice Roller
 
-Dice roller for FreeForm Universal(FU) RPG Classic & v2, Action Tales! RPG, Neon City Overdrive RPG
+Dice roller for FreeForm Universal(FU) RPG Classic & v2, Action Tales! RPG, Neon City Overdrive RPG, Earthdawn - Age Of Legend
 
 The dice roller is not dependent on any specific Foundry game system but can used in any one.
 
