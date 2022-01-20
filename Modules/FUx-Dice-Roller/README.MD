@@ -39,6 +39,13 @@ In Classic, the roller will reduce selected Action(Start + Bonus)/Danger(Penalty
 The oracle used for Classic is the alternative numbering(1-3 Bad, 4-6 Good result) and not the default Even/Odd due to programming reasons.
 
 ![FU Classic](readme.assets/FU_Classic.png)
+### Earthdawn - Age Of Legend
+
+In Classic, the roller will reduce selected Action(Start + Bonus)/Danger(Penalty)dice before the roll
+
+The oracle used for Earthdawn - Age Of Legend is the alternative numbering(1-3 Bad, 4-6 Good result) and not the default Even/Odd due to programming reasons.
+
+![FU Classic](readme.assets/ED_AoL.png)
 
 ## Launching FUx Dice Roller
 
