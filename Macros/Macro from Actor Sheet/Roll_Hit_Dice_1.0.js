@@ -89,6 +89,7 @@ function GetSheetActor(event) {
 // Version Compability: Tested with
 //                      Sandbox 0.10.9 | Foundry 0.8.9
 //                      Sandbox 0.10.11 | Foundry 0.8.9
+//                      Sandbox 0.12.0 | Foundry 9.242
 // Parameters:          actor,propertykey            
 // Return:              Returns the value of an actor property 
 //                      If no value is found, it returns null. 
@@ -112,6 +113,7 @@ function GetActorPropertyValue(actor, propertykey) {
 // Version Compability: Tested with
 //                      Sandbox 0.10.9 | Foundry 0.8.9
 //                      Sandbox 0.10.11 | Foundry 0.8.9
+//                      Sandbox 0.12.0 | Foundry 9.242
 // Parameters:          actor,propertykey,newvalue,newmax            
 // Return:              Sets the value/max of an actor property  
 // ================================================================ 
