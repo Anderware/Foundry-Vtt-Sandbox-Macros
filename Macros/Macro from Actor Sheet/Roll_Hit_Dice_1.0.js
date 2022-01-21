@@ -35,6 +35,7 @@ if (sheetactor!= null) {
 // Version Compability: Tested with
 //                      Sandbox 0.10.9 | Foundry 0.8.9
 //                      Sandbox 0.10.11 | Foundry 0.8.9
+//                      Sandbox 0.12.0 | Foundry 9.242
 // Parameters:          event            
 // Return:              Returns the actor that called this macro
 //                      If no actor found, it returns null. 
