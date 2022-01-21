@@ -13,3 +13,4 @@ This macro has been tested with the following versions
 Sandbox  | Foundry
 -------  | ----------
 0.10.11   | 0.8.9
+0.12.0   | 9.242
