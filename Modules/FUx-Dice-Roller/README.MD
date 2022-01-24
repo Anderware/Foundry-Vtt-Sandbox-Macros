@@ -7,13 +7,15 @@ Builtin support for
 - Game system Sandbox chat result style
 - Dice So Nice
 
-The dice roller is not dependent on any specific Foundry game system but can used in any one.
+The dice roller is not dependent on any specific Foundry game system but can used in any game system.
 ### Recommended Foundry Game systems
 - [Sandbox System Builder](https://foundryvtt.com/packages/sandbox)
 - [Simple World-Building](https://foundryvtt.com/packages/worldbuilding)
 
 ![fux_fu_v2](readme.assets/fux_fu_v2.gif)
 ## Installation
+### Directly inside Foundry
+FUx Dice Roller can be installed from Foundry´s configuration meny under "Add-on Module", and choose "Install module", filter package for "FUx Dice Roller"
 ### Manifest URL
 https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/FUx-Dice-Roller/releases/module.json
 
