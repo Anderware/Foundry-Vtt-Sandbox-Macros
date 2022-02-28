@@ -8,12 +8,13 @@ and whatever without having to open each character sheet.
 - Also possible to trigger macros
 ## Version Compability
 This macro has been tested with the following versions
-Sandbox  | Foundry
--------  | ----------
-0.8.6    | 0.7.9
-0.9.26   | 0.8.8
-0.9.27   | 0.8.8
-0.10.0   | 0.8.8
+Sandbox  | Foundry     | Macro version |
+-------  | ----------  | ------------- |
+0.8.6    | 0.7.9       |               |
+0.9.26   | 0.8.8       |               |
+0.9.27   | 0.8.8       |               |
+0.10.0   | 0.8.8       | 2.06          |
+0.12.2   | 9.249       | 2.07          |
 
 
 
