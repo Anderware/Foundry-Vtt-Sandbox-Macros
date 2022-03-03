@@ -3,8 +3,7 @@
 // Description:         Displays a dialog for the selected token
 //                      with configured properties
 // Version Compability: Tested with
-//                      Sandbox 0.10.9 | Foundry 0.8.9
-//                      Sandbox 0.12.2 | Foundry 9.249
+//                      Sandbox 0.12.2 | Foundry 9.251
 // ================================================================ 
 // Date       Version  Author               Description             
 // ---------- -------- -------------------- -----------------------
