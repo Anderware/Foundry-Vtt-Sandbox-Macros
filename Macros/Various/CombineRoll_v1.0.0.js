@@ -1,3 +1,15 @@
+// **************************************************************** 
+// Macro:               CombineRoll 
+// Description:         Displays a dialog for player characters
+//                      allowing them to combine(average) simplenumeric 
+//                      properties and roll against them
+// Version Compability: Tested with
+//                      Sandbox 0.12.2 | Foundry 9.251                      
+// ================================================================ 
+// Date       Version  Author               Description             
+// ---------- -------- -------------------- -----------------------
+// 2022-03-04 1.0.0    Ramses800            Macro created 
+// ****************************************************************   
 //                                                                  
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 //                                                                  
@@ -90,13 +102,7 @@ function Setting_FormWidth(){return 0;} // set to 0 to autosize
 //                                                                  
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 //         
-// **************************************************************** 
-// Macro:         Macro Dialog Example                        
-// ================================================================ 
-// Date       Version  Author               Description             
-// ---------- -------- -------------------- -----------------------
-// 2022-03-04 1.0.0    Ramses800            Macro created 
-// ****************************************************************                                                                                                                                         
+                                                                                                                                      
 function macroTitle() {
   let thismacroname=`Roll against combined average of players values `;  
   return thismacroname;  
