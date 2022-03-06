@@ -1,5 +1,6 @@
 # Enable standard Foundry chat messages for text messages
-With this modification, you can use the 
+With this modification, you wheneevr you write a normal text chat message, it will use the standard Foundry chat message format/template instead of Sandbox customized.   
+Sandbox rolls(from actor or as free roll(meaning dice command in the chat window)) will still use the Sandbox format.
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
 ##  Warnings, notes and disclaimers
