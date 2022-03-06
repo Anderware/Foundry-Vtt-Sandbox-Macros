@@ -20,6 +20,7 @@ This macro has been tested with the following versions
 Sandbox  | Foundry
 -------  | ----------
 0.10.1   | 0.8.8
+0.12.2   | 9.251
 
 Note. This have only been tested on a self-hosted Foundry VTT on Windows 10.  
 If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
