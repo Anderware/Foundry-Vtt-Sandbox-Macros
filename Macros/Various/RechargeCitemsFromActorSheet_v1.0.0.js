@@ -11,8 +11,7 @@
 // get sheetactor
 let sheetactor= GetSheetActor(event); 
 
-if (sheetactor!= null) {
-  console.log(sheetactor); 
+if (sheetactor!= null) { 
   // Loop all actors cItems
   for(let i=0; i<sheetactor.data.data.citems.length;i++){
     let citem=sheetactor.data.data.citems[i]; 
@@ -81,6 +80,7 @@ if (sheetactor!= null) {
 //                      Sandbox 0.10.11 | Foundry 0.8.9
 //                      Sandbox 0.12.0 | Foundry 9.242
 //                      Sandbox 0.12.2 | Foundry 9.249
+//                      Sandbox 0.12.4 | Foundry 9.255
 // Parameters:          event            
 // Return:              Returns the actor that called this macro
 //                      If no actor found, it returns null. 
