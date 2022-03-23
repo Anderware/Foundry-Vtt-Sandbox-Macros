@@ -22,19 +22,19 @@ if (sheetactor!= null) {
       // -------   
       // by name
       // ------- 
-      let citemnames=['Book of Truth','Magic Wand'];
+      let citemnames=['Book of Lies','Magic Wand'];
       if (citemnames.includes(citem.name)){
-        // console.log(citem.name + ' Matches name'); 
+        console.log(citem.name + ' Matches name'); 
         brechargethis=true;
       } 
       // by citem group(key)
-      let groupkey='GROUP_ITEMS'
+      let groupkey='GROUP_ITEMSX'
       if (citem.groups.length>0){                         
         // loop all the groups of this citem                 
         for(let iGroup=0;iGroup<citem.groups.length;iGroup++){ 
           // check if this is the desired group 
           if(citem.groups[iGroup].ikey==groupkey){ 
-            // console.log(citem.name + ' Matches group');
+            console.log(citem.name + ' Matches group');
             brechargethis=true;
           }
         }
@@ -45,10 +45,10 @@ if (sheetactor!= null) {
       let citempropertykey='ItemGroup';
       let citempropertyvalue='Miscellaneous'; 
       // check if citem has property
-      if (citem.hasOwnProperty(citempropertykey)){ 
+      if (citem.attributes.hasOwnProperty(citempropertykey)){ 
         // check if property value is a match
         if(citem.attributes[citempropertykey].value==citempropertyvalue){ 
-          // console.log(citem.name +' Matches citem property');
+          console.log(citem.name +' Matches citem property');
           brechargethis=true;
         }
       }
