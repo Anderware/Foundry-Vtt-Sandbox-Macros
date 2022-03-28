@@ -26,7 +26,7 @@ Sandbox  | FoundryVTT
 
 **AFTER MAKING A BACKUP OF THE ORIGINAL FILE**, edit the file \Data\systems\sandbox\module\gactorsheet.js like this:
 
-In gactorsheet.js , find the function starting with 
+In gactorsheet.js , find the method starting with 
 ``` javascript 
 async refreshCItems(basehtml) {
 ```
