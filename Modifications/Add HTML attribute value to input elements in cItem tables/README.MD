@@ -139,5 +139,6 @@ else if (propdata.datatype === "simplenumeric") {
 
 Save the file
 ## Step 5 
-In Foundry press F5 to refresh(reload the scripts) 
+In Foundry press F5 to refresh(reload the scripts)
+
 Rebuild template and reload actors.
