@@ -14,7 +14,7 @@ The content of this article has been tested with the following versions
 
 | Sandbox | Foundry | Monks Enhanced Journals |
 | ------- | ------- | ----------------------- |
-| 0.12.7  | 9.55    | 1.0.52                  |
+| 0.12.7  | 9.255    | 1.0.52                  |
 
 ##  Warnings, notes and disclaimers
 
