@@ -2,7 +2,7 @@
 This macro displays a table with configured cItems for the currently selected tokens and has the following features
 - Activate/deactivate cItems with a ACTIVATION MOD
 - Add/remove configured cItems to/from tokens/actors
-- Updates the table if any currentlu actor/tokens are updated elsewhere
+- Updates the table if any currently displayed tokens/actors are updated elsewhere
 
 ![selectedtokenscitems](https://user-images.githubusercontent.com/81265884/165173242-51a690d4-d926-406a-b9f8-397ef1334eec.gif)
 
