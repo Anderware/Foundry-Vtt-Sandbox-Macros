@@ -218,7 +218,7 @@ else {
 } 
 ```
 
-Modify it to like like this
+Modify it to this
 
 ```javascript
 // Create the owned item
