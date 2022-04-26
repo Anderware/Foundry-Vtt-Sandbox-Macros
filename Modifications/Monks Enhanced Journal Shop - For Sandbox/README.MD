@@ -14,7 +14,7 @@ The content of this article has been tested with the following versions
 
 | Sandbox | Foundry | Monks Enhanced Journals |
 | ------- | ------- | ----------------------- |
-| 0.12.7  | 9.255    | 1.0.52                  |
+| 0.12.4  | 9.255    | 1.0.52                  |
 
 ##  Warnings, notes and disclaimers
 
@@ -230,45 +230,64 @@ else {
         // check that actor has citem
         let ciKey=item.data.ciKey;
         let citem = actor.data.data.citems.find(y=>y.ciKey == ciKey);
-        if (citem!=null){
-            // increase number 
-            let newnumber=parseInt(citem.number)+result.quantity;
-            let citemIDs = duplicate(actor.data.data.citems);
-            let citemNew = citemIDs.find(y => y.id == citem.id);
-            citemNew.number = newnumber;
-            await actor.update({ "data.citems": citemIDs });
+        let citemIDs;
+        let citemNew;
+        let newuses;
+        if (citem!=null){   
+          console.warn(citem);
+          // increase number 
+          let newnumber=parseInt(citem.number)+result.quantity;              
+          // account for uses
+          newuses=parseInt(citem.uses) + (Math.round(citem.maxuses/citem.number)*result.quantity);                          
+          citemIDs = duplicate(actor.data.data.citems);
+          citemNew = citemIDs.find(y => y.id == citem.id);
+          citemNew.number = newnumber;                                
+          citemNew.uses = parseInt(newuses);
+          await actor.update({ "data.citems": citemIDs });
         } else {  
+            // actor does not have this citem
             // get citem from game db
             citem=await game.items.find(y=>y.data.data.ciKey == ciKey);
-            if (citem!=null){
+            if (citem!=null){               
                 // prepare citem to be added to actor
-                let subitems =await actor.addcItem(citem,null,null,result.quantity);
+                let subitems =await actor.addcItem(citem,null,null,result.quantity);                                            
                 if (actor.isToken) {
                     let myToken = canvas.tokens.get(actor.token.id);
                     await myToken.document.update({ "actorData.data.citems": subitems });
                 }
-                else {
+                else {                                    
                     await actor.update({ "data.citems": subitems });
+                }  
+                // if bought quantity is more than 1, adjust uses 
+                // (seems to be a small bug in Sandbox addcItem that only adds uses for 1 item regardless )
+                if(result.quantity>1){
+                  citem = actor.data.data.citems.find(y=>y.ciKey == ciKey);
+                  newuses=parseInt(citem.maxuses*result.quantity);
+                  citemIDs = duplicate(actor.data.data.citems);
+                  citemNew = citemIDs.find(y => y.id == citem.id);
+                  citemNew.uses = parseInt(newuses); 
+                  await actor.update({ "data.citems": citemIDs });
                 }
             }
-        }
+          }
     } else {
-        let itemData = duplicate(item);
-        delete itemData._id;
-        this.setValue(itemData, quantityname(), result.quantity);
-        await actor.createEmbeddedDocuments("Item", [itemData]);
+      let itemData = duplicate(item);
+      delete itemData._id;
+      this.setValue(itemData, quantityname(), result.quantity);
+      await actor.createEmbeddedDocuments("Item", [itemData]);
     }
 
     MonksEnhancedJournal.emit("purchaseItem",
-                              {
-        shopid: this.object.id,
-        itemid: item._id,
-        actorid: actor.id,
-        user: game.user.id,
-        quantity: result.quantity,
-        purchase: true
-    });
+        {
+            shopid: this.object.id,
+            itemid: item._id,
+            actorid: actor.id,
+            user: game.user.id,
+            quantity: result.quantity,
+            purchase: true
+        });
 }
+
 ```
 
 Save the file
