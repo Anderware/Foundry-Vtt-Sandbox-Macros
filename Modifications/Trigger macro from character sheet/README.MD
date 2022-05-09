@@ -1,4 +1,4 @@
-# Trigger macro from Sandbox character sheet
+# Trigger macro from Sandbox character sheet roll expression
 If you dont mind some minor modification of sandbox core files, this can be done quite easily.
 
 This modification uses User Flags to carry arguments to the selected macro.(It is also possible to use the module Furnace for this but in this mod, flags works well enough)
