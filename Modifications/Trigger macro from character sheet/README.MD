@@ -74,7 +74,7 @@ add
             let objargs;       
             // get actor information
             //let objActorData={actorId: this._id, actorLink: this.data.token.actorLink};   // for Sandbox pre 0.12     
-            let objActorData={actorId: this.id, actorLink: this.data.token.actorLink}; 
+            let objActorData={actorId: this.id, actorLink: !this.isToken};                  // for Sandbox 0.12+
             // check if any arguments were supplied
             if (rollid[0].length>0){
               args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);
