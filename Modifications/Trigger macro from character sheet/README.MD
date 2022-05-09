@@ -7,9 +7,10 @@ The GIF below showcases a macro([RollMyDice](https://github.com/Anderware/Foundr
 
 ![MacroFromSheet_2 3_ffm](https://user-images.githubusercontent.com/81265884/130851674-ce0be728-d217-4164-894e-c8f890202fe6.gif)
 
-## As always
-* Make a backup of any Sandbox file you edit __**before**__ any editing
-* Any changes you have made to Sandbox core files will be overwritten when updating Sandbox to a newer version so save your edits somewhere to re-apply them again 
+# Warnings, notes and disclaimers
+📌 Make a backup of your Sandbox world before any editing! This modification, if implemented incorrectly or in a untested version(of Foundry/Sandbox) can corrupt your data. You have been warned.
+📌 Make a backup of any Sandbox core file you edit before any editing
+⚠️ Any changes you have made to Sandbox core files will be overwritten when updating Sandbox to a newer version so save your edits somewhere to re-apply them again
 
 ## Version Compability
 This modification has been tested with the following versions
@@ -72,7 +73,8 @@ add
             let args;
             let objargs;       
             // get actor information
-            let objActorData={actorId: this.id, actorLink: this.data.token.actorLink};        
+            //let objActorData={actorId: this._id, actorLink: this.data.token.actorLink};   // for Sandbox pre 0.12     
+            let objActorData={actorId: this.id, actorLink: this.data.token.actorLink}; 
             // check if any arguments were supplied
             if (rollid[0].length>0){
               args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);
