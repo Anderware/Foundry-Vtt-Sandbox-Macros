@@ -20,6 +20,7 @@ Sandbox  | Foundry
 0.9.27   | 0.8.8   
 0.9.28   | 0.8.8   
 0.10.0   | 0.8.8   
+0.12.4   | 9.255 
 
 
 
@@ -71,7 +72,7 @@ add
             let args;
             let objargs;       
             // get actor information
-            let objActorData={actorId: this._id, actorLink: this.data.token.actorLink};         
+            let objActorData={actorId: this.id, actorLink: this.data.token.actorLink};        
             // check if any arguments were supplied
             if (rollid[0].length>0){
               args=await auxMeth.autoParser(rollid[0],actorattributes,citemattributes,true,false,number);
