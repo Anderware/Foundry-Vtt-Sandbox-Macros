@@ -1,4 +1,8 @@
+# Sandbox Macro Helpers
 A collection of macro functions
+
+Please note that in order to use them, you need to include their actual code(found in the js-file) into your macro
+
 ```
 // ---------------------------------------------------------------
 // Functions for getting an actor
