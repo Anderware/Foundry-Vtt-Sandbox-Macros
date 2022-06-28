@@ -13,8 +13,10 @@ Sandbox  | Foundry
 0.9.27   | 0.8.8
 0.9.28   | 0.8.8
 0.10.0   | 0.8.8
+0.13.4   | 9.269
 
 # Specials
+## For Sandbox versions prior to 0.13
 Please use a custom css for the class roll-result to make the resulting chat message window big enough 
 ``` css
  /* Custom CSS */
