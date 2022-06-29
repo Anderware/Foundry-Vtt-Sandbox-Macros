@@ -16,9 +16,10 @@
       "path": "languages/en.json"
     }
   ],
-  "version": "0.4.1",
-  "minimumCoreVersion": "0.8.8",
-  "compatibleCoreVersion": "9.242",
+  "version": "0.4.2",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "9",
+  "socket": "true",
   "dependencies": [
     {
       "name": "sandbox",
@@ -37,6 +38,8 @@
   ],   
   "esmodules": [
     "scripts/sandbox-extensions.js",
+    "scripts/sbe-constants-item-attribute.js",
+    "scripts/sbe-string-case.js",
     "scripts/module-settings-form.js",
     "scripts/sandbox-key-checker-form.js",
     "scripts/sandbox-item-checker-form.js",
@@ -45,15 +48,17 @@
     "scripts/sandbox-expressions-code-mirror.js",
     "scripts/transliteration_2.1.8_bundle.esm.min.js",
     "scripts/sbe-tools-form.js",
-    "scripts/sandbox-extensions-macro-helpers.js"
+    "scripts/sandbox-extensions-macro-helpers.js",
+    "scripts/sbe-info-form.js",
+    "scripts/sbe-item-data-export.js"
     
     
   ],
   "manifest": "https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/Sandbox-Extensions/releases/module.json",
   "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/Sandbox-Extensions",
-  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/raw/main/Modules/Sandbox-Extensions/releases/0.4.1/sandbox-extensions-0.4.1.zip",
+  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/raw/main/Modules/Sandbox-Extensions/releases/0.4.2/sandbox-extensions-0.4.2.zip",
   "readme": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/README.MD",
-  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/releases/0.4.1/changelog.md",
+  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/Sandbox-Extensions/releases/0.4.2/changelog.md",
   "media": [
       {
           "type": "icon",
