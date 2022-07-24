@@ -21,6 +21,7 @@ Sandbox  | Foundry
 -------  | ----------
 0.10.1   | 0.8.8
 0.12.2   | 9.251
+0.13.4   | 9.269
 
 Note. This have only been tested on a self-hosted Foundry VTT on Windows 10.  
 If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
