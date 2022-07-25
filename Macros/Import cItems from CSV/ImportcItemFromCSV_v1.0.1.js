@@ -437,6 +437,7 @@
                                 // base mandatory data
                                 let newitemdata={
                                   "name":sItemname,
+                                  "data.attributes.name":sItemname,
                                   "folder":importfolder.data._id
                                 };
                                 // add optional data
@@ -467,7 +468,7 @@
                                   } 
                                 } 
                                 // make a clone of the template
-                                newcitem=await citemtemplate.clone(newitemdata, {save: true}); 
+                                newcitem=await citemtemplate.clone(newitemdata, {save: true,keepEmbeddedIds:false}); 
                                 //bUpdateThis=true;
                                 bNewcitem=true;
                               }
