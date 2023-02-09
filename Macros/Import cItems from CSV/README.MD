@@ -17,11 +17,12 @@ Why? Because Remove Folder just does that, it does not remove the items in the f
 ## Version Compability
 This macro has been tested with the following versions
 
-Sandbox  | Foundry
--------  | ----------
-0.10.1   | 0.8.8
-0.12.2   | 9.251
-0.13.4   | 9.269
+Sandbox  | Foundry    | Macro Version | Notes
+-------  | ---------- | ------------- | -----
+0.10.1   | 0.8.8      | 1.0.1         | :warning: Not compatible with Foundry 10x
+0.12.2   | 9.251      | 1.0.1         | :warning: Not compatible with Foundry 10x
+0.13.4   | 9.269      | 1.0.1         | :warning: Not compatible with Foundry 10x
+0.14.0   | 10.291     | 1.1.0         | :warning: Not compatible with Foundry 9x
 
 Note. This have only been tested on a self-hosted Foundry VTT on Windows 10.  
 If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
