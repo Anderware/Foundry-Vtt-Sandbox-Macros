@@ -61,7 +61,7 @@ Setting|Comment
 -------| ------
 CSV file| Use the filepicker to select the CSV file
 List separator character used in CSV-file| What character the macro should use to determine fields in the file. If the file does not match this a error will be displayed.
-Update existing items with data from import file|If this is not checked, any already existing cItems will not be updated
+Update existing items with data from import file|If this is not checked, any already existing cItems will not be updated. Default check for existence is the name of the citem and that it exist in the specified import folder
 For update of existing items, require identical Group configuration|This is used to validate and identify an existing cItem. Can be unchecked for a more relaxed check
 
 ### Run the import
