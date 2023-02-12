@@ -23,6 +23,7 @@ Sandbox  | Foundry    | Macro Version | Notes
 0.12.2   | 9.251      | 1.0.1         | :warning: Not compatible with Foundry 10x
 0.13.4   | 9.269      | 1.0.1         | :warning: Not compatible with Foundry 10x
 0.14.0   | 10.291     | 1.1.0         | :warning: Not compatible with Foundry 9x
+0.14.0   | 10.291     | 1.2.0         | :warning: Not compatible with Foundry 9x<br>Folders will now be created if not existing and are hierarchical named
 
 Note. This have only been tested on a self-hosted Foundry VTT on Windows 10.  
 If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
@@ -99,9 +100,21 @@ Header key|Description|Can be empty
 ------|-------|--------------
 Name|The name of the cItem|No
 Template|The name of the cItem template that must exist in your world. Different templates can be used in the same file|No
-ImportFolder|Where the cItem should be imported into, this must exist in your world|No
+ImportFolder|Where the cItem should be imported into, this must exist in your world<br> As of 1.2, folders are created if not existing|No
 Image|Valid path to the image file for the cItem|This can be empty
 Description|Description is the text on the Bio/info-tab and can be a valid HTML string. Just make sure that any text here dont conflict with the list separator setting|This can be empty
+
+### Hierarchical folder names(version 1.2)
+From this version, import folder name must be a full path  
+Examples  
+```
+Imports/Items/Weapons  
+Imports/Items/Containers  
+Imports/Skills/Containers  
+```
+Note that default maximum number of levels in Foundry is 3  
+The import will work with more levels but unless a suitable module is active, only 3 levels will be shown(the citem will still be there, just not shown.)
+If more levels are needed, use a suitable module to display them.
 
 ## Custom headers
 After the compulsory headers, you can add cItem property keys that exist in your cItem template item.
