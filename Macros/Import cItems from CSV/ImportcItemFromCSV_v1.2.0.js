@@ -102,7 +102,7 @@
           <label  for="${thisMacroName()}_chkUpdatesRequireIdenticalGroups">For update of existing items, require identical Group configuration</label>
         </td>
         <td style="text-align:center"> 
-          <input  type="checkbox" id="${thisMacroName()}_chkUpdatesRequireIdenticalGroups" checked>       
+          <input  type="checkbox" id="${thisMacroName()}_chkUpdatesRequireIdenticalGroups" >       
         </td>
       </tr>
     </table>
