@@ -47,7 +47,8 @@ _Example._
 If you have added any MODs to the cItems(either the template item or imported ones after the import, you can still update the citems properties in a future update without removing the MODs.
 
 ### Create import folders
-Specified import folders must exist
+Specified import folders must exist.  
+As of macro version 1.2, folders are now created if not existing
 
 ## Step 2 - Prepare your CSV file
 See section of CSV formatting below
