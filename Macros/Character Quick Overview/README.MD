@@ -6,6 +6,9 @@ and whatever without having to open each character sheet.
 - With customizable headers(replaces those codelike keys)
 - If the properties you specified to list has a roll expression, you can trigger that roll directly from the list. Useful for npcs or the more miniature/skirmish kind of games.
 - Also possible to trigger macros
+
+For details, see comments in the macro
+
 ## Version Compability
 This macro has been tested with the following versions
 Sandbox  | Foundry     | Macro version |
@@ -13,8 +16,9 @@ Sandbox  | Foundry     | Macro version |
 0.8.6    | 0.7.9       |               |
 0.9.26   | 0.8.8       |               |
 0.9.27   | 0.8.8       |               |
-0.10.0   | 0.8.8       | 2.06          |
-0.12.2   | 9.249       | 2.08          |
+0.10.0   | 0.8.8       | 2.0.6         |
+0.12.2   | 9.249       | 2.0.8         |
+0.14.0   | 10.291      | 2.1.0         |
 
 
 
