@@ -24,8 +24,9 @@ Sandbox  | Foundry    | Macro Version | Notes
 0.13.4   | 9.269      | 1.0.1         | :warning: Not compatible with Foundry 10x
 0.14.0   | 10.291     | 1.1.0         | :warning: Not compatible with Foundry 9x
 0.14.0   | 10.291     | 1.2.0         | :warning: Not compatible with Foundry 9x<br>Folders will now be created if not existing and are hierarchical named
+0.14.1   | 11.315     | 1.2.0         | :warning: Not compatible with Foundry 9x
 
-Note. This have only been tested on a self-hosted Foundry VTT on Windows 10.  
+Note. This have only been tested on a self-hosted Foundry VTT on Windows 10/11.  
 If you use Forge or some other remote hosting, please tell me your results on the Sandbox Discord.
 
 # :gear: How it works
