@@ -27,7 +27,7 @@
   // 2022-07-24 1.0.1    Ramses800            Rewrite of cloning, now item attributes will be added on first import correctly
   // 2023-02-09 1.1.0    Ramses800            Rewrite for Foundry v10
   // 2023-02-12 1.2.0    Ramses800            Folder are now using hiearchical naming and are created if not existing 
-  // 2024-03-02 1.2.1    Ramses800            Error information for unhandled errors
+  // 2024-03-02 1.2.1    Ramses800            Error information for unhandled errors, fix for if any citems is located at root
   // ****************************************************************                                                        
   function macroVersion(){
     return "1.2.1";
